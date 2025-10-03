@@ -5,6 +5,7 @@ use_directory_urls: false
 
 nav:
   - "Inici": "index.md"
+  - "Riesgos Laborales": "riscos-individuales.md"
  # - Segundo apartado del menú lateral
 theme:
   language: ca
