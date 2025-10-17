@@ -12,7 +12,7 @@
 <body>
     <h1>¡Hola, Mundo!</h1>
 
-		<form method="POST" action="../../backend/api/index.php">
+		<form method="POST" enctype="multipart/form-data" action="../../backend/api/index.php">
 			<label>Nom: </label>
 			<input type="text" id="nom" name="nom"><br>
 
@@ -21,9 +21,9 @@
 
 			<label for="cicle">Cicle Formatiu </label>
 			<select id="cicle" name="cicle">
-				<option vlaue="ASIX">ASIX</option>
-				<option vlaue="DAM">Desarrollo Aplicaciones Multiplataforma</option>
-				<option vlaue="DAW">Desarrollo Aplicaciones Web</option>
+				<option value="ASIX">ASIX</option>
+				<option value="DAM">Desarrollo Aplicaciones Multiplataforma</option>
+				<option value="DAW">Desarrollo Aplicaciones Web</option>
 			</select><br>
 
 			<label>Telefon: </label>
