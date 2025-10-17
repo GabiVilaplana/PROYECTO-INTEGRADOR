@@ -6,91 +6,81 @@ $consentimiento = false;
 $cicle = "";
 $errores = [];
 
-
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    $nom = $_POST["nom"] ?? "";
-    $email = $_POST["email"] ?? "";
-    $telefon = $_POST["telefon"] ?? "";
-    $consentimiento = $_POST["consentimiento"] ?? "";
-    $cicle = $_POST["cicle"] ?? "";
+    $nom = trim($_POST["nom"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $telefon = trim($_POST["telefon"] ?? "");
+    $consentimiento = !empty($_POST["consentimiento"]); // checkbox: true si marcado
+    $cicle = trim($_POST["cicle"] ?? "");
 
-
-
-    if (empty($nombre)) {
+    if (empty($nom)) {
         $errores["errorNombre"] = "No introducido ningún nombre";
     }
 
-    if (empty($email)) {
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errores["errorEmail"] = "No introducido ningún Email o este es incorrecto";
     }
 
-    if (empty($telefon) && strlen(trim($telefon)) !== 9) {
-        $errores["errorTelefon"] = "Telefono que ha introducido es incorrecto";
+    if (empty($telefon) || strlen($telefon) !== 9 || !ctype_digit($telefon)) {
+        $errores["errorTelefon"] = "Teléfono que ha introducido es incorrecto";
     }
 
     if (empty($cicle)) {
-        $errores["erroreCicle"] = "Ciclo Introducido es nulo";
+        $errores["errorCicle"] = "Ciclo introducido es nulo";
     }
-
 }
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf8">
+    <meta charset="utf-8">
     <title>Proyecto Intermodular</title>
-    <meta name="description" content="Ejercicio de Javascript">
-    <meta name="author" content="Gabi y Alex">
-    <meta name="keywords" content="Venta, Articulos, e-commerce">
     <link href="../../frontend/HTML/CSS/index.css" rel="stylesheet" type="text/css">
 </head>
-</head>
-
 <body>
-    <h1>Pagina Contactos</h1>
+    <h1>Página Contactos</h1>
 
-    <label><strong>Nom:</strong></label>
-    <input type="text" id="nom" name="nom" required><br><br>
+    <form method="POST" action="">
+        <label><strong>Nom:</strong></label>
+        <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($nom); ?>" required><br><br>
 
-    <?php if ((strlen(htmlspecialchars($errores["errorNombre"])) > 0)): ?>
-        <p id="datosIncorrectos"><?php htmlspecialchars($errores["errorNombre"]) ?></p><br>
-    <?php endif; ?>
+        <?php if (!empty($errores["errorNombre"])): ?>
+            <p class="datosIncorrectos"><?php echo htmlspecialchars($errores["errorNombre"]); ?></p><br>
+        <?php endif; ?>
 
-    <label><strong>Email: </label>
-    <input type="email" id="email" name="email" required><br><br>
+        <label><strong>Email:</strong></label>
+        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required><br><br>
 
-    <?php if ((strlen(htmlspecialchars($errores["errorEmail"])) > 0)): ?>
-        <p id="datosIncorrectos"><?php htmlspecialchars($errores["errorEmail"]) ?></p><br>
-    <?php endif; ?>
+        <?php if (!empty($errores["errorEmail"])): ?>
+            <p class="datosIncorrectos"><?php echo htmlspecialchars($errores["errorEmail"]); ?></p><br>
+        <?php endif; ?>
 
-    <label for="cicle"><strong>Cicle Formatiu</strong> </label>
-    <select id="cicle" name="cicle">
-        <option vlaue="ASIX"></option>
-        <option vlaue="DAM"></option>
-        <option vlaue="DAW"></option>
-    </select><br>
-    <p>
+        <label for="cicle"><strong>Cicle Formatiu:</strong></label>
+        <select id="cicle" name="cicle">
+            <option value="">-- Selecciona --</option>
+            <option value="ASIX" <?php echo ($cicle === 'ASIX') ? 'selected' : ''; ?>>ASIX</option>
+            <option value="DAM" <?php echo ($cicle === 'DAM') ? 'selected' : ''; ?>>DAM</option>
+            <option value="DAW" <?php echo ($cicle === 'DAW') ? 'selected' : ''; ?>>DAW</option>
+        </select><br><br>
 
-        <?php if ((strlen(htmlspecialchars($errores["errorCicle"])) > 0)): ?>
-        <p id="datosIncorrectos"><?php htmlspecialchars($errores["errorCicle"]) ?></p><br>
-    <?php endif; ?>
+        <?php if (!empty($errores["errorCicle"])): ?>
+            <p class="datosIncorrectos"><?php echo htmlspecialchars($errores["errorCicle"]); ?></p><br>
+        <?php endif; ?>
 
-    <label><strong>Telefon:</strong></label>
-    <input type="number" id="telefon" name="telefon" required><br><br>
+        <label><strong>Telèfon:</strong></label>
+        <input type="tel" id="telefon" name="telefon" value="<?php echo htmlspecialchars($telefon); ?>" required><br><br>
 
-    <?php if ((strlen(htmlspecialchars($errores["errorTelefon"])) > 0)): ?>
-        <p id="datosIncorrectos"><?php htmlspecialchars($errores["errorTelefon"]) ?></p><br>
-    <?php endif; ?>
+        <?php if (!empty($errores["errorTelefon"])): ?>
+            <p class="datosIncorrectos"><?php echo htmlspecialchars($errores["errorTelefon"]); ?></p><br>
+        <?php endif; ?>
 
-    <label><strong>Al enviar este formulario, aceptas el tratamiento de tus datos personales conforme a nuestra Política
-            de Privacidad.</strong></label>
-    <input type="checkbox" id="consentimiento" name="consentimiento" required><br>
+        <label>
+            <input type="checkbox" id="consentimiento" name="consentimiento" <?php echo $consentimiento ? 'checked' : ''; ?> required>
+            Al enviar este formulario, aceptas el tratamiento de tus datos personales conforme a nuestra Política de Privacidad.
+        </label><br><br>
 
-    <input href="../../frontend/HTML/index.html" type="submit" id="button" name="button" value="Volver">
+        <a href="../../frontend/HTML/index.html">Volver</a>
+    </form>
 </body>
-</form>
-</body>
-
 </html>
