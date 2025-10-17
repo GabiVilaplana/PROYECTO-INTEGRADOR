@@ -53,16 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     <label><strong>Nom:</strong></label>
     <input type="text" id="nom" name="nom" required><br><br>
-    
+
     <?php if ((strlen(htmlspecialchars($errores["errorNombre"])) > 0)): ?>
-        <p><?php htmlspecialchars($errores["errorNombre"]) ?></p><br>
+        <p id="datosIncorrectos"><?php htmlspecialchars($errores["errorNombre"]) ?></p><br>
     <?php endif; ?>
 
     <label><strong>Email: </label>
     <input type="email" id="email" name="email" required><br><br>
 
     <?php if ((strlen(htmlspecialchars($errores["errorEmail"])) > 0)): ?>
-        <p><?php htmlspecialchars($errores["errorEmail"]) ?></p><br>
+        <p id="datosIncorrectos"><?php htmlspecialchars($errores["errorEmail"]) ?></p><br>
     <?php endif; ?>
 
     <label for="cicle"><strong>Cicle Formatiu</strong> </label>
@@ -74,14 +74,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <p>
 
         <?php if ((strlen(htmlspecialchars($errores["errorCicle"])) > 0)): ?>
-        <p><?php htmlspecialchars($errores["errorCicle"]) ?></p><br>
+        <p id="datosIncorrectos"><?php htmlspecialchars($errores["errorCicle"]) ?></p><br>
     <?php endif; ?>
 
     <label><strong>Telefon:</strong></label>
     <input type="number" id="telefon" name="telefon" required><br><br>
 
     <?php if ((strlen(htmlspecialchars($errores["errorTelefon"])) > 0)): ?>
-        <p><?php htmlspecialchars($errores["errorTelefon"]) ?></p><br>
+        <p id="datosIncorrectos"><?php htmlspecialchars($errores["errorTelefon"]) ?></p><br>
     <?php endif; ?>
 
     <label><strong>Al enviar este formulario, aceptas el tratamiento de tus datos personales conforme a nuestra Política
