@@ -11,6 +11,28 @@
 </head>
 <body>
     <h1>¡Hola, Mundo!</h1>
-    <p>Este es el contenido visible de mi página web.</p>
+
+		<form method="POST" action="../../backend/api/index.php">
+			<label>Nom: </label>
+			<input type="text" id="nom" name="nom" required><br>
+
+			<label>Email: </label>
+			<input type="email" id="email" name="email" required><br>
+
+			<label for="cicle">Cicle Formatiu </label>
+			<select id="cicle" name="cicle">
+				<option vlaue="ASIX"></option>
+				<option vlaue="DAM"></option>
+				<option vlaue="DAW"></option>
+			</select><br>
+
+			<label>Telefon: </label>
+			<input type="number" id="telefon" name="telefon" required><br>
+
+			<label>Al enviar este formulario, aceptas el tratamiento de tus datos personales conforme a nuestra Política de Privacidad. </label>
+			<input type="checkbox" id="consentimiento" name="consentimiento" required><br>
+
+			<input type="submit" id="button" name="button" value="Enviar"></body>
+		</form>
 </body>
 </html>
