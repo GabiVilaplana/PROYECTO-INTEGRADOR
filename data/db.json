@@ -1,0 +1,108 @@
+{
+    "Categorias": [
+        {
+            "IDCategoria": "1",
+            "Nombre": "Desarrollo Web",
+            "Descripcion": "Servicios de creación y mantenimiento de sitios web.",
+            "Activo": "TRUE"
+        },
+        {
+            "IDCategoria": "2",
+            "Nombre": "Educación",
+            "Descripcion": "Clases particulares y formación académica.",
+            "Activo": "TRUE"
+        },
+        {
+            "IDCategoria": "3",
+            "Nombre": "Fotografía",
+            "Descripcion": "Sesiones fotográficas profesionales para productos o eventos.",
+            "Activo": "FALSE"
+        }
+    ],
+    "Servicio": [
+        {
+            "IDServicio": "201",
+            "Nombre": "Diseño Web Responsive",
+            "FechaCreacion": "2025-03-15T10:30:00Z",
+            "Descripcion": "Creación de sitio web moderno, adaptable a móviles y optimizado para SEO.",
+            "DuracionEstimada": "35",
+            "Precio": "420.00",
+            "IDCategoria": "1",
+            "IDUsuarioCreacion": "101",
+            "IDImagen": "301",
+            "Estado": "activo"
+        },
+        {
+            "IDServicio": "202",
+            "Nombre": "Clases de Matemáticas Online",
+            "FechaCreacion": "2025-04-01T16:45:00Z",
+            "Descripcion": "Clases personalizadas para ESO y Bachillerato.",
+            "DuracionEstimada": "1",
+            "Precio": "25.00",
+            "IDCategoria": "2",
+            "IDUsuarioCreacion": "102",
+            "IDImagen": "302",
+            "Estado": "activo"
+        },
+        {
+            "IDServicio": "203",
+            "Nombre": "Sesión Fotográfica de Producto",
+            "FechaCreacion": "2025-02-20T09:15:00Z",
+            "Descripcion": "Fotografía profesional para e-commerce.",
+            "DuracionEstimada": "3",
+            "Precio": "180.00",
+            "IDCategoria": "3",
+            "IDUsuarioCreacion": "103",
+            "IDImagen": "303",
+            "Estado": "inactivo"
+        }
+    ],
+    "ServicioCompras": [
+        {
+            "IDCompra": "5001",
+            "IDUsuarioCompra": "104",
+            "IDServicio": "201",
+            "FechaCompra": "2025-04-10T14:20:00Z"
+        },
+        {
+            "IDCompra": "5002",
+            "IDUsuarioCompra": "104",
+            "IDServicio": "202",
+            "FechaCompra": "2025-04-12T10:00:00Z"
+        }
+    ],
+    "Usuarios": [
+        {
+            "IDUsuario": "101",
+            "Nombre": "Ana",
+            "Apellidos": "Martínez López",
+            "Telefono": "+34 600 123 456",
+            "Correo": "ana@creativeweb.es",
+            "Valoracion": "4.9"
+        },
+        {
+            "IDUsuario": "102",
+            "Nombre": "Carlos",
+            "Apellidos": "López García",
+            "Telefono": "+34 611 234 567",
+            "Correo": "carlos.profesor@gmail.com",
+            "Valoracion": "4.7"
+        },
+        {
+            "IDUsuario": "103",
+            "Nombre": "Lucía",
+            "Apellidos": "Fernández Ruiz",
+            "Telefono": "+34 622 345 678",
+            "Correo": "lucia@fotoluz.es",
+            "Valoracion": "5.0"
+        },
+        {
+            "IDUsuario": "104",
+            "Nombre": "Miguel",
+            "Apellidos": "Sánchez Pérez",
+            "Telefono": "+34 633 456 789",
+            "Correo": "miguel.cliente@email.com",
+            "Valoracion": ""
+        }
+    ]
+}
