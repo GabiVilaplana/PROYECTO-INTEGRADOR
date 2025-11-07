@@ -78,6 +78,7 @@
             "Apellidos": "Martínez López",
             "Telefono": "+34 600 123 456",
             "Correo": "ana@creativeweb.es",
+            "Password": "1234",
             "Valoracion": "4.9"
         },
         {
@@ -86,6 +87,7 @@
             "Apellidos": "López García",
             "Telefono": "+34 611 234 567",
             "Correo": "carlos.profesor@gmail.com",
+            "Password": "4321",
             "Valoracion": "4.7"
         },
         {
@@ -94,6 +96,7 @@
             "Apellidos": "Fernández Ruiz",
             "Telefono": "+34 622 345 678",
             "Correo": "lucia@fotoluz.es",
+            "Password": "25879",
             "Valoracion": "5.0"
         },
         {
@@ -102,7 +105,8 @@
             "Apellidos": "Sánchez Pérez",
             "Telefono": "+34 633 456 789",
             "Correo": "miguel.cliente@email.com",
-            "Valoracion": ""
+            "Password": "55854",
+            "Valoracion": null
         }
     ]
 }

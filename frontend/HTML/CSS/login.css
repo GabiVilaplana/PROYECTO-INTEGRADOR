@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  float: left;
+  margin-top: 1%;
+  margin-left: 4%;
+  width: 36%;
+  height: 95vh; /*Lo que hace es que se ajusta a la parte visible de la pagina*/
+  border-radius: 10%;
+  box-shadow: 10px 0px 5px lightgrey;
+}
+.sidebar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+}
+
+.datos {
+  float: left;
+  width: 60%;
+  margin-top: 8%;
+  margin-bottom: 20px;
+}
+
+.textInicioSesion{
+    font-size: 18px;
+    color:#1976d2;
+    margin-left: 9%;
+}
+
+.contenedorInicio {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.contenedorEmail {
+  overflow: hidden;
+  border: 2px solid lightgrey;
+  border-radius: 25px;
+  padding: 2px;
+  margin-bottom: 15px;
+  width: 80%;
+  margin-left: 9%;
+  
+}
+.inputMail::placeholder {
+  color: #2196f3;
+}
+
+
+.inputMail {
+  width: 85%;
+  float: left;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+.inputMail::placeholder {
+  color: #2196f3;
+}
+.iconoEmail {
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin: 8px 8px 0 12px;
+}
+.contenedorContrasenya {
+  overflow: hidden;
+  border: 2px solid lightgrey;
+  border-radius: 25px;
+  padding: 2px;
+  width: 80%;
+  margin-left: 9%;
+}
+.inputContra {
+  width: 85%;
+  float: left;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+
+.inputContra::placeholder {
+  color: #2196f3;
+}
+
+.iconoContrasnya {
+  padding-left: 12px;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin: 8px 8px 0 0;
+}
+
+.btnEntrar {
+  width: 75%;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  margin-top: 22px;
+  margin-left: 12%;
+  padding: 12px;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+.btnEntrar:hover {
+  background-color: #1976d2;
+}
+
+.lineaSeparacion {
+  margin-top: 5%;
+  text-decoration: none;
+}
+.lineaPrincipio {
+  margin-left: 23%;
+  width: 25%;
+  float: left;
+  margin-right: 10px;
+  border-top: 1px solid #ccc;
+}
+.lineaFinal {
+  margin-right: 24%;
+  width: 25%;
+  float: right;
+  border-top: 1px solid #ccc;
+}
+
+.btnInicios {
+  margin-top: 2%;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.contenedorGoogle {
+  overflow: hidden;
+  border: 2px solid lightgrey;
+  border-radius: 25px;
+  padding: 4px 0 4px 0;
+  padding-left: 30%;
+  margin-bottom: 3%;
+}
+.btnGoogle {
+  float: left;
+  width: 40%;
+  padding: 7px 0 7px 0;
+  font-size: 14px;
+  border: none;
+  background-color: white;
+  color: #2196f3;
+}
+.iconoGoogle {
+  padding-left: 12px;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin: 8px 8px 0 0;
+}
+
+.contenedorApple {
+  overflow: hidden;
+  border: 2px solid lightgrey;
+  border-radius: 25px;
+  padding: 4px 0 4px 0;
+  padding-left: 30%;
+}
+.btnApple {
+  float: left;
+  width: 40%;
+  padding: 7px 0 7px 0;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+  color: #2196f3;
+}
+
+.contenedorRegistrarse {
+  overflow: hidden;
+  border: 2px solid #2196f3;
+  border-radius: 25px;
+  margin-top: 3%;
+  padding: 4px 0 4px 0;
+  padding-left: 30%;
+}
+.btnCrearCuenta {
+  float: left;
+  width: 60%;
+  padding: 7px 0 7px 0;
+  font-size: 14px;
+  border: none;
+  background-color: white;
+  font-size: 14px;
+  color: #2196f3;
+}
+
+.contenedorOlvidarContra {
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+}
+.contenedorOlvidarContra strong {
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+.contenedorOlvidarContra strong:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  float: left;
+  width: 100%;
+  margin-left: 10%;
+  padding-top: 10px;
+  clear: both;
+}
+.logo img {
+  width: 200px;
+  height: 100px;
+  margin-left: 30%;
+  max-width: 80%;
+}
+.logo p {
+  font-size: 14px;
+  color: #666;
+  margin-left: 17%;
+  max-width: 80%;
+}
+.logo a {
+  color: #2196f3;
+  font-weight: bold;
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #888;
+}
