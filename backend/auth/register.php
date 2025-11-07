@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (json_save_data('db.json', $data)) {
                 $mensaje = "✅ ¡Cuenta creada correctamente! Ya puedes iniciar sesión.";
                 // Opcional: redirigir automàticament
-                header('Location:ogin.php');
+                header('Location: ../../frontend/index.php');
             } else {
                 $mensaje = "❌ Error al guardar los datos. Inténtalo más tarde.";
             }

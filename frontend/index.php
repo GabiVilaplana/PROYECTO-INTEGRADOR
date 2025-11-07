@@ -1,3 +1,33 @@
+<?php 
+session_start();
+require_once __DIR__ . '/../backend/includes/json_connect.php';
+
+$user_id = $_COOKIE['user_id'] ?? $_SESSION['user_id'] ?? null;
+$usuario = null;
+if ($user_id) {
+    $data = json_get_data('db.json');
+    $usuarios = $data['Usuarios'] ?? [];
+
+    foreach ($usuarios as $u) {
+        // Comparació estricta de strings (IDUsuario és string!)
+        if (isset($u['IDUsuario']) && $u['IDUsuario'] === $user_id) {
+            $usuario = $u;
+            
+            // Sincronitzar sessió (per coherència)
+            $_SESSION['user_id'] = $u['IDUsuario'];
+            $_SESSION['email'] = $u['Correo'];
+            $_SESSION['nombre'] = $u['Nombre'];
+            break;
+        }
+    }
+}
+ 
+if ($user_id && !$usuario) {
+    header('Location: logout.php');
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -18,7 +48,7 @@
         </div>
 
         <div class="right-header">
-            <span class="texto-servicios">Ofrecer Servicios</span>
+            <span class="texto-servicios"><?=  htmlspecialchars($_SESSION["nombre"])?></span>
             <div class="icono-perfil">
                 <img src="./IMG/imagenPerfilRedonda.png" class="profile-icon"></div>
             </div>
