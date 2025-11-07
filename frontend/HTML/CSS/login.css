@@ -192,13 +192,14 @@ body {
 }
 .btnCrearCuenta {
   float: left;
-  width: 60%;
+  width: 100%;
   padding: 7px 0 7px 0;
   font-size: 14px;
   border: none;
   background-color: white;
   font-size: 14px;
   color: #2196f3;
+  margin-left: 12%;
 }
 
 .contenedorOlvidarContra {
@@ -232,8 +233,8 @@ body {
 .logo p {
   font-size: 14px;
   color: #666;
-  margin-left: 17%;
-  max-width: 80%;
+  margin-left: 25%;
+  max-width: 100%;
 }
 .logo a {
   color: #2196f3;
