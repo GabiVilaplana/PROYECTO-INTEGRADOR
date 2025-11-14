@@ -107,6 +107,24 @@
             "Correo": "miguel.cliente@email.com",
             "Password": "55854",
             "Valoracion": null
+        },
+        {
+            "IDUsuario": "105",
+            "Nombre": "",
+            "Apellidos": "",
+            "Telefono": "",
+            "Correo": "prueba@prueba.com",
+            "Password": "$2y$10$y.YIp7N77Y.w5Uw0F0ucZOsnZh5Xt7RGTlb9dnIVApL7gbgQKZexS",
+            "Valoracion": null
+        },
+        {
+            "IDUsuario": "106",
+            "Nombre": "",
+            "Apellidos": "",
+            "Telefono": "",
+            "Correo": "prueba@prueba2.com",
+            "Password": "$2y$10$9JTGiksxAaHn7vHACDtao.2EHAYAvV9cdqzVVrgS6ZNp5yyW6u72i",
+            "Valoracion": null
         }
     ]
 }

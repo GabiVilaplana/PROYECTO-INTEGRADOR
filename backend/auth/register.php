@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "Apellidos" => "",
                 "Telefono" => "",
                 "Correo" => $email,
-                "Password" => $password, // 📝 Text pla (coherent amb el teu JSON)
+                "Password" => password_hash($password,PASSWORD_DEFAULT), // 📝 Text pla (coherent amb el teu JSON)
                 "Valoracion" => null
             ];
 
@@ -56,9 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Desar
             if (json_save_data('db.json', $data)) {
-                $mensaje = "✅ ¡Cuenta creada correctamente! Ya puedes iniciar sesión.";
-                // Opcional: redirigir automàticament
                 header('Location: ../../frontend/index.php');
+                exit;
             } else {
                 $mensaje = "❌ Error al guardar los datos. Inténtalo más tarde.";
             }
@@ -142,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           />
         </div>
 
-        <input type="submit" value="Crear cuenta" class="btnEntrar" /> <!-- ✅ Millor text -->
+        <input type="submit" value="Crear cuenta" class="btnEntrar" />
 
         <div class="contenedorOlvidarContra">
           <a href="login.php">← ¿Ya tienes cuenta? Inicia sesión</a>
