@@ -62,17 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inicio Sesión TaskLink</title>
   <link rel="stylesheet" href="../../frontend/HTML/CSS/login.css" type="text/css" />
-  <style>
-    .mensaje-error {
-      background-color: #ffebee;
-      color: #c62828;
-      padding: 12px 16px;
-      border-radius: 6px;
-      margin-bottom: 20px;
-      font-weight: 500;
-      border-left: 4px solid #d32f2f;
-    }
-  </style>
 </head>
 
 <body>

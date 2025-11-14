@@ -11,10 +11,12 @@ body {
   margin-top: 1%;
   margin-left: 4%;
   width: 36%;
-  height: 95vh; /*Lo que hace es que se ajusta a la parte visible de la pagina*/
+  height: 95vh;
+  /*Lo que hace es que se ajusta a la parte visible de la pagina*/
   border-radius: 10%;
   box-shadow: 10px 0px 5px lightgrey;
 }
+
 .sidebar img {
   width: 100%;
   height: 100%;
@@ -28,10 +30,10 @@ body {
   margin-bottom: 20px;
 }
 
-.textInicioSesion{
-    font-size: 18px;
-    color:#1976d2;
-    margin-left: 9%;
+.textInicioSesion {
+  font-size: 18px;
+  color: #1976d2;
+  margin-left: 9%;
 }
 
 .contenedorInicio {
@@ -47,8 +49,9 @@ body {
   margin-bottom: 15px;
   width: 80%;
   margin-left: 9%;
-  
+
 }
+
 .inputMail::placeholder {
   color: #2196f3;
 }
@@ -62,15 +65,18 @@ body {
   border: none;
   outline: none;
 }
+
 .inputMail::placeholder {
   color: #2196f3;
 }
+
 .iconoEmail {
   float: left;
   width: 16px;
   height: 16px;
   margin: 8px 8px 0 12px;
 }
+
 .contenedorContrasenya {
   overflow: hidden;
   border: 2px solid lightgrey;
@@ -79,6 +85,7 @@ body {
   width: 80%;
   margin-left: 9%;
 }
+
 .inputContra {
   width: 85%;
   float: left;
@@ -120,6 +127,7 @@ body {
   margin-top: 5%;
   text-decoration: none;
 }
+
 .lineaPrincipio {
   margin-left: 23%;
   width: 25%;
@@ -127,6 +135,7 @@ body {
   margin-right: 10px;
   border-top: 1px solid #ccc;
 }
+
 .lineaFinal {
   margin-right: 24%;
   width: 25%;
@@ -148,6 +157,7 @@ body {
   padding-left: 30%;
   margin-bottom: 3%;
 }
+
 .btnGoogle {
   float: left;
   width: 40%;
@@ -157,6 +167,7 @@ body {
   background-color: white;
   color: #2196f3;
 }
+
 .iconoGoogle {
   padding-left: 12px;
   width: 16px;
@@ -172,6 +183,7 @@ body {
   padding: 4px 0 4px 0;
   padding-left: 30%;
 }
+
 .btnApple {
   float: left;
   width: 40%;
@@ -190,6 +202,7 @@ body {
   padding: 4px 0 4px 0;
   padding-left: 30%;
 }
+
 .btnCrearCuenta {
   float: left;
   width: 100%;
@@ -207,12 +220,14 @@ body {
   text-align: center;
   margin-top: 12px;
 }
+
 .contenedorOlvidarContra strong {
   color: #2196f3;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
 }
+
 .contenedorOlvidarContra strong:hover {
   text-decoration: underline;
 }
@@ -224,26 +239,40 @@ body {
   padding-top: 10px;
   clear: both;
 }
+
 .logo img {
   width: 200px;
   height: 100px;
   margin-left: 30%;
   max-width: 80%;
 }
+
 .logo p {
   font-size: 14px;
   color: #666;
   margin-left: 25%;
   max-width: 100%;
 }
+
 .logo a {
   color: #2196f3;
   font-weight: bold;
   text-decoration: none;
 }
+
 footer {
   text-align: center;
   margin-top: 20px;
   font-size: 12px;
   color: #888;
+}
+
+.mensaje-error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  border-left: 4px solid #d32f2f;
 }
