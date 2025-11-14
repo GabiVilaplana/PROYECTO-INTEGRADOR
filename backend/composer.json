@@ -1,0 +1,7 @@
+{
+    "name": "batoi/pi",
+    "description": "Projecte Integrador",
+    "require": {
+        "phpoffice/phpspreadsheet": "^2"
+    }
+}
