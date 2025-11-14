@@ -2,7 +2,7 @@
 session_start();
 require_once __DIR__ . '/../backend/includes/json_connect.php';
 
-$user_id = $_COOKIE['user_id'] ?? $_SESSION['user_id'] ?? null;
+$user_id = $_SESSION['user_id'] ?? $_COOKIE['user_id'] ?? null;
 $usuario = null;
 if ($user_id) {
     $data = json_get_data('db.json');

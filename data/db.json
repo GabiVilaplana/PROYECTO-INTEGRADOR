@@ -125,6 +125,33 @@
             "Correo": "prueba@prueba2.com",
             "Password": "$2y$10$9JTGiksxAaHn7vHACDtao.2EHAYAvV9cdqzVVrgS6ZNp5yyW6u72i",
             "Valoracion": null
+        },
+        {
+            "IDUsuario": "107",
+            "Nombre": "",
+            "Apellidos": "",
+            "Telefono": "",
+            "Correo": "gabired345@gmail.com",
+            "Password": "$2y$10$2rviNw71Uf8IDoj6Bjtbi.41CWPQefH\/BuPDFko7Wf0Ts2LfjV6\/e",
+            "Valoracion": null
+        },
+        {
+            "IDUsuario": "108",
+            "Nombre": "",
+            "Apellidos": "",
+            "Telefono": "",
+            "Correo": "a2000lex@hotmail.com",
+            "Password": "$2y$10$WGF1u1O1vMU9U7PFCbv\/iuBxI\/0QiTv8Jpxfxn8BdWkJK253Q0pc6",
+            "Valoracion": null
+        },
+        {
+            "IDUsuario": "109",
+            "Nombre": "alex",
+            "Apellidos": "",
+            "Telefono": "",
+            "Correo": "alex@tasklink.es",
+            "Password": "$2y$10$fiOrXFy9tKLjMDwVcNwg1OIm8hJCLcibaBz2jUYkd35Tk3pvmkPGi",
+            "Valoracion": null
         }
     ]
 }
