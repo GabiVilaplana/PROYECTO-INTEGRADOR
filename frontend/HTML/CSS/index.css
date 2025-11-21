@@ -2,79 +2,153 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "hero"
+        "container"
+        "footer";
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
 }
 
 /* HEADER */
 header {
+    grid-area: header;
     background-color: white;
     border-bottom-left-radius: 90px;
     border-bottom-right-radius: 90px;
     padding: 0px 20px;
-    overflow: hidden;
     height: 80px;
-}
-
-.logo-container {
-    float: left;
-    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
 }
 
 .logo-container .logo-icon {
     width: 150px;
     height: 75px;
-    margin-right: 8px;
     border-radius: 5px;
-    vertical-align: middle;
-    display: inline-block;
 }
 
 .right-header {
-    float: right;
-    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 10px;
+    justify-content: end;
+    
 }
 
 .texto-servicios {
     color: #333;
     font-weight: bold;
     font-size: 14px;
-    margin-right: 20px;
     cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 80px;
-}
-
-.icono-perfil {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
+    white-space: nowrap;
 }
 
 .icono-perfil .profile-icon{
     width: 35px;
     height: 35px;
-    border-radius: 70%;
-    line-height: 80px;
+    border-radius: 50%;
+}
+
+/* DROPDOWN */
+
+.user-dropdown {
+    position: absolute;
+    top: 60px; /* Justo debajo del header */
+    right: 20px; /* Alineado con el ícono de perfil */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 300px;
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+    padding: 15px 0;
+}
+
+.user-dropdown.active {
+    display: block;
+}
+
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin: 0 20px; /* Márgenes: izq/der 20px, abajo 15px */
+    padding-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.dropdown-menu li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    color: #007BFF;
+}
+
+.dropdown-menu a span {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.divider {
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.divider hr {
+    width: calc(100% - 40px); /* Ocupa todo menos 40px (20px a cada lado) */
+    border: none;
+    border-top: 1px solid #C5D9F8;
+    margin: 0;
 }
 
 /* SECTION 1 */
 
 .hero {
+    grid-area: hero;
     background-color: #C5D9F8;
     padding: 40px 20px;
-    text-align: center;
+    display: grid;
+    place-items: center;
+    gap: 30px;
 }
 
 .hero h2 {
     font-size: 32px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 30px;
+    margin: 0;
 }
 
 .search-container {
-    text-align: center;
     margin-bottom: 40px;
+    justify-self: center;
 }
 
 .search-bar {
@@ -82,23 +156,19 @@ header {
     padding: 5px;
     border-radius: 20px;
     width: 326px;
-    margin: 0 auto;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto;
 }
 
 .search-bar input {
-    float: left;
     border: none;
     outline: none;
     padding: 8px 12px;
-    width: 250px;
     border-radius: 20px 0 0 20px;
-    font-size: 14px;
     box-sizing: border-box;
 }
 
 .search-bar button {
-    float: right;
     background-color: #007BFF;
     color: white;
     border: none;
@@ -116,22 +186,22 @@ header {
 /* SECTION 2 */
 
 .container {
+    grid-area: container;
     background-color: white;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 20px;
-    overflow: hidden;
     width: 97.8%;
     text-align: center;
     margin-top: -2%;
 }
 
 .courses {
-    float: left;
-    width: 100%;
+    display: grid;
     padding: 20px;
-    overflow: hidden;
-    text-align: center;
+    justify-items: center;
+    grid-template-columns: auto auto auto;
+    padding: 20px 0;
 }
 
 .course {
@@ -139,11 +209,8 @@ header {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
-    margin: 15px;
-    display: inline-block;
     background-color: white;
     text-align: center;
-    position: relative;
 }
 
 .course img {
@@ -170,22 +237,25 @@ header {
 }
 
 .course-footer {
+    display: grid;
+    grid-template-columns: auto auto;
     overflow: hidden;
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 10px;
     border-top: 10px solid #C5D9F8;
 }
 
 .course-footer .price {
-    float: left;
+    display: grid;
     font-weight: bold;
     color: #333;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 17px;
+    justify-content: start;
 }
 
 .course-footer button {
-    float: right;
+    display: grid;
     background-color: #007BFF;
     color: white;
     border: none;
@@ -193,8 +263,8 @@ header {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 13px;
+    justify-content: end;
 }
 
 .course-footer button:hover {
@@ -203,6 +273,7 @@ header {
 
 /* FOOTER */
 footer {
+    grid-area: footer;
     background-color: #C5D9F8;
     text-align: center;
     padding: 15px;

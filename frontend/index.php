@@ -21,7 +21,7 @@ if ($user_id) {
         }
     }
 }
- 
+
 if ($user_id && !$usuario) {
     header('Location: logout.php');
     exit;
@@ -49,10 +49,24 @@ if ($user_id && !$usuario) {
 
         <div class="right-header">
             <span class="texto-servicios"><?=  htmlspecialchars($_SESSION["nombre"])?></span>
-            <div class="icono-perfil">
+            <div class="icono-perfil" onclick="toggleDropdown()">
                 <img src="./IMG/imagenPerfilRedonda.png" class="profile-icon"></div>
             </div>
         </div>
+
+        <div id="user-dropdown" class="user-dropdown">
+        <ul class="dropdown-menu">
+            <h2>Mi cuenta</h2>
+            <li class="divider"><hr></li>
+            <li><a href="../backend/auth/profile.php"><span>👤</span> Perfil</a></li>
+            <li><a href="like.php"><span>❤️</span> Favoritos</a></li>
+            <li><a href="mensajes.php"><span>💬</span> Mensajes</a></li>
+            <li class="divider"><hr></li>
+            <li><a href="configuracion.php"><span>⚙️</span> Configuración de la cuenta</a></li>
+            <li><a href="moneda.php"><span>🌐</span> Idiomas y moneda</a></li>
+            <li><a href="ayuda.php"><span>❓</span> Centro de ayuda</a></li>
+        </ul>
+    </div>
     </header>
 
     <section class="hero">
@@ -134,5 +148,36 @@ if ($user_id && !$usuario) {
     <footer>
         Español (España) © 2025 TaskLink from Alex&Gabi
     </footer>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('user-dropdown');
+            const isActive = dropdown.classList.contains('active');
+
+            // Cerrar todos los dropdowns primero
+            document.querySelectorAll('.user-dropdown').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Si no estaba activo, abrirlo
+            if (!isActive) {
+                dropdown.classList.add('active');
+                
+                // Cerrar al hacer clic fuera
+                document.addEventListener('click', closeDropdownOnClickOutside);
+            }
+        }
+
+        function closeDropdownOnClickOutside(event) {
+            const dropdown = document.getElementById('user-dropdown');
+            const profileIcon = document.querySelector('.icono-perfil');
+
+            // Si el clic fue fuera del dropdown Y fuera del ícono de perfil → cerrar
+            if (!dropdown.contains(event.target) && !profileIcon.contains(event.target)) {
+                dropdown.classList.remove('active');
+                document.removeEventListener('click', closeDropdownOnClickOutside);
+            }
+        }
+</script>
 </body>
 </html>
