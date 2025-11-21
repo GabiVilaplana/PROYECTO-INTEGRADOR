@@ -19,3 +19,12 @@ function json_update_collection(string $collection, array $newData): bool {
     $data[$collection] = $newData;
     return file_put_contents($path, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)) !== false;
 }
+
+function json_save_data(string $filename, array $data): bool {
+    $path = __DIR__ . '/../../data/' . $filename;
+    return file_put_contents(
+        $path,
+        json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+    ) !== false;
+}
+?>
