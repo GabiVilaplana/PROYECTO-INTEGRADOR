@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
       // 🔑 Comparació EN TEXT PLA (perquè 'Password' és en clar al JSON)
       // ⚠️ Només acceptable en entorns educatius / locals.
-      if (isset($user['Password']) && $password === $user['Password']) {
+      if (isset($user['Password']) && password_verify( $password ,$user['Password'])) {
         // ✅ Login correcte
         $_SESSION['user_id'] = $user['IDUsuario'];
         $_SESSION['email'] = $user['Correo'];

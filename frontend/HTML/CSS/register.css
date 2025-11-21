@@ -20,6 +20,7 @@ header img {
   padding: 0;
   overflow: hidden;
 }
+
 .contenedor {
   float: left;
   width: 100%;
@@ -30,6 +31,7 @@ header img {
   color: white;
   text-align: center;
 }
+
 .datos {
   float: left;
   width: 100%;
@@ -54,6 +56,7 @@ header img {
   padding: 2px;
   margin-bottom: 15px;
 }
+
 .inputMail::placeholder {
   color: #2196f3;
 }
@@ -66,7 +69,17 @@ header img {
   border: none;
   outline: none;
 }
-.inputMail::placeholder {
+
+.inputNombre {
+  width: 85%;
+  float: left;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+
+.inputNombre::placeholder {
   color: #2196f3;
 }
 .iconoEmail {
@@ -75,6 +88,7 @@ header img {
   height: 16px;
   margin: 8px 8px 0 12px;
 }
+
 .contenedorContrasenya {
   overflow: hidden;
   border: 2px solid lightgrey;
@@ -82,6 +96,7 @@ header img {
   padding: 2px;
   margin-bottom: 12px;
 }
+
 .inputContra {
   width: 85%;
   float: left;
@@ -123,12 +138,14 @@ header img {
   text-decoration: none;
   color: grey;
 }
+
 .lineaPrincipio {
   margin-left: 24%;
   width: 25%;
   float: left;
   border-top: 1px solid #ccc;
 }
+
 .lineaFinal {
   margin-right: 24%;
   width: 25%;
@@ -150,6 +167,7 @@ header img {
   padding-left: 30%;
   margin-bottom: 3%;
 }
+
 .btnGoogle {
   float: left;
   width: 40%;
@@ -159,6 +177,7 @@ header img {
   background-color: white;
   color: #2196f3;
 }
+
 .iconoGoogle {
   padding-left: 12px;
   width: 16px;
@@ -174,6 +193,7 @@ header img {
   padding: 4px 0 4px 0;
   padding-left: 30%;
 }
+
 .btnApple {
   float: left;
   width: 40%;
@@ -200,12 +220,14 @@ header img {
   text-align: center;
   margin-top: 8px;
 }
+
 .contenedorOlvidarContra strong {
   color: #2196f3;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
 }
+
 .contenedorOlvidarContra strong:hover {
   text-decoration: underline;
 }
@@ -216,22 +238,45 @@ header img {
   padding-top: 10px;
   clear: both;
 }
+
 .logo img {
   width: 200px;
   height: 100px;
 }
+
 .logo p {
   font-size: 14px;
   color: #666;
 }
+
 .logo a {
   color: #2196f3;
   font-weight: bold;
   text-decoration: none;
 }
+
 footer {
   text-align: center;
   margin-top: 20px;
   font-size: 12px;
   color: #888;
+}
+
+.mensaje {
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.mensaje-exito {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.mensaje-error {
+  background-color: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #d32f2f;
 }
