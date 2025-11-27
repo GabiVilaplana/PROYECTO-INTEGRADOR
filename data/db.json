@@ -19,6 +19,44 @@
             "Activo": "FALSE"
         }
     ],
+    "Mensajes": [
+        {
+            "idMensaje": "1",
+            "nombre": "Ana García",
+            "email": "ana@email.com",
+            "asunto": "Consulta sobre servicio",
+            "mensaje": "Hola, quisiera saber más sobre el servicio de reciclaje.",
+            "fecha_envio": "2025-11-20 10:15:30",
+            "leido": "0"
+        },
+        {
+            "idMensaje": "2",
+            "nombre": "Luis Mendoza",
+            "email": "luis.m@empresa.org",
+            "asunto": "Sugerencia de mejora",
+            "mensaje": "Sería genial tener un filtro por impacto sostenible en la búsqueda.",
+            "fecha_envio": "2025-11-22 14:30:00",
+            "leido": "1"
+        },
+        {
+            "idMensaje": "3",
+            "nombre": "María Sánchez",
+            "email": "maria.s@example.net",
+            "asunto": "Problema técnico",
+            "mensaje": "No puedo acceder a mi perfil después de registrarme.",
+            "fecha_envio": "2025-11-24 09:45:12",
+            "leido": "0"
+        },
+        {
+            "idMensaje": "2001",
+            "nombre": "Alex",
+            "email": "a2000lex@hotmail.com",
+            "asunto": "adadad",
+            "mensaje": "adasdsadasdas",
+            "fecha_envio": "2025-11-24 19:29:44",
+            "leido": 0
+        }
+    ],
     "Servicio": [
         {
             "IDServicio": "201",
@@ -106,51 +144,6 @@
             "Telefono": "+34 633 456 789",
             "Correo": "miguel.cliente@email.com",
             "Password": "55854",
-            "Valoracion": null
-        },
-        {
-            "IDUsuario": "105",
-            "Nombre": "",
-            "Apellidos": "",
-            "Telefono": "",
-            "Correo": "prueba@prueba.com",
-            "Password": "$2y$10$y.YIp7N77Y.w5Uw0F0ucZOsnZh5Xt7RGTlb9dnIVApL7gbgQKZexS",
-            "Valoracion": null
-        },
-        {
-            "IDUsuario": "106",
-            "Nombre": "",
-            "Apellidos": "",
-            "Telefono": "",
-            "Correo": "prueba@prueba2.com",
-            "Password": "$2y$10$9JTGiksxAaHn7vHACDtao.2EHAYAvV9cdqzVVrgS6ZNp5yyW6u72i",
-            "Valoracion": null
-        },
-        {
-            "IDUsuario": "107",
-            "Nombre": "",
-            "Apellidos": "",
-            "Telefono": "",
-            "Correo": "gabired345@gmail.com",
-            "Password": "$2y$10$2rviNw71Uf8IDoj6Bjtbi.41CWPQefH\/BuPDFko7Wf0Ts2LfjV6\/e",
-            "Valoracion": null
-        },
-        {
-            "IDUsuario": "108",
-            "Nombre": "",
-            "Apellidos": "",
-            "Telefono": "",
-            "Correo": "a2000lex@hotmail.com",
-            "Password": "$2y$10$WGF1u1O1vMU9U7PFCbv\/iuBxI\/0QiTv8Jpxfxn8BdWkJK253Q0pc6",
-            "Valoracion": null
-        },
-        {
-            "IDUsuario": "109",
-            "Nombre": "alex",
-            "Apellidos": "",
-            "Telefono": "",
-            "Correo": "alex@tasklink.es",
-            "Password": "$2y$10$fiOrXFy9tKLjMDwVcNwg1OIm8hJCLcibaBz2jUYkd35Tk3pvmkPGi",
             "Valoracion": null
         }
     ]
