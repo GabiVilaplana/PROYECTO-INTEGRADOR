@@ -3,28 +3,28 @@
         {
             "IDCategoria": "1",
             "Nombre": "Desarrollo Web",
-            "Descripcion": "Servicios de creación y mantenimiento de sitios web.",
+            "Descripcion": "Servicios de creaci\u00f3n y mantenimiento de sitios web.",
             "Activo": "TRUE"
         },
         {
             "IDCategoria": "2",
-            "Nombre": "Educación",
-            "Descripcion": "Clases particulares y formación académica.",
+            "Nombre": "Educaci\u00f3n",
+            "Descripcion": "Clases particulares y formaci\u00f3n acad\u00e9mica.",
             "Activo": "TRUE"
         },
         {
             "IDCategoria": "3",
-            "Nombre": "Fotografía",
-            "Descripcion": "Sesiones fotográficas profesionales para productos o eventos.",
+            "Nombre": "Fotograf\u00eda",
+            "Descripcion": "Sesiones fotogr\u00e1ficas profesionales para productos o eventos.",
             "Activo": "FALSE"
         }
     ],
     "Servicio": [
         {
             "IDServicio": "201",
-            "Nombre": "Diseño Web Responsive",
+            "Nombre": "Dise\u00f1o Web Responsive",
             "FechaCreacion": "2025-03-15T10:30:00Z",
-            "Descripcion": "Creación de sitio web moderno, adaptable a móviles y optimizado para SEO.",
+            "Descripcion": "Creaci\u00f3n de sitio web moderno, adaptable a m\u00f3viles y optimizado para SEO.",
             "DuracionEstimada": "35",
             "Precio": "420.00",
             "IDCategoria": "1",
@@ -34,7 +34,7 @@
         },
         {
             "IDServicio": "202",
-            "Nombre": "Clases de Matemáticas Online",
+            "Nombre": "Clases de Matem\u00e1ticas Online",
             "FechaCreacion": "2025-04-01T16:45:00Z",
             "Descripcion": "Clases personalizadas para ESO y Bachillerato.",
             "DuracionEstimada": "1",
@@ -46,9 +46,9 @@
         },
         {
             "IDServicio": "203",
-            "Nombre": "Sesión Fotográfica de Producto",
+            "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
             "FechaCreacion": "2025-02-20T09:15:00Z",
-            "Descripcion": "Fotografía profesional para e-commerce.",
+            "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
             "DuracionEstimada": "3",
             "Precio": "180.00",
             "IDCategoria": "3",
@@ -75,7 +75,7 @@
         {
             "IDUsuario": "101",
             "Nombre": "Ana",
-            "Apellidos": "Martínez López",
+            "Apellidos": "Mart\u00ednez L\u00f3pez",
             "Telefono": "+34 600 123 456",
             "Correo": "ana@creativeweb.es",
             "Password": "1234",
@@ -84,7 +84,7 @@
         {
             "IDUsuario": "102",
             "Nombre": "Carlos",
-            "Apellidos": "López García",
+            "Apellidos": "L\u00f3pez Garc\u00eda",
             "Telefono": "+34 611 234 567",
             "Correo": "carlos.profesor@gmail.com",
             "Password": "4321",
@@ -92,8 +92,8 @@
         },
         {
             "IDUsuario": "103",
-            "Nombre": "Lucía",
-            "Apellidos": "Fernández Ruiz",
+            "Nombre": "Luc\u00eda",
+            "Apellidos": "Fern\u00e1ndez Ruiz",
             "Telefono": "+34 622 345 678",
             "Correo": "lucia@fotoluz.es",
             "Password": "25879",
@@ -102,7 +102,7 @@
         {
             "IDUsuario": "104",
             "Nombre": "Miguel",
-            "Apellidos": "Sánchez Pérez",
+            "Apellidos": "S\u00e1nchez P\u00e9rez",
             "Telefono": "+34 633 456 789",
             "Correo": "miguel.cliente@email.com",
             "Password": "55854",
@@ -128,12 +128,14 @@
         },
         {
             "IDUsuario": "107",
-            "Nombre": "",
+            "Nombre": "Gabi Vila",
             "Apellidos": "",
-            "Telefono": "",
+            "Telefono": "622917181",
             "Correo": "gabired345@gmail.com",
             "Password": "$2y$10$2rviNw71Uf8IDoj6Bjtbi.41CWPQefH\/BuPDFko7Wf0Ts2LfjV6\/e",
-            "Valoracion": null
+            "Valoracion": null,
+            "Direccion": "Av Verge Dels Desemparats",
+            "Biografia": "Guapo xulo y melon"
         },
         {
             "IDUsuario": "108",

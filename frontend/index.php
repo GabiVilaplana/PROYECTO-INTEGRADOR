@@ -48,10 +48,15 @@ if ($user_id && !$usuario) {
         </div>
 
         <div class="right-header">
-            <span class="texto-servicios"><?=  htmlspecialchars($_SESSION["nombre"])?></span>
-            <div class="icono-perfil" onclick="toggleDropdown()">
-                <img src="./IMG/imagenPerfilRedonda.png" class="profile-icon"></div>
-            </div>
+            <?php if ($usuario): ?>
+                <span class="texto-servicios"><?= htmlspecialchars($usuario['Nombre']) ?></span>
+                <div class="icono-perfil" onclick="toggleDropdown()">
+                    <img src="./IMG/imagenPerfilRedonda.png" class="profile-icon">
+                </div>
+            <?php else: ?>
+                <span class="texto-servicios"><a href="../backend/auth/login.php">Iniciar Sesión</a></span>
+                <!-- No mostrar el ícono de perfil si no hay usuario -->
+            <?php endif; ?>
         </div>
 
         <div id="user-dropdown" class="user-dropdown">
@@ -65,6 +70,8 @@ if ($user_id && !$usuario) {
             <li><a href="configuracion.php"><span>⚙️</span> Configuración de la cuenta</a></li>
             <li><a href="moneda.php"><span>🌐</span> Idiomas y moneda</a></li>
             <li><a href="ayuda.php"><span>❓</span> Centro de ayuda</a></li>
+            <li class="divider"><hr></li>
+            <li><a href="../backend/auth/logout.php"><span>➜]</span> Cerrar sesión</a></li>
         </ul>
     </div>
     </header>
