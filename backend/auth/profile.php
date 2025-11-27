@@ -189,48 +189,5 @@ $ruta_foto = '../../frontend/IMG/' . $foto_perfil;
     <footer>
         Español (España) © 2025 TaskLink from Alex&Gabi
     </footer>
-
-    <!-- Script para el dropdown y vista previa de imagen -->
-    <script>
-        function toggleDropdown() {
-            const dropdown = document.getElementById('user-dropdown');
-            const isActive = dropdown.classList.contains('active');
-
-            // Cerrar todos los dropdowns primero
-            document.querySelectorAll('.user-dropdown').forEach(el => {
-                el.classList.remove('active');
-            });
-
-            // Si no estaba activo, abrirlo
-            if (!isActive) {
-                dropdown.classList.add('active');
-                
-                // Cerrar al hacer clic fuera
-                document.addEventListener('click', closeDropdownOnClickOutside);
-            }
-        }
-
-        function closeDropdownOnClickOutside(event) {
-            const dropdown = document.getElementById('user-dropdown');
-            const profileIcon = document.querySelector('.icono-perfil');
-
-            // Si el clic fue fuera del dropdown Y fuera del ícono de perfil → cerrar
-            if (!dropdown.contains(event.target) && !profileIcon.contains(event.target)) {
-                dropdown.classList.remove('active');
-                document.removeEventListener('click', closeDropdownOnClickOutside);
-            }
-        }
-
-        // ✅ Vista previa de la imagen
-        function previewImage(event) {
-            const reader = new FileReader();
-            reader.onload = function() {
-                const preview = document.getElementById('preview-foto');
-                preview.src = reader.result;
-            }
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    </script>
-
 </body>
 </html>

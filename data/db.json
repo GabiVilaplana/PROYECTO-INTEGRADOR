@@ -22,10 +22,10 @@
     "Mensajes": [
         {
             "idMensaje": "1",
-            "nombre": "Ana García",
+            "nombre": "Ana Garc\u00eda",
             "email": "ana@email.com",
             "asunto": "Consulta sobre servicio",
-            "mensaje": "Hola, quisiera saber más sobre el servicio de reciclaje.",
+            "mensaje": "Hola, quisiera saber m\u00e1s sobre el servicio de reciclaje.",
             "fecha_envio": "2025-11-20 10:15:30",
             "leido": "0"
         },
@@ -34,16 +34,16 @@
             "nombre": "Luis Mendoza",
             "email": "luis.m@empresa.org",
             "asunto": "Sugerencia de mejora",
-            "mensaje": "Sería genial tener un filtro por impacto sostenible en la búsqueda.",
+            "mensaje": "Ser\u00eda genial tener un filtro por impacto sostenible en la b\u00fasqueda.",
             "fecha_envio": "2025-11-22 14:30:00",
             "leido": "1"
         },
         {
             "idMensaje": "3",
-            "nombre": "María Sánchez",
+            "nombre": "Mar\u00eda S\u00e1nchez",
             "email": "maria.s@example.net",
-            "asunto": "Problema técnico",
-            "mensaje": "No puedo acceder a mi perfil después de registrarme.",
+            "asunto": "Problema t\u00e9cnico",
+            "mensaje": "No puedo acceder a mi perfil despu\u00e9s de registrarme.",
             "fecha_envio": "2025-11-24 09:45:12",
             "leido": "0"
         },
@@ -166,14 +166,14 @@
         },
         {
             "IDUsuario": "107",
-            "Nombre": "Gabi Vila",
+            "Nombre": "Gabi Vilaplana",
             "Apellidos": "",
             "Telefono": "622917181",
             "Correo": "gabired345@gmail.com",
             "Password": "$2y$10$2rviNw71Uf8IDoj6Bjtbi.41CWPQefH\/BuPDFko7Wf0Ts2LfjV6\/e",
             "Valoracion": null,
             "Direccion": "Av Verge Dels Desemparats",
-            "Biografia": "Guapo xulo y melon"
+            "Biografia": "DWES"
         },
         {
             "IDUsuario": "108",
