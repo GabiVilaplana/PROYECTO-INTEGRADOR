@@ -19,6 +19,44 @@
             "Activo": "FALSE"
         }
     ],
+    "Mensajes": [
+        {
+            "idMensaje": "1",
+            "nombre": "Ana García",
+            "email": "ana@email.com",
+            "asunto": "Consulta sobre servicio",
+            "mensaje": "Hola, quisiera saber más sobre el servicio de reciclaje.",
+            "fecha_envio": "2025-11-20 10:15:30",
+            "leido": "0"
+        },
+        {
+            "idMensaje": "2",
+            "nombre": "Luis Mendoza",
+            "email": "luis.m@empresa.org",
+            "asunto": "Sugerencia de mejora",
+            "mensaje": "Sería genial tener un filtro por impacto sostenible en la búsqueda.",
+            "fecha_envio": "2025-11-22 14:30:00",
+            "leido": "1"
+        },
+        {
+            "idMensaje": "3",
+            "nombre": "María Sánchez",
+            "email": "maria.s@example.net",
+            "asunto": "Problema técnico",
+            "mensaje": "No puedo acceder a mi perfil después de registrarme.",
+            "fecha_envio": "2025-11-24 09:45:12",
+            "leido": "0"
+        },
+        {
+            "idMensaje": "2001",
+            "nombre": "Alex",
+            "email": "a2000lex@hotmail.com",
+            "asunto": "adadad",
+            "mensaje": "adasdsadasdas",
+            "fecha_envio": "2025-11-24 19:29:44",
+            "leido": 0
+        }
+    ],
     "Servicio": [
         {
             "IDServicio": "201",
