@@ -280,3 +280,51 @@ footer {
     clear: both;
     margin-top: 20px;
 }
+
+footer {
+    grid-area: footer;
+    background-color: #C5D9F8;
+    text-align: center;
+    padding: 20px 15px;
+    clear: both;
+    margin-top: 20px;
+}
+
+.footer-contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: left; /* sobrescribe el center del footer SOLO para el contenedor */
+    margin-bottom: 2%;
+}
+
+.footer-contenedor h2 {
+    font-size: 1.1rem;
+    margin: 0 0 12px 0;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* ✅ Eliminamos el bloque con flex y lo reemplazamos por: */
+.footer-contenedor a {
+    display: block;          /* Cada enlace ocupa una línea */
+    text-decoration: none;
+    color: black;
+    font-size: 0.95rem;
+    margin-bottom: 8px;      /* Espacio entre enlaces */
+    transition: color 0.2s;
+}
+
+.footer-contenedor a:last-child {
+    margin-bottom: 0;        /* Evita margen extra en el último enlace */
+}
+
+.footer-contenedor a:hover,
+.footer-contenedor a:focus {
+    color: #1a5276;
+    text-decoration: underline;
+    outline: none;
+}

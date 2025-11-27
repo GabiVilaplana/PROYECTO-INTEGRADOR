@@ -72,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <aside class="sidebar">
             <section class="opcionesContacto">
                 <div class="OtrosContactos">
+                    <a href="../../frontend/index.php" class="btn-volver">← Volver</a>
                     <h3>Otras Formas de Contacto</h3>
                 </div>
                 <div class="contactoInsta" id="contacto">

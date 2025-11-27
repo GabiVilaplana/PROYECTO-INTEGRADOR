@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once __DIR__ . '/../backend/includes/json_connect.php';
 
@@ -12,7 +12,7 @@ if ($user_id) {
         // Comparació estricta de strings (IDUsuario és string!)
         if (isset($u['IDUsuario']) && $u['IDUsuario'] === $user_id) {
             $usuario = $u;
-            
+
             // Sincronitzar sessió (per coherència)
             $_SESSION['user_id'] = $u['IDUsuario'];
             $_SESSION['email'] = $u['Correo'];
@@ -37,7 +37,7 @@ if ($user_id && !$usuario) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TaskLink</title>
     <link rel="stylesheet" href="./HTML/CSS/index.css">
-    
+
 </head>
 
 <body>
@@ -60,20 +60,26 @@ if ($user_id && !$usuario) {
         </div>
 
         <div id="user-dropdown" class="user-dropdown">
-        <ul class="dropdown-menu">
-            <h2>Mi cuenta</h2>
-            <li class="divider"><hr></li>
-            <li><a href="../backend/auth/profile.php"><span>👤</span> Perfil</a></li>
-            <li><a href="like.php"><span>❤️</span> Favoritos</a></li>
-            <li><a href="mensajes.php"><span>💬</span> Mensajes</a></li>
-            <li class="divider"><hr></li>
-            <li><a href="configuracion.php"><span>⚙️</span> Configuración de la cuenta</a></li>
-            <li><a href="moneda.php"><span>🌐</span> Idiomas y moneda</a></li>
-            <li><a href="ayuda.php"><span>❓</span> Centro de ayuda</a></li>
-            <li class="divider"><hr></li>
-            <li><a href="../backend/auth/logout.php"><span>➜]</span> Cerrar sesión</a></li>
-        </ul>
-    </div>
+            <ul class="dropdown-menu">
+                <h2>Mi cuenta</h2>
+                <li class="divider">
+                    <hr>
+                </li>
+                <li><a href="../backend/auth/profile.php"><span>👤</span> Perfil</a></li>
+                <li><a href="like.php"><span>❤️</span> Favoritos</a></li>
+                <li><a href="mensajes.php"><span>💬</span> Mensajes</a></li>
+                <li class="divider">
+                    <hr>
+                </li>
+                <li><a href="configuracion.php"><span>⚙️</span> Configuración de la cuenta</a></li>
+                <li><a href="moneda.php"><span>🌐</span> Idiomas y moneda</a></li>
+                <li><a href="ayuda.php"><span>❓</span> Centro de ayuda</a></li>
+                <li class="divider">
+                    <hr>
+                </li>
+                <li><a href="../backend/auth/logout.php"><span>➜]</span> Cerrar sesión</a></li>
+            </ul>
+        </div>
     </header>
 
     <section class="hero">
@@ -153,6 +159,30 @@ if ($user_id && !$usuario) {
         <p><i>Proximamente...</i></p>
     </div>
     <footer>
+        <div class="footer-contenedor">
+            <div class="footer-asistencia">
+                <h2>Asistencia</h2>
+                <div>
+                    <a href="../backend/auth/contacto.php">Centro de ayuda</a>
+                </div>
+            </div>
+            <div class="footer-ofertas">
+                <h2>Como crear Oferta</h2>
+                <div>
+                    <a href="">Crear oferta</a>
+                    <a href="">Solicitar Oferta</a>
+                </div>
+            </div>
+            <div class="footer-acercade">
+                <h2>TaskLink</h2>
+                <div>
+                    <a href="">Lanzamiento TaskLink</a>
+                    <a href="">Empleo</a>
+                    <a href="">Inversores</a>
+
+                </div>
+            </div>
+        </div>
         Español (España) © 2025 TaskLink from Alex&Gabi
     </footer>
 
@@ -169,7 +199,7 @@ if ($user_id && !$usuario) {
             // Si no estaba activo, abrirlo
             if (!isActive) {
                 dropdown.classList.add('active');
-                
+
                 // Cerrar al hacer clic fuera
                 document.addEventListener('click', closeDropdownOnClickOutside);
             }
@@ -185,6 +215,7 @@ if ($user_id && !$usuario) {
                 document.removeEventListener('click', closeDropdownOnClickOutside);
             }
         }
-</script>
+    </script>
 </body>
+
 </html>
