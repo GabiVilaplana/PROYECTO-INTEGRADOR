@@ -1,0 +1,43 @@
+@use "tarjetas" as *;
+@use "dimensiones" as *;
+@use "caracteristicas" as *;
+@use "colores" as *;
+@use "imagenes" as *;
+@use "keyframes" as *;
+
+.container {
+  background-color: $color-background-page-claro;
+  border-top-left-radius: $border-radius-grande;
+  border-top-right-radius: $border-radius-grande;
+  padding: $margenOPaddingDe20;
+  overflow: $oculto;
+  width: $widthmaximo;
+  text-align: $centrar;
+  margin-top: -2%;
+
+  .courses {
+    float: $izquierda;
+    width: $widthmaximo;
+    padding: $margenOPaddingDe20;
+    overflow: $oculto;
+    text-align: $centrar;
+  }
+
+  .proximamente {
+    float: $derecha;
+    width: 30%;
+    height: 15%;
+    margin-right: $searchBar-width;
+    border-radius: $border-radius;
+    background-color: $color-background-trasera;
+    text-align: $centrar;
+    color: $color-blanco;
+    font-size: $margenOPaddingDe26;
+    font-weight: $texto-Oscuro;
+    overflow: $oculto;
+
+    p {
+      animation: pulse 1.6s $infinito;
+    }
+  }
+}

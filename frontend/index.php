@@ -71,7 +71,6 @@ if ($user_id && !$usuario) {
                 <li class="divider">
                     <hr>
                 </li>
-                <li><a href="configuracion.php"><span>⚙️</span> Configuración de la cuenta</a></li>
                 <li><a href="moneda.php"><span>🌐</span> Idiomas y moneda</a></li>
                 <li><a href="ayuda.php"><span>❓</span> Centro de ayuda</a></li>
                 <li class="divider">
@@ -83,80 +82,204 @@ if ($user_id && !$usuario) {
     </header>
 
     <section class="hero">
+      <video class="hero-video" autoplay muted loop>
+        <source src="./MP4/prueba2.mp4" type="video/mp4" />
+        Tu navegador no soporta videos.
+      </video>
+      <div class="hero-content">
         <h2>Conecta el talento con las oportunidades</h2>
+        <p>
+          Conectamos tus talentos con las oportunidades<br />
+          que te ofrecen otras personas
+        </p>
         <div class="search-container">
-            <div class="search-bar">
-                <input type="text" placeholder="¿Que servicio necesitas?">
-                <button>Buscar</button>
-            </div>
+          <div class="search-bar">
+            <input type="text" placeholder="¿Qué servicio necesitas?" />
+            <button class="btnSearch-bar">Buscar</button>
+          </div>
         </div>
+      </div>
     </section>
 
-    <div class="container">
-        <h2>OFERTAS ACTUALES</h2>
-        <section class="courses">
-            <div class="course">
-                <img src="./IMG/image1.png" alt="Diseñador">
-                <h3>Diseñador</h3>
-                <p>Busco diseñador gráfico para proyecto web.</p>
-                <div class="course-footer">
-                    <span class="price">8€</span>
-                    <button>Reservar</button>
-                </div>
+<div class="container">
+      <h2>OFERTAS ACTUALES</h2>
+      <section class="courses">
+        <div class="course-completo category-diseñador">
+          <div class="course">
+            <img src="./IMG/image1.jpg" alt="Diseñador" />
+            <h3>Diseñador</h3>
+            <p>Busco diseñador gráfico para proyecto web.</p>
+            <div class="course-footer">
+              <span class="price">8€</span>
             </div>
-            <div class="course">
-                <img src="./IMG/img2.png" alt="Limpieza">
-                <h3>Limpieza</h3>
-                <p>Se necesita personal para limpieza de oficinas.</p>
-                <div class="course-footer">
-                    <span class="price">6€/h</span>
-                    <button>Reservar</button>
-                </div>
+          </div>
+          <div class="course-trasera">
+            <h4>Información del Usuario</h4>
+            <p>Nombre: Juan Pérez</p>
+            <p>Valoración: 4/5</p>
+            <p>Telefono: 637123487</p>
+            <p>Email: juan@email.com</p>
+            <div class="mapa-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
             </div>
-            <div class="course">
-                <img src="./IMG/img3.png" alt="Diseñador">
-                <h3>Diseñador</h3>
-                <p>Busco diseñador gráfico para proyecto web.</p>
-                <div class="course-footer">
-                    <span class="price">47€/h</span>
-                    <button>Reservar</button>
-                </div>
+            <button class="btn-trasera">Contactar</button>
+          </div>
+        </div>
+        <div class="course-completo category-limpieza">
+          <div class="course">
+            <img src="./IMG/img2.jpg" alt="Limpieza" />
+            <h3>Limpieza</h3>
+            <p>Se necesita personal para limpieza de oficinas.</p>
+            <div class="course-footer">
+              <span class="price">6€/h</span>
             </div>
-        </section>
+          </div>
+          <div class="course-trasera">
+            <h4>Información del Usuario</h4>
+            <p>Nombre: Juan Pérez</p>
+            <p>Valoración: 4/5</p>
+            <p>Telefono: 637123487</p>
+            <p>Email: juan@email.com</p>
+            <div class="mapa-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+            <button class="btn-trasera">Contactar</button>
+          </div>
+        </div>
 
-        <h3>Servicios destacados</h3>
-        <section class="courses">
-            <div class="course">
-                <img src="./IMG/img4.png" alt="Peluquero">
-                <h3>Peluquero</h3>
-                <p>Peluquero 24h pide cita cuando mas falta te haga.</p>
-                <div class="course-footer">
-                    <span class="price">15€</span>
-                    <button>Reservar</button>
-                </div>
+        <div class="course-completo category-diseñador">
+          <div class="course">
+            <img src="./IMG/img3.jpg" alt="Diseñador" />
+            <h3>Diseñador</h3>
+            <p>Busco diseñador gráfico para proyecto web.</p>
+            <div class="course-footer">
+              <span class="price">47€/h</span>
             </div>
-            <div class="course">
-                <img src="./IMG/img5.png" alt="Profesor">
-                <h3>Profesor</h3>
-                <p>Profesor particular para cualquier tipo de asignatura.</p>
-                <div class="course-footer">
-                    <span class="price">Negociable</span>
-                    <button>Reservar</button>
-                </div>
+          </div>
+          <div class="course-trasera">
+            <h4>Información del Usuario</h4>
+            <p>Nombre: Juan Pérez</p>
+            <p>Valoración: 4/5</p>
+            <p>Telefono: 637123487</p>
+            <p>Email: juan@email.com</p>
+            <div class="mapa-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
             </div>
-            <div class="course">
-                <img src="./IMG/img6.png" alt="Mecanico">
-                <h3>Mecánico</h3>
-                <p>Mecánico con mucha experiéncia para todas las necesidades.</p>
-                <div class="course-footer">
-                    <span class="price">50€/h</span>
-                    <button>Reservar</button>
-                </div>
-            </div>
-        </section>
+            <button class="btn-trasera">Contactar</button>
+          </div>
+        </div>
+      </section>
 
-        <h3>¡Tendencias ahora!</h3>
+      <h3>Servicios destacados</h3>
+      <section class="courses">
+        <div class="course-completo category-peluquero">
+          <div class="course">
+            <img src="./IMG/img4.png" alt="Peluquero" />
+            <h3>Peluquero</h3>
+            <p>Peluquero 24h pide cita cuando mas falta te haga.</p>
+            <div class="course-footer">
+              <span class="price">15€</span>
+            </div>
+          </div>
+          <div class="course-trasera">
+            <h4>Información del Usuario</h4>
+            <p>Nombre: Juan Pérez</p>
+            <p>Valoración: 4/5</p>
+            <p>Telefono: 637123487</p>
+            <p>Email: juan@email.com</p>
+            <div class="mapa-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+            <button class="btn-trasera">Contactar</button>
+          </div>
+        </div>
+
+        <div class="course-completo category-profesor">
+          <div class="course">
+            <img src="./IMG/img5.png" alt="Profesor" />
+            <h3>Profesor</h3>
+            <p>Profesor particular para cualquier tipo de asignatura.</p>
+            <div class="course-footer">
+              <span class="price">Negociable</span>
+            </div>
+          </div>
+
+          <div class="course-trasera">
+            <h4>Información del Usuario</h4>
+            <p>Nombre: Juan Pérez</p>
+            <p>Valoración: 4/5</p>
+            <p>Telefono: 637123487</p>
+            <p>Email: juan@email.com</p>
+            <div class="mapa-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+            <button class="btn-trasera">Contactar</button>
+          </div>
+        </div>
+
+        <div class="course-completo category-mecanico">
+          <div class="course">
+            <img src="./IMG/img6.png" alt="Mecanico" />
+            <h3>Mecánico</h3>
+            <p>Mecánico con mucha experiéncia para todas las necesidades.</p>
+            <div class="course-footer">
+              <span class="price">50€/h</span>
+            </div>
+          </div>
+          <div class="course-trasera">
+            <h4>Información del Usuario</h4>
+            <p>Nombre: Juan Pérez</p>
+            <p>Valoración: 4/5</p>
+            <p>Telefono: 637123487</p>
+            <p>Email: juan@email.com</p>
+            <div class="mapa-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+            <button class="btn-trasera">Contactar</button>
+          </div>
+        </div>
+      </section>
+
+      <h3>¡Tendencias ahora!</h3>
+      <div class="proximamente">
         <p><i>Proximamente...</i></p>
+      </div>
     </div>
     <footer>
         <div class="footer-contenedor">

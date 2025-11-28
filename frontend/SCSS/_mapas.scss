@@ -1,0 +1,16 @@
+@use "dimensiones" as *;
+@use "caracteristicas" as *;
+
+.mapa-container {
+  width: $map-width;
+  height: $map-height;
+  overflow: $oculto;
+  border-radius: $map-radius;
+  margin-bottom: $margenOPaddingDe5;
+
+  iframe {
+    width: $widthmaximo;
+    height: $heightmaximo;
+    border: $sinDimensiones;
+  }
+}

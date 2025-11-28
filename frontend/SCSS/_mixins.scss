@@ -1,0 +1,101 @@
+@use "dimensiones" as *;
+@use "colores" as *;
+@use "keyframes" as *;
+@use "animaciones" as *;
+@use "caracteristicas" as *;
+
+@mixin btn-disenyos($class) {
+  background-color: $color-btn;
+  color: $color-blanco;
+  border: $without-border;
+  padding: $btn-padding-topybottom $btn-padding-rightyleft;
+
+  cursor: $puntero;
+
+  &:hover {
+    background-color: $color-btn-hover;
+  }
+
+  @if $class == "btnSearch-bar" {
+    float: $derecha;
+    font-weight: $texto-Oscuro;
+    width: $btn-width20;
+    box-sizing: $tamanyo-caja;
+    border-radius: $sinDimensiones
+      $margenOPaddingDe20
+      $margenOPaddingDe20
+      $sinDimensiones;
+  } @else if $class == "btn-trasera" {
+    margin-top: $margenOPaddingDe10;
+    float: $derecha;
+  } @else {
+    float: $izquierda;
+    border-radius: $border-radius;
+  }
+}
+
+@mixin img-tamanyo($class) {
+  @if $class == "logo" {
+    width: $img-pequenya-width;
+    height: $img-pequenya-height;
+  } @else if $class == "perfil-pequenyo" {
+    width: $icon-mid-width;
+    height: $icon-mid-height;
+  } @else {
+    width: $img-width;
+    height: $img-height;
+    border-radius: $border-radius-grande;
+  }
+}
+
+@mixin efectos($class) {
+  @if $class == "hero" {
+    opacity: $sinOpacidad;
+    transform: $translateYvalorAmplio;
+    animation: heroScroll 1.5s $linear $ambos;
+  }
+}
+
+@mixin modosVista($tipo){
+    @if $tipo == "oscuro" {
+    background-color: $color-background-page-oscuro;
+  } @else {
+    background-color: $color-background-page-claro;
+  }
+}
+
+@mixin flip-card($duration: 0.8s) {
+  perspective: 1000px;
+  .front,
+  .back {
+    width: $widthmaximo;
+    height: $heightmaximo;
+    border-radius: $border-radius;
+    backface-visibility: $oculto;
+    transition: transform $duration;
+    position: $posicionAbsoluta;
+    top: $sinDimensiones;
+    left: $sinDimensiones;
+    box-sizing: $tamanyo-caja;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: $color-blanco;
+    overflow: $oculto;
+  }
+  .front {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+  .back {
+    z-index: 1;
+    transform: rotateY(180deg);
+  }
+  &:hover {
+    .front {
+      transform: rotateY(180deg);
+    }
+    .back {
+      transform: rotateY(0deg);
+    }
+  }
+}
