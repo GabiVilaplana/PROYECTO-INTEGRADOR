@@ -177,12 +177,14 @@
         },
         {
             "IDUsuario": "108",
-            "Nombre": "",
+            "Nombre": "Alex",
             "Apellidos": "",
             "Telefono": "",
             "Correo": "a2000lex@hotmail.com",
             "Password": "$2y$10$WGF1u1O1vMU9U7PFCbv\/iuBxI\/0QiTv8Jpxfxn8BdWkJK253Q0pc6",
-            "Valoracion": null
+            "Valoracion": null,
+            "Direccion": "",
+            "Biografia": ""
         },
         {
             "IDUsuario": "109",
