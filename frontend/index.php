@@ -103,81 +103,15 @@ if ($user_id && !$usuario) {
 
   <div class="container">
     <h2>OFERTAS ACTUALES</h2>
-    <section class="courses">
-      <div class="course-completo category-diseñador">
-        <div class="course">
-          <img src="./IMG/image1.jpg" alt="Diseñador" />
-          <h3>Diseñador</h3>
-          <p>Busco diseñador gráfico para proyecto web.</p>
-          <div class="course-footer">
-            <span class="price">8€</span>
-          </div>
-        </div>
-        <div class="course-trasera">
-          <h4>Información del Usuario</h4>
-          <p>Nombre: Juan Pérez</p>
-          <p>Valoración: 4/5</p>
-          <p>Telefono: 637123487</p>
-          <p>Email: juan@email.com</p>
-          <div class="mapa-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-          <button class="btn-trasera">Contactar</button>
-        </div>
-      </div>
-      <div class="course-completo category-limpieza">
-        <div class="course">
-          <img src="./IMG/img2.jpg" alt="Limpieza" />
-          <h3>Limpieza</h3>
-          <p>Se necesita personal para limpieza de oficinas.</p>
-          <div class="course-footer">
-            <span class="price">6€/h</span>
-          </div>
-        </div>
-        <div class="course-trasera">
-          <h4>Información del Usuario</h4>
-          <p>Nombre: Juan Pérez</p>
-          <p>Valoración: 4/5</p>
-          <p>Telefono: 637123487</p>
-          <p>Email: juan@email.com</p>
-          <div class="mapa-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-          <button class="btn-trasera">Contactar</button>
-        </div>
-      </div>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" id="btn-left">‹</button>
 
-      <div class="course-completo category-diseñador">
-        <div class="course">
-          <img src="./IMG/img3.jpg" alt="Diseñador" />
-          <h3>Diseñador</h3>
-          <p>Busco diseñador gráfico para proyecto web.</p>
-          <div class="course-footer">
-            <span class="price">47€/h</span>
-          </div>
-        </div>
-        <div class="course-trasera">
-          <h4>Información del Usuario</h4>
-          <p>Nombre: Juan Pérez</p>
-          <p>Valoración: 4/5</p>
-          <p>Telefono: 637123487</p>
-          <p>Email: juan@email.com</p>
-          <div class="mapa-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-          <button class="btn-trasera">Contactar</button>
-        </div>
-      </div>
-    </section>
+      <section class="courses carousel-track" id="carousel-courses">
+        <!-- aquí JS mete las cards -->
+      </section>
+
+      <button class="carousel-btn right" id="btn-right">›</button>
+    </div>
 
     <h3>Servicios destacados</h3>
     <section class="courses">
@@ -299,7 +233,16 @@ if ($user_id && !$usuario) {
   </div>
 </footer>
 
-  <script>
+  <script type="module">
+    import Controller from './JAVAScript/controllers/indexController.class.js';
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const myController = new Controller();
+      myController.init();
+    })
+
+  </script>
+  <!--<script>
     function toggleDropdown() {
       const dropdown = document.getElementById('user-dropdown');
       const isActive = dropdown.classList.contains('active');
@@ -328,7 +271,7 @@ if ($user_id && !$usuario) {
         document.removeEventListener('click', closeDropdownOnClickOutside);
       }
     }
-  </script>
+  </script>-->
 </body>
 
 </html>

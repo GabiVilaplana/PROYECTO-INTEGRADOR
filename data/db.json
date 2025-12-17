@@ -1,199 +1,247 @@
 {
-    "Categorias": [
-        {
-            "IDCategoria": "1",
-            "Nombre": "Desarrollo Web",
-            "Descripcion": "Servicios de creaci\u00f3n y mantenimiento de sitios web.",
-            "Activo": "TRUE"
-        },
-        {
-            "IDCategoria": "2",
-            "Nombre": "Educaci\u00f3n",
-            "Descripcion": "Clases particulares y formaci\u00f3n acad\u00e9mica.",
-            "Activo": "TRUE"
-        },
-        {
-            "IDCategoria": "3",
-            "Nombre": "Fotograf\u00eda",
-            "Descripcion": "Sesiones fotogr\u00e1ficas profesionales para productos o eventos.",
-            "Activo": "FALSE"
-        }
-    ],
-    "Mensajes": [
-        {
-            "idMensaje": "1",
-            "nombre": "Ana Garc\u00eda",
-            "email": "ana@email.com",
-            "asunto": "Consulta sobre servicio",
-            "mensaje": "Hola, quisiera saber m\u00e1s sobre el servicio de reciclaje.",
-            "fecha_envio": "2025-11-20 10:15:30",
-            "leido": "0"
-        },
-        {
-            "idMensaje": "2",
-            "nombre": "Luis Mendoza",
-            "email": "luis.m@empresa.org",
-            "asunto": "Sugerencia de mejora",
-            "mensaje": "Ser\u00eda genial tener un filtro por impacto sostenible en la b\u00fasqueda.",
-            "fecha_envio": "2025-11-22 14:30:00",
-            "leido": "1"
-        },
-        {
-            "idMensaje": "3",
-            "nombre": "Mar\u00eda S\u00e1nchez",
-            "email": "maria.s@example.net",
-            "asunto": "Problema t\u00e9cnico",
-            "mensaje": "No puedo acceder a mi perfil despu\u00e9s de registrarme.",
-            "fecha_envio": "2025-11-24 09:45:12",
-            "leido": "0"
-        },
-        {
-            "idMensaje": "2001",
-            "nombre": "Alex",
-            "email": "a2000lex@hotmail.com",
-            "asunto": "adadad",
-            "mensaje": "adasdsadasdas",
-            "fecha_envio": "2025-11-24 19:29:44",
-            "leido": 0
-        }
-    ],
-    "Servicio": [
-        {
-            "IDServicio": "201",
-            "Nombre": "Dise\u00f1o Web Responsive",
-            "FechaCreacion": "2025-03-15T10:30:00Z",
-            "Descripcion": "Creaci\u00f3n de sitio web moderno, adaptable a m\u00f3viles y optimizado para SEO.",
-            "DuracionEstimada": "35",
-            "Precio": "420.00",
-            "IDCategoria": "1",
-            "IDUsuarioCreacion": "101",
-            "IDImagen": "301",
-            "Estado": "activo"
-        },
-        {
-            "IDServicio": "202",
-            "Nombre": "Clases de Matem\u00e1ticas Online",
-            "FechaCreacion": "2025-04-01T16:45:00Z",
-            "Descripcion": "Clases personalizadas para ESO y Bachillerato.",
-            "DuracionEstimada": "1",
-            "Precio": "25.00",
-            "IDCategoria": "2",
-            "IDUsuarioCreacion": "102",
-            "IDImagen": "302",
-            "Estado": "activo"
-        },
-        {
-            "IDServicio": "203",
-            "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
-            "FechaCreacion": "2025-02-20T09:15:00Z",
-            "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
-            "DuracionEstimada": "3",
-            "Precio": "180.00",
-            "IDCategoria": "3",
-            "IDUsuarioCreacion": "103",
-            "IDImagen": "303",
-            "Estado": "inactivo"
-        }
-    ],
-    "ServicioCompras": [
-        {
-            "IDCompra": "5001",
-            "IDUsuarioCompra": "104",
-            "IDServicio": "201",
-            "FechaCompra": "2025-04-10T14:20:00Z"
-        },
-        {
-            "IDCompra": "5002",
-            "IDUsuarioCompra": "104",
-            "IDServicio": "202",
-            "FechaCompra": "2025-04-12T10:00:00Z"
-        }
-    ],
-    "Usuarios": [
-        {
-            "IDUsuario": "101",
-            "Nombre": "Ana",
-            "Apellidos": "Mart\u00ednez L\u00f3pez",
-            "Telefono": "+34 600 123 456",
-            "Correo": "ana@creativeweb.es",
-            "Password": "1234",
-            "Valoracion": "4.9"
-        },
-        {
-            "IDUsuario": "102",
-            "Nombre": "Carlos",
-            "Apellidos": "L\u00f3pez Garc\u00eda",
-            "Telefono": "+34 611 234 567",
-            "Correo": "carlos.profesor@gmail.com",
-            "Password": "4321",
-            "Valoracion": "4.7"
-        },
-        {
-            "IDUsuario": "103",
-            "Nombre": "Luc\u00eda",
-            "Apellidos": "Fern\u00e1ndez Ruiz",
-            "Telefono": "+34 622 345 678",
-            "Correo": "lucia@fotoluz.es",
-            "Password": "25879",
-            "Valoracion": "5.0"
-        },
-        {
-            "IDUsuario": "104",
-            "Nombre": "Miguel",
-            "Apellidos": "S\u00e1nchez P\u00e9rez",
-            "Telefono": "+34 633 456 789",
-            "Correo": "miguel.cliente@email.com",
-            "Password": "55854",
-            "Valoracion": null
-        },
-        {
-            "IDUsuario": "105",
-            "Nombre": "",
-            "Apellidos": "",
-            "Telefono": "",
-            "Correo": "prueba@prueba.com",
-            "Password": "$2y$10$y.YIp7N77Y.w5Uw0F0ucZOsnZh5Xt7RGTlb9dnIVApL7gbgQKZexS",
-            "Valoracion": null
-        },
-        {
-            "IDUsuario": "106",
-            "Nombre": "",
-            "Apellidos": "",
-            "Telefono": "",
-            "Correo": "prueba@prueba2.com",
-            "Password": "$2y$10$9JTGiksxAaHn7vHACDtao.2EHAYAvV9cdqzVVrgS6ZNp5yyW6u72i",
-            "Valoracion": null
-        },
-        {
-            "IDUsuario": "107",
-            "Nombre": "Gabi Vilaplana",
-            "Apellidos": "",
-            "Telefono": "622917181",
-            "Correo": "gabired345@gmail.com",
-            "Password": "$2y$10$2rviNw71Uf8IDoj6Bjtbi.41CWPQefH\/BuPDFko7Wf0Ts2LfjV6\/e",
-            "Valoracion": null,
-            "Direccion": "Av Verge Dels Desemparats",
-            "Biografia": "DWES"
-        },
-        {
-            "IDUsuario": "108",
-            "Nombre": "Alex",
-            "Apellidos": "",
-            "Telefono": "",
-            "Correo": "a2000lex@hotmail.com",
-            "Password": "$2y$10$WGF1u1O1vMU9U7PFCbv\/iuBxI\/0QiTv8Jpxfxn8BdWkJK253Q0pc6",
-            "Valoracion": null,
-            "Direccion": "",
-            "Biografia": ""
-        },
-        {
-            "IDUsuario": "109",
-            "Nombre": "alex",
-            "Apellidos": "",
-            "Telefono": "",
-            "Correo": "alex@tasklink.es",
-            "Password": "$2y$10$fiOrXFy9tKLjMDwVcNwg1OIm8hJCLcibaBz2jUYkd35Tk3pvmkPGi",
-            "Valoracion": null
-        }
-    ]
+  "Categorias": [
+    {
+      "IDCategoria": "1",
+      "Nombre": "Diseñador",
+      "Descripcion": "Servicios de creaci\u00f3n y mantenimiento de sitios web.",
+      "Activo": "TRUE"
+    },
+    {
+      "IDCategoria": "2",
+      "Nombre": "Profesor",
+      "Descripcion": "Clases particulares y formaci\u00f3n acad\u00e9mica.",
+      "Activo": "TRUE"
+    },
+    {
+      "IDCategoria": "3",
+      "Nombre": "Peluquero",
+      "Descripcion": "Para cualquier tipo de pelos y para cualquier tipo de edades",
+      "Activo": "TRUE"
+    },
+    {
+      "IDCategoria": "4",
+      "Nombre": "Limpieza",
+      "Descripcion": "Para limpiar todo lo que sea necesario",
+      "Activo": "TRUE"
+    },
+    {
+      "IDCategoria": "5",
+      "Nombre": "Mecanico",
+      "Descripcion": "Para reparaciones de cualquier tipo de vehiculo",
+      "Activo": "TRUE"
+    }
+  ],
+  "Mensajes": [
+    {
+      "idMensaje": "1",
+      "nombre": "Ana Garc\u00eda",
+      "email": "ana@email.com",
+      "asunto": "Consulta sobre servicio",
+      "mensaje": "Hola, quisiera saber m\u00e1s sobre el servicio de reciclaje.",
+      "fecha_envio": "2025-11-20 10:15:30",
+      "leido": "0"
+    },
+    {
+      "idMensaje": "2",
+      "nombre": "Luis Mendoza",
+      "email": "luis.m@empresa.org",
+      "asunto": "Sugerencia de mejora",
+      "mensaje": "Ser\u00eda genial tener un filtro por impacto sostenible en la b\u00fasqueda.",
+      "fecha_envio": "2025-11-22 14:30:00",
+      "leido": "1"
+    },
+    {
+      "idMensaje": "3",
+      "nombre": "Mar\u00eda S\u00e1nchez",
+      "email": "maria.s@example.net",
+      "asunto": "Problema t\u00e9cnico",
+      "mensaje": "No puedo acceder a mi perfil despu\u00e9s de registrarme.",
+      "fecha_envio": "2025-11-24 09:45:12",
+      "leido": "0"
+    },
+    {
+      "idMensaje": "2001",
+      "nombre": "Alex",
+      "email": "a2000lex@hotmail.com",
+      "asunto": "adadad",
+      "mensaje": "adasdsadasdas",
+      "fecha_envio": "2025-11-24 19:29:44",
+      "leido": 0
+    }
+  ],
+  "Servicio": [
+    {
+      "IDServicio": "201",
+      "Nombre": "Dise\u00f1o Web Responsive",
+      "FechaCreacion": "2025-03-15T10:30:00Z",
+      "Descripcion": "Creaci\u00f3n de sitio web moderno, adaptable a m\u00f3viles y optimizado para SEO.",
+      "DuracionEstimada": "35",
+      "Precio": "420.00",
+      "IDCategoria": "1",
+      "IDUsuarioCreacion": "101",
+      "IDImagen": "301",
+      "Estado": "activo"
+    },
+    {
+      "IDServicio": "202",
+      "Nombre": "Clases de Matem\u00e1ticas Online",
+      "FechaCreacion": "2025-04-01T16:45:00Z",
+      "Descripcion": "Clases personalizadas para ESO y Bachillerato.",
+      "DuracionEstimada": "1",
+      "Precio": "25.00",
+      "IDCategoria": "2",
+      "IDUsuarioCreacion": "102",
+      "IDImagen": "302",
+      "Estado": "activo"
+    },
+    {
+      "IDServicio": "203",
+      "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
+      "FechaCreacion": "2025-02-20T09:15:00Z",
+      "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
+      "DuracionEstimada": "3",
+      "Precio": "180.00",
+      "IDCategoria": "3",
+      "IDUsuarioCreacion": "103",
+      "IDImagen": "303",
+      "Estado": "inactivo"
+    },
+    {
+      "IDServicio": "203",
+      "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
+      "FechaCreacion": "2025-02-20T09:15:00Z",
+      "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
+      "DuracionEstimada": "3",
+      "Precio": "180.00",
+      "IDCategoria": "3",
+      "IDUsuarioCreacion": "103",
+      "IDImagen": "303",
+      "Estado": "inactivo"
+    },
+    {
+      "IDServicio": "203",
+      "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
+      "FechaCreacion": "2025-02-20T09:15:00Z",
+      "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
+      "DuracionEstimada": "3",
+      "Precio": "180.00",
+      "IDCategoria": "3",
+      "IDUsuarioCreacion": "103",
+      "IDImagen": "303",
+      "Estado": "inactivo"
+    },
+    {
+      "IDServicio": "203",
+      "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
+      "FechaCreacion": "2025-02-20T09:15:00Z",
+      "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
+      "DuracionEstimada": "3",
+      "Precio": "180.00",
+      "IDCategoria": "3",
+      "IDUsuarioCreacion": "103",
+      "IDImagen": "303",
+      "Estado": "inactivo"
+    }
+  ],
+  "ServicioCompras": [
+    {
+      "IDCompra": "5001",
+      "IDUsuarioCompra": "104",
+      "IDServicio": "201",
+      "FechaCompra": "2025-04-10T14:20:00Z"
+    },
+    {
+      "IDCompra": "5002",
+      "IDUsuarioCompra": "104",
+      "IDServicio": "202",
+      "FechaCompra": "2025-04-12T10:00:00Z"
+    }
+  ],
+  "Usuarios": [
+    {
+      "IDUsuario": "101",
+      "Nombre": "Ana",
+      "Apellidos": "Mart\u00ednez L\u00f3pez",
+      "Telefono": "+34 600 123 456",
+      "Correo": "ana@creativeweb.es",
+      "Password": "1234",
+      "Valoracion": "4.9"
+    },
+    {
+      "IDUsuario": "102",
+      "Nombre": "Carlos",
+      "Apellidos": "L\u00f3pez Garc\u00eda",
+      "Telefono": "+34 611 234 567",
+      "Correo": "carlos.profesor@gmail.com",
+      "Password": "4321",
+      "Valoracion": "4.7"
+    },
+    {
+      "IDUsuario": "103",
+      "Nombre": "Luc\u00eda",
+      "Apellidos": "Fern\u00e1ndez Ruiz",
+      "Telefono": "+34 622 345 678",
+      "Correo": "lucia@fotoluz.es",
+      "Password": "25879",
+      "Valoracion": "5.0"
+    },
+    {
+      "IDUsuario": "104",
+      "Nombre": "Miguel",
+      "Apellidos": "S\u00e1nchez P\u00e9rez",
+      "Telefono": "+34 633 456 789",
+      "Correo": "miguel.cliente@email.com",
+      "Password": "55854",
+      "Valoracion": null
+    },
+    {
+      "IDUsuario": "105",
+      "Nombre": "",
+      "Apellidos": "",
+      "Telefono": "",
+      "Correo": "prueba@prueba.com",
+      "Password": "$2y$10$y.YIp7N77Y.w5Uw0F0ucZOsnZh5Xt7RGTlb9dnIVApL7gbgQKZexS",
+      "Valoracion": null
+    },
+    {
+      "IDUsuario": "106",
+      "Nombre": "",
+      "Apellidos": "",
+      "Telefono": "",
+      "Correo": "prueba@prueba2.com",
+      "Password": "$2y$10$9JTGiksxAaHn7vHACDtao.2EHAYAvV9cdqzVVrgS6ZNp5yyW6u72i",
+      "Valoracion": null
+    },
+    {
+      "IDUsuario": "107",
+      "Nombre": "Gabi Vilaplana",
+      "Apellidos": "",
+      "Telefono": "622917181",
+      "Correo": "gabired345@gmail.com",
+      "Password": "$2y$10$2rviNw71Uf8IDoj6Bjtbi.41CWPQefH/BuPDFko7Wf0Ts2LfjV6/e",
+      "Valoracion": null,
+      "Direccion": "Av Verge Dels Desemparats",
+      "Biografia": "DWES"
+    },
+    {
+      "IDUsuario": "108",
+      "Nombre": "Alex",
+      "Apellidos": "",
+      "Telefono": "",
+      "Correo": "a2000lex@hotmail.com",
+      "Password": "$2y$10$WGF1u1O1vMU9U7PFCbv/iuBxI/0QiTv8Jpxfxn8BdWkJK253Q0pc6",
+      "Valoracion": null,
+      "Direccion": "",
+      "Biografia": ""
+    },
+    {
+      "IDUsuario": "109",
+      "Nombre": "alex",
+      "Apellidos": "",
+      "Telefono": "",
+      "Correo": "alex@tasklink.es",
+      "Password": "$2y$10$fiOrXFy9tKLjMDwVcNwg1OIm8hJCLcibaBz2jUYkd35Tk3pvmkPGi",
+      "Valoracion": null
+    }
+  ]
 }
