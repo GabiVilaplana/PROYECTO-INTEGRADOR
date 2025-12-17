@@ -1,0 +1,24 @@
+$color-background-page-claro: white;
+$color-background-page-oscuro: #2F2F2F;
+$color-negro:black;
+$color-background-trasera:#1a4c6e;
+$color-btn:#007bff;
+$color-btn-hover:#0056b3;
+$color-footer:#0a3d62;
+$text-color: #333;
+$color-border:#ddd;
+$color-background-hero:#c5d9f885;
+$colores_a_footer:#dcdde1;
+$color-h2Hero:rgba(0, 0, 0, 0.5);
+$color-pHeroContent:rgba(17, 17, 17, 0.548);
+$color-blanco:white;
+
+// Paleta de colores por categoría
+$categories: (
+  diseñador: #6a5acd,
+  limpieza: #2e8b57,
+  peluquero: #ff69b4,
+  profesor: #ffa500,
+  mecanico: #4682b4,
+  default: $color-background-trasera
+);

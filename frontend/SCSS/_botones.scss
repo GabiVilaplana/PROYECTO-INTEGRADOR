@@ -1,0 +1,16 @@
+@use "colores" as *;
+@use "dimensiones" as *;
+@use "mixins" as *;
+
+.btnSearch-bar {
+  @include btn-disenyos("btnSearch-bar");
+}
+
+button {
+  @include btn-disenyos("btn-basico");
+}
+
+.btn-trasera {
+  @include btn-disenyos("btn-trasera");
+
+}

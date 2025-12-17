@@ -1,17 +1,29 @@
-## 🖥️ 1. Esto es un ejemplo de Documentación Mark Down
+# 💼 TaskLink
 
-### 1️⃣ Explicació
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. **No sólo sobrevivió 500 años**, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+## 🧩 ¿Qué es TaskLink?
+**TaskLink** es una **plataforma web** que conecta a **personas que ofrecen servicios** con aquellas que **necesitan contratarlos**.  
+Su objetivo es **facilitar la interacción entre profesionales y clientes**, permitiendo comunicarse, acordar trabajos y gestionar contrataciones de forma sencilla, rápida y segura.
 
-### 2️⃣ Objectiu
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+Con TaskLink:
+- Los **profesionales** pueden publicar sus servicios (clases, reparaciones, diseño, asesorías…).  
+- Los **clientes** pueden explorar, comparar y contratar al profesional adecuado.
 
-### 3️⃣ Passos guiats
-1. 🖥️ Obrir Visual Studio Code i el terminal integrat (`Ctrl+ñ`).
-2. 📦 Comprovar que Git està instal·lat:
+---
 
-    ```bash
-    Así se implementa el código
-    ```
+## 🚀 Objetivo
+El objetivo de **TaskLink** es **digitalizar la conexión entre la oferta y la demanda de servicios**, creando un espacio donde:
+- Los usuarios puedan **publicar y gestionar servicios**.  
+- Los clientes puedan **contratar servicios de manera ágil y segura**.  
+- Se fomente la **colaboración y la valoración** entre miembros de la comunidad.
 
+---
 
+## 👥 Equipo de desarrollo
+- 👨‍💼 **Coordinador del Proyecto:** [Alex y Gabi]  
+- 🧑‍💻 **Desarrollador Backend:** [Alex y Gabi]   
+- 👩‍💻 **Desarrollador Frontend:** [Alex y Gabi]  
+- 🧑‍🎨 **Diseñador UI/UX:** [Alex y Gabi] 
+
+---
+
+> *“TaskLink nace con la idea de unir personas y oportunidades a través de la tecnología.”*

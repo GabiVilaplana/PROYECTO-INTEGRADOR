@@ -1,0 +1,133 @@
+@use "colores" as *;
+@use "dimensiones" as *;
+@use "caracteristicas" as *;
+/*
+footer {
+  background-color: $color-footer;
+  text-align: $centrar;
+  padding: $margenOPaddingDe12;
+  color:$color-blanco;
+  clear: $ambos;
+  margin-top: $margenOPaddingDe20;
+}
+
+.footer-contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: left; 
+    margin-bottom: 2%;
+}
+
+.footer-contenedor h2 {
+    font-size: 1.1rem;
+    margin: 0 0 12px 0;
+    border-left: 4px $border-style #82ccdd;
+    padding-left: 8px;
+    color: $color-blanco;
+    font-weight: 600;
+}
+
+.footer-contenedor a {
+    display: block;          
+    text-decoration: none;
+    color: $colores_a_footer;
+    font-size: 0.95rem;
+    margin-bottom: 8px;     
+    transition: color 0.2s;
+}
+
+.footer-contenedor a:last-child {
+    margin-bottom: 0;      
+}
+
+.footer-contenedor a:hover,
+.footer-contenedor a:focus {
+    color: #1a5276;
+    text-decoration: underline;
+    outline: none;
+}
+
+.footer-contenedor p{
+    color: $colores_a_footer;
+    font-size: 15px;
+}
+*/
+
+footer {
+  background: $color-footer;// igual que el diseño azul elegante
+  text-align: $centrar;
+  padding: $margenOPaddingDe40 $margenOPaddingDe20;
+  color: $color-blanco;
+  clear: $ambos;
+  margin-top: $margenOPaddingDe20;
+}
+
+// --- CONTENEDOR DE COLUMNAS ---
+.footer-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  text-align: left;
+}
+
+// --- TÍTULOS ---
+.footer-contenedor h2 {
+  font-size: 1.35rem;
+  margin: 0 0 12px 0;
+  border-left: 4px solid #bbdefb;
+  padding-left: 8px;
+  color: $color-blanco;
+  font-weight: 600;
+}
+
+// --- LINK Y TEXTOS ---
+.footer-contenedor p,
+.footer-contenedor a {
+  color: #e3f2fd;
+  font-size: 0.95rem;
+  text-decoration: none;
+  line-height: 1.5;
+  transition: 0.2s ease;
+}
+
+// Espaciado entre links
+.footer-contenedor a {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.footer-contenedor a:last-child {
+  margin-bottom: 0;
+}
+
+// Hover moderno
+.footer-contenedor a:hover,
+.footer-contenedor a:focus {
+  color: #bbdefb;
+  text-decoration: underline;
+  outline: none;
+}
+
+// --- CONTENEDOR DE COLUMNAS INTERNAS ---
+footer div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+// --- PARTE INFERIOR ---
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  color: #cfe4ff;
+}

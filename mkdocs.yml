@@ -2,11 +2,20 @@ site_name: Projecte Intermodular 2DAW
 site_url: https://gabivilaplana.github.io/PROYECTO-INTEGRADOR/
 use_directory_urls: false
 
-
 nav:
   - "Inici": "index.md"
-  - "Riesgos Laborales": "riscos-individuales.md"
- # - Segundo apartado del menú lateral
+  - "Sprint":
+        - "1️⃣ Sprint":
+          - "Entorn i entorns": "sprint1-entorno.md"
+          - "Tauler de projectes": "sprint1-tauler.md"
+          - "Cronograma Gantt": "sprint1-gantt.md"
+          - "Assignació de rols i tasques": "sprint1-rols.md"
+          - "Riscos Laborals": "sprint1-riscos.md"
+          - "Pàgina inicial i formulari": "sprint1-formulari.md"
+
+repo_url: "https://GabiVilaplana.github.io/PROYECTO-INTEGRADOR/"
+repo_name: "GitHub"
+
 theme:
   language: ca
   favicon: imagenes/favicon.png
@@ -32,8 +41,6 @@ theme:
     - header.autohide
     - toc.integrate
     - content.tabs.link
-    # - navigation.tabs
-    # - navigation.top
 
 extra:
   search:
@@ -75,4 +82,4 @@ markdown_extensions:
       permalink: true
       toc_depth: 3
 
-copyright: 2025-2026  Alumne1, Alumne2 - Licencia CC BY-NC-SA
+copyright: 2025-2026  Alex, Gabi - Licencia CC BY-NC-SA

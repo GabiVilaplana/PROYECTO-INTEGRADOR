@@ -1,0 +1,89 @@
+@use "dimensiones" as *;
+@use "caracteristicas" as *;
+@use "colores" as *;
+@use "mixins" as *;
+@use "imagenes" as *;
+@use "animaciones" as *;
+@use "mapas" as *;
+@use "botones" as *;
+
+.course-completo {
+  width: $tamanyoCurso;
+  height: $tamanyoHeightCurso;
+  perspective: $tamanyoPredefinido;
+  display: $bloqueEnLinea;
+  margin: $margenOPaddingDe15;
+  position: $posicionRelativa;
+  vertical-align: $alineacionVertical-Top;
+
+  .course,
+  .course-trasera {
+    width: $widthmaximo;
+    height: $heightmaximo;
+    border-radius: $border-radius;
+    backface-visibility: $oculto;
+    transition: transform 0.8s;
+    position: $posicionAbsoluta;
+    top: $sinDimensiones;
+    left: $sinDimensiones;
+    box-sizing: $tamanyo-caja;
+    padding: $margenOPaddingDe15;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: $color-background-page-claro;
+    overflow: $oculto;
+
+    h3,
+    h4 {
+      margin: $margenOPaddingDe10 $sinDimensiones;
+    }
+
+    p {
+      font-size: $letraTamanyo;
+      line-height: 1.4;
+      margin-bottom: $margenOPaddingDe10;
+      overflow-wrap: $noRomperPalabra;
+    }
+  }
+
+  .course {
+    z-index: 2;
+    transform: $rotacionY0;
+  }
+
+  .course-trasera {
+    z-index: 1;
+    transform: $rotaconY180;
+    color: $color-blanco;
+    text-align: $izquierda;
+  }
+
+  @each $categoria, $color in $categories {
+    &.category-#{$categoria} {
+      .course-trasera {
+        background-color: $color;
+      }
+    }
+  }
+
+  &:hover {
+    .course {
+      transform: $rotaconY180;
+    }
+    .course-trasera {
+      transform: $rotacionY0;
+    }
+  }
+
+  .course-footer {
+    border-top: $margenOPaddingDe10 $border-style #c5d9f8;
+    padding-top: $margenOPaddingDe10;
+    overflow: $oculto;
+
+    .price {
+      float: $izquierda;
+      font-weight: $texto-Oscuro;
+      color: $text-color;
+      font-size: $text-color;
+    }
+  }
+}

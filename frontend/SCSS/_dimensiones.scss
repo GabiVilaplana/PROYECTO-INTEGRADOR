@@ -1,0 +1,63 @@
+@use "colores" as *;
+
+//Configuración letras 
+$letraTamanyo:14px;
+$border-radius: 8px;
+$border-radius-grande:18px;
+$border-width: 1px;
+$widthmaximo:100%;
+$heightmaximo:100%;
+$tamanyoPredefinido:1000px;
+
+//Dimensiones botones
+$btn-padding-topybottom:5px;
+$btn-padding-rightyleft:10px;
+$btn-width20:20%;
+
+
+//DIMENSIONES TARJETAS
+$card-width: 350px;
+$card-height: 370px;
+$flip-duration: 0.8s;
+$map-height: 35%;
+$map-width:95%;
+
+$map-radius: 16px;
+$price-border-thickness: 10px;
+
+//Dimensiones imagenes
+
+$vid-heightCompleto: 100%;
+$vid-widthCompleto: 100%;
+
+$vid-widthMedio:45%;
+$vid-heightMedio:45%;
+
+$img-width: 100%;
+$img-height: 180px;
+
+$img-pequenya-width: 150px;
+$img-pequenya-height: 75px;
+
+$icon-mid-width: 35px;
+$icon-mid-height: 35px;
+
+$margenOPaddingDe5:5px;
+$margenOPaddingDe8:8px;
+$margenOPaddingDe10:10px;
+$margenOPaddingDe12:12px;
+$margenOPaddingDe20:20px;
+$margenOPaddingDe15:15px;
+$margenOPaddingDe26:26px;
+$margenOPaddingDe40:40px;
+$margenOPaddingDe3Porciento:3%;
+
+$minHeightPantalla:20vh;
+
+$sinDimensiones:0;
+$conDimensionesMuyBajas:2px;
+$conDimensionesBajas:6px;
+$searchBar-width: 35%;
+$tamanyoCasiMaxima:80%;
+$tamanyoCurso:350px;
+$tamanyoHeightCurso:370px;

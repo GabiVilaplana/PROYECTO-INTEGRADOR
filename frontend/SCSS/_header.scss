@@ -1,0 +1,56 @@
+@use "dimensiones" as *;
+@use "caracteristicas" as *;
+@use "imagenes" as *;
+@use "colores" as *;
+@use "mixins" as *;
+@use "opcionesPerfil" as *;
+
+
+body{
+    margin: $sinDimensiones ;
+    padding: $sinDimensiones ;
+    overflow-x: $oculto;
+}
+
+header {
+overflow: $oculto;
+  .logo-container {
+    float: $izquierda;
+    height: $heightmaximo;
+  }
+  .logo-icon {
+    @include img-tamanyo("logo");
+    margin-right:$border-radius;
+    border-radius: $border-radius;
+    vertical-align: $alineacionVertical;
+    display: $bloqueEnLinea;
+  }
+  .right-header {
+    float: $derecha;
+    height: $heightmaximo;
+  }
+  
+  .texto-servicios{
+    color: $text-color;
+    font-weight: $texto-Oscuro;
+    font-size: $letraTamanyo;
+    margin-right: $margenOPaddingDe20 ;
+    cursor: $puntero;
+    display: $bloqueEnLinea;
+    vertical-align: $alineacionVertical;
+    line-height: 80px;
+  }
+
+  .icono-perfil{
+    display: $bloqueEnLinea;
+    vertical-align: $alineacionVertical;
+    margin-left: $btn-padding-rightyleft;
+  }
+
+  .profile-icon{
+    width: $icon-mid-width;
+    height: $icon-mid-height;
+    border-radius: $border-radius-grande;
+    line-height: 80px;
+  }
+}

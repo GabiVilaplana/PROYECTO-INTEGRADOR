@@ -1,0 +1,42 @@
+@use "animaciones" as *;
+
+@keyframes heroScroll {
+  100% {
+    opacity: $conOpacidadTotal;
+    transform: $translateYvalorMinimo;
+  }
+  0% {
+    opacity: $sinOpacidad;
+    transform: $translateYvalorAmplio;
+  }
+}
+@keyframes vibrar {
+  5%,
+  25%,
+  45%,
+  65%,
+  85% {
+    transform:$translateXNegativo;
+  }
+  15%,
+  35%,
+  55%,
+  75%,
+  95% {
+    transform: $translateXPositivo;
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: $conOpacidadMedia;
+    transform: $scaleMenosMaximo;
+  }
+  50% {
+    opacity: $conOpacidadTotal;
+    transform: $scaleMaximo;
+  }
+  100% {
+    opacity: $conOpacidadMedia;
+    transform: $scaleMenosMaximo;
+  }
+}
