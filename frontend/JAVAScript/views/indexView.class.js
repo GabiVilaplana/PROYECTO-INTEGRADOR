@@ -73,7 +73,7 @@ export default class View {
                 <p>${prod.Descripcion}</p>
                 <div class="course-footer">
                     <span class="price">Precio - ${prod.Precio}€ por persona · 
-                        ${usuario.Valoracion || '0,0'} Valoracion
+                        ${usuario.Valoracion || '0,0'} /5
                     </span>
                 </div>
             </div>
