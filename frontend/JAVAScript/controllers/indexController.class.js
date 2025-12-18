@@ -9,7 +9,6 @@ export default class Controller {
             servicios: new Servicios(),
             categorias: new Categorias(),
             usuarios: new Usuarios()
-            //origenes: new Origins()
         }
         this.view = new View();
     }
@@ -25,10 +24,15 @@ export default class Controller {
                 this.model.usuarios.populate()
             ]);
 
+            this.model.categorias.data.forEach(categoria=> this.view.renderNewServicioPorCategoria(categoria))
+            
             this.model.servicios.data.forEach(servicio =>
                 this.view.renderNewServicio(servicio, this.model.categorias.data, this.model.usuarios.data));
 
             this.view.sliceCards();
+            this.view.bindProfileDropdown(() => {
+                this.view.renderToggleDropdown();
+            });
 
         } catch (error) {
             this.view.mostrarErrores("Error al cargar la infromación inicial: " + error);

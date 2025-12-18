@@ -36,8 +36,8 @@
 
 @mixin img-tamanyo($class) {
   @if $class == "logo" {
-    width: $img-pequenya-width;
-    height: $img-pequenya-height;
+    width: $img-pequenya-width-logo;
+    height: $img-pequenya-height-logo;
   } @else if $class == "perfil-pequenyo" {
     width: $icon-mid-width;
     height: $icon-mid-height;

@@ -29,6 +29,12 @@
       "Nombre": "Mecanico",
       "Descripcion": "Para reparaciones de cualquier tipo de vehiculo",
       "Activo": "TRUE"
+    },
+    {
+      "IDCategoria": "6",
+      "Nombre": "Jardinero",
+      "Descripcion": "Para reparaciones y arreglos de cualquier tipo de planta",
+      "Activo": "TRUE"
     }
   ],
   "Mensajes": [

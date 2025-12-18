@@ -49,7 +49,7 @@ if ($user_id && !$usuario) {
     <div class="right-header">
       <?php if ($usuario): ?>
         <span class="texto-servicios"><?= htmlspecialchars($usuario['Nombre']) ?></span>
-        <div class="icono-perfil" onclick="toggleDropdown()">
+        <div class="icono-perfil">
           <img src="./IMG/imagenPerfilRedonda.png" class="profile-icon">
         </div>
       <?php else: ?>
@@ -101,135 +101,59 @@ if ($user_id && !$usuario) {
   </section>
 
   <div class="container">
-    <h2>OFERTAS ACTUALES</h2>
-    <div class="carousel-wrapper">
-      <button class="carousel-btn left" id="btn-left">‹</button>
 
-      <section class="courses carousel-track" id="carousel-courses">
+    <div class="carousel-wrapper">
+      <h2>Categorias</h2>
+      <button class="carousel-btn left" id="btn-left">‹</button>
+      <button class="carousel-btn right" id="btn-right">›</button>
+      <section class="courses carousel-track" id="datosCategoria">
         <!-- aquí JS mete las cards -->
       </section>
 
-      <button class="carousel-btn right" id="btn-right">›</button>
+
     </div>
-
-    <h3>Servicios destacados</h3>
-    <section class="courses">
-      <div class="course-completo category-peluquero">
-        <div class="course">
-          <img src="./IMG/img4.png" alt="Peluquero" />
-          <h3>Peluquero</h3>
-          <p>Peluquero 24h pide cita cuando mas falta te haga.</p>
-          <div class="course-footer">
-            <span class="price">15€</span>
-          </div>
-        </div>
-        <div class="course-trasera">
-          <h4>Información del Usuario</h4>
-          <p>Nombre: Juan Pérez</p>
-          <p>Telefono: 637123487</p>
-          <p>Email: juan@email.com</p>
-          <div class="mapa-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-          <button class="btn-trasera">Contactar</button>
-        </div>
-      </div>
-
-      <div class="course-completo category-profesor">
-        <div class="course">
-          <img src="./IMG/img5.png" alt="Profesor" />
-          <h3>Profesor</h3>
-          <p>Profesor particular para cualquier tipo de asignatura.</p>
-          <div class="course-footer">
-            <span class="price">Precio - Negociable por persona · <img src ="./SVG/estrellaGris.svg" alt="estrella" class="icon-star"> 4,0</span>
-          </div>
-        </div>
-
-        <div class="course-trasera">
-          <h4>Información del Usuario</h4>
-          <p>Nombre: Juan Pérez</p>
-          <p>Valoración: 4/5</p>
-          <p>Telefono: 637123487</p>
-          <p>Email: juan@email.com</p>
-          <div class="mapa-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-          <button class="btn-trasera">Contactar</button>
-        </div>
-      </div>
-
-      <div class="course-completo category-mecanico">
-        <div class="course">
-          <img src="./IMG/img6.png" alt="Mecanico" />
-          <h3>Mecánico</h3>
-          <p>Mecánico con mucha experiéncia para todas las necesidades.</p>
-          <div class="course-footer">
-            <span class="price">50€/h</span>
-          </div>
-        </div>
-        <div class="course-trasera">
-          <h4>Información del Usuario</h4>
-          <p>Nombre: Juan Pérez</p>
-          <p>Valoración: 4/5</p>
-          <p>Telefono: 637123487</p>
-          <p>Email: juan@email.com</p>
-          <div class="mapa-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-          <button class="btn-trasera">Contactar</button>
-        </div>
-      </div>
-    </section>
-
+    <h2>Servicios Disponibles</h2>
+    <div id="contenedorCategoria"></div>
     <h3>¡Tendencias ahora!</h3>
     <div class="proximamente">
       <p><i>Proximamente...</i></p>
     </div>
   </div>
-<footer>
-  <div class="footer-contenedor">
+  <footer>
+    <div class="footer-contenedor">
 
-    <div class="footer-asistencia">
-      <h2>Sobre Nosotros</h2>
-      <div>
-        <p>Esta página web va dirigida a la generación de servicios.<br>
-        Puedes tanto contratar servicios como crear servicios para otras personas.</p>
+      <div class="footer-asistencia">
+        <h2>Sobre Nosotros</h2>
+        <div>
+          <p>Esta página web va dirigida a la generación de servicios.<br>
+            Puedes tanto contratar servicios como crear servicios para otras personas.</p>
+        </div>
       </div>
+
+      <div class="footer-ofertas">
+        <h2>Enlaces Rápidos</h2>
+        <div>
+          <a href="../backend/auth/contacto.php">Centro de ayuda</a>
+          <a href="#">Crear oferta</a>
+          <a href="#">Solicitar Oferta</a>
+        </div>
+      </div>
+
+      <div class="footer-acercade">
+        <h2>TaskLink</h2>
+        <div>
+          <a href="#">Lanzamiento TaskLink</a>
+          <a href="#">Empleo</a>
+          <a href="#">Inversores</a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="footer-ofertas">
-      <h2>Enlaces Rápidos</h2>
-      <div>
-        <a href="../backend/auth/contacto.php">Centro de ayuda</a>
-        <a href="#">Crear oferta</a>
-        <a href="#">Solicitar Oferta</a>
-      </div>
+    <div class="footer-bottom">
+      Español (España) © 2025 TaskLink from Alex&Gabi
     </div>
-
-    <div class="footer-acercade">
-      <h2>TaskLink</h2>
-      <div>
-        <a href="#">Lanzamiento TaskLink</a>
-        <a href="#">Empleo</a>
-        <a href="#">Inversores</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    Español (España) © 2025 TaskLink from Alex&Gabi
-  </div>
-</footer>
+  </footer>
 
   <script type="module">
     import Controller from './JAVAScript/controllers/indexController.class.js';
@@ -240,36 +164,7 @@ if ($user_id && !$usuario) {
     })
 
   </script>
-  <!--<script>
-    function toggleDropdown() {
-      const dropdown = document.getElementById('user-dropdown');
-      const isActive = dropdown.classList.contains('active');
 
-      // Cerrar todos los dropdowns primero
-      document.querySelectorAll('.user-dropdown').forEach(el => {
-        el.classList.remove('active');
-      });
-
-      // Si no estaba activo, abrirlo
-      if (!isActive) {
-        dropdown.classList.add('active');
-
-        // Cerrar al hacer clic fuera
-        document.addEventListener('click', closeDropdownOnClickOutside);
-      }
-    }
-
-    function closeDropdownOnClickOutside(event) {
-      const dropdown = document.getElementById('user-dropdown');
-      const profileIcon = document.querySelector('.icono-perfil');
-
-      // Si el clic fue fuera del dropdown Y fuera del ícono de perfil → cerrar
-      if (!dropdown.contains(event.target) && !profileIcon.contains(event.target)) {
-        dropdown.classList.remove('active');
-        document.removeEventListener('click', closeDropdownOnClickOutside);
-      }
-    }
-  </script>-->
 </body>
 
 </html>

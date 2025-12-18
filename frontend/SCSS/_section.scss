@@ -85,6 +85,7 @@
       color: $color-negro;
       padding-top: $margenOPaddingDe10;
       p {
+        display: none !important;
         font-size: 18px;
         color: $color-pHeroContent;
       }

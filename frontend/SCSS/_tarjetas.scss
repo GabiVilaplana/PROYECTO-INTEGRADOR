@@ -7,13 +7,68 @@
 @use "mapas" as *;
 @use "botones" as *;
 
+.course-categoria {
+  width: $tamanyoCurso;
+  height: $tamanyoHeightCurso;
+  position: $posicionRelativa;
+  vertical-align: $alineacionVertical-Top;
+
+  .course {
+    width: $widthmaximo;
+    height: $heightmaximo;
+    border-radius: $border-radius;
+    position: $posicionAbsoluta;
+    top: $sinDimensiones;
+    left: $sinDimensiones;
+    box-sizing: $tamanyo-caja;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: $color-background-page-claro;
+    overflow: $oculto;
+
+    h3 {
+      margin: $margenOPaddingDe10 $sinDimensiones;
+    }
+
+    p {
+      font-size: $letraTamanyo;
+      line-height: 1.4;
+      color: $color-grisLetras;
+      margin-bottom: $margenOPaddingDe10;
+      overflow-wrap: $noRomperPalabra;
+    }
+  }
+
+  .course-footer {
+    padding-top: $margenOPaddingDe10;
+    overflow: $oculto;
+
+    .price {
+      float: $izquierda;
+      margin-left: $margenOPaddingDe5;
+      font-weight: $texto-Oscuro;
+      color: $color-grisLetras;
+      font-size: $text-color;
+    }
+
+    .icon-star {
+      width: $icon-pequenyo-width;
+      height: $icon-pequenyo-height;
+    }
+  }
+
+  @each $categoria, $color in $categories {
+    &.category-#{$categoria} {
+      .course {
+        background-color: $color;
+      }
+    }
+  }
+}
+
 .course-completo {
   width: $tamanyoCurso;
   height: $tamanyoHeightCurso;
   perspective: $tamanyoPredefinido;
-  display: $bloqueEnLinea;
-  margin: $sinDimensiones;
-  margin: $margenOPaddingDe15;
   position: $posicionRelativa;
   vertical-align: $alineacionVertical-Top;
 
@@ -90,7 +145,7 @@
       margin-left: $margenOPaddingDe5;
       font-weight: $texto-Oscuro;
       color: $color-grisLetras;
-      font-size: $text-color;
+      font-size: $letraTamanyo-10;
     }
     .icon-star {
       width: $icon-pequenyo-width;
@@ -101,6 +156,10 @@
 
 /* Tablet */
 @media (max-width: 768px) {
+  .course-categoria {
+    width: $card-tablet-width;
+    height: $card-tablet-height;
+  }
   .course-completo {
     width: $card-tablet-width;
     height: $card-tablet-height;
@@ -109,12 +168,11 @@
 
 /* Móvil */
 @media (max-width: 480px) {
-  .course-completo {
-    width: $card-movil-width;
-    height: $card-movil-height;
+  .course-categoria {
+    width: $tamanyoWidthCursoMovilCategoria;
+    height: $tamanyoHeightCursoMovilCategoria;
 
-    .course,
-    .course-trasera {
+    .course {
       width: $widthmaximo;
       height: $heightmaximo;
       h3,
@@ -134,28 +192,135 @@
       img {
         width: $widthmaximo;
         height: $img-pequenya-height;
+        object-fit: fill;
       }
     }
+  }
+  .course-completo {
+    width: 140px;
+    height: 120px;
+    flex: 0 0 auto;
+    position: relative;
+    margin: 0;
+    padding: 0;
 
-    .course-trasera {
-      padding-top: $margenOPaddingDe12;
-      padding-left: $margenOPaddingDe12;
-      p {
-        font-size: $letraTamanyoPequeño;
+    .course {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      padding: 4px;
+      box-sizing: border-box;
 
-        margin-bottom: $margenOPaddingDe10;
-        overflow-wrap: $noRomperPalabra;
+      // Imagen: 50% izquierda
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
       }
+
+      // Título: arriba del todo (derecha)
+      h3 {
+        position: absolute;
+        top: 4px; // respetar el padding del contenedor
+        left: 50%;
+        right: 4px;
+        margin: 0;
+        font-size: 12px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-left: 5px;
+      }
+
+      // Descripción: centrada verticalmente en el espacio total (solo visible en la derecha)
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: 4px;
+        margin: 0;
+        font-size: 0.55rem;
+        color: #666;
+        transform: translateY(-50%);
+        text-align: left;
+        overflow: hidden;
+        line-height: 1.2;
+        margin-left: 5px;
+      }
+
+      .course-footer {
+        position: absolute;
+        padding-left: 5px;
+        bottom: 4px;
+        left: 50%;
+        right: 4px;
+
+        .icon-star {
+          width: 8px;
+          height: 8px;
+          // ✅ Elimina float y usa esto:
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 2px; // espacio consistente: · ★ 4,5
+        }
+      }
+    }
+    .course-trasera {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      padding: 4px;
+
+      h4 {
+        font-size: 0.65rem;
+        margin: 2px 0;
+      }
+      p {
+        font-size: 0.55rem;
+        margin: 1px 0;
+      }
+
       .mapa-container {
         display: none !important;
       }
+
       button {
         display: block !important;
-        width: $btn-pequenyo-width-tamanyo;
-        height: $btn-pequenyo-height-tamanyo;
-        font-size: $letraTamanyoPequeño;
-        margin-top: $sinDimensiones;
-        margin-right:$margenOPaddingDe12;
+        font-size: 0.55rem;
+        margin-top: 3px;
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      .course {
+        transform: rotateY(180deg);
+      }
+      .course-trasera {
+        transform: rotateY(0deg);
       }
     }
   }

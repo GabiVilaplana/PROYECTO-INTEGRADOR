@@ -2,7 +2,9 @@
 
 //Configuración letras
 $letraTamanyo: 14px;
-$letraTamanyoPequeño:6px;
+$letraTamanyo-10: 10px;
+
+$letraTamanyoPequeño: 6px;
 $border-radius: 8px;
 $border-radius-grande: 18px;
 $border-width: 1px;
@@ -15,8 +17,8 @@ $btn-padding-topybottom: 5px;
 $btn-padding-rightyleft: 10px;
 $btn-width20: 20%;
 
-$btn-pequenyo-width-tamanyo:50px;
-$btn-pequenyo-height-tamanyo:20px;
+$btn-pequenyo-width-tamanyo: 50px;
+$btn-pequenyo-height-tamanyo: 20px;
 
 //DIMENSIONES TARJETAS
 $card-width: 350px;
@@ -27,7 +29,16 @@ $map-width: 95%;
 $tamanyoCurso: 300px;
 $tamanyoHeightCurso: 335px;
 
-$card-tablet-width: 250px;
+$tamanyoWidthCursoMovilCategoria: 350px;
+$tamanyoHeightCursoMovilCategoria: 150px;
+
+$tamanyoWidthCursoMovil: 50px;
+$tamanyoHeightCursoMovil: 150px;
+
+$tamanyoCategorias: 30px;
+$tamanyoHeightCategorias: 335px;
+
+$card-tablet-width: 350px;
 $card-tablet-height: 280px;
 
 $card-movil-width: 110px;
@@ -50,8 +61,11 @@ $vid-heightPequeño: 35%;
 $img-width: 100%;
 $img-height: 180px;
 
-$img-pequenya-width: 150px;
-$img-pequenya-height: 75px;
+$img-pequenya-width: 100%;
+$img-pequenya-height: 50%;
+
+$img-pequenya-width-logo: 150px;
+$img-pequenya-height-logo: 75px;
 
 $icon-mid-width: 35px;
 $icon-mid-height: 35px;

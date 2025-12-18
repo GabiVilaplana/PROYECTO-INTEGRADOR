@@ -167,6 +167,47 @@ header .profile-icon {
   line-height: 80px;
 }
 
+@media (max-width: 480px) {
+  header {
+    overflow: hidden;
+  }
+  header .logo-container {
+    float: left;
+  }
+  header .logo-icon {
+    width: 150px;
+    height: 75px;
+    margin-right: 8px;
+    border-radius: 8px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  header .right-header {
+    float: right;
+    height: 100%;
+  }
+  header .texto-servicios {
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 80px;
+  }
+  header .icono-perfil {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+  header .profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 18px;
+    line-height: 80px;
+  }
+}
 .btnSearch-bar {
   background-color: #007bff;
   color: white;
@@ -295,6 +336,7 @@ button {
     padding-top: 10px;
   }
   .hero .hero-content p {
+    display: none !important;
     font-size: 18px;
     color: rgba(17, 17, 17, 0.548);
   }
@@ -325,13 +367,72 @@ button {
   border: 0;
 }
 
+.course-categoria {
+  width: 300px;
+  height: 335px;
+  position: relative;
+  vertical-align: top;
+}
+.course-categoria .course {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow: hidden;
+}
+.course-categoria .course h3 {
+  margin: 10px 0;
+}
+.course-categoria .course p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #6a6a6a;
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+}
+.course-categoria .course-footer {
+  padding-top: 10px;
+  overflow: hidden;
+}
+.course-categoria .course-footer .price {
+  float: left;
+  margin-left: 5px;
+  font-weight: bold;
+  color: #6a6a6a;
+  font-size: #333;
+}
+.course-categoria .course-footer .icon-star {
+  width: 12px;
+  height: 12px;
+}
+.course-categoria.category-diseñador .course {
+  background-color: #6a5acd;
+}
+.course-categoria.category-limpieza .course {
+  background-color: #2e8b57;
+}
+.course-categoria.category-peluquero .course {
+  background-color: #ff69b4;
+}
+.course-categoria.category-profesor .course {
+  background-color: #ffa500;
+}
+.course-categoria.category-mecanico .course {
+  background-color: #4682b4;
+}
+.course-categoria.category-default .course {
+  background-color: #1a4c6e;
+}
+
 .course-completo {
   width: 300px;
   height: 335px;
   perspective: 1000px;
-  display: inline-block;
-  margin: 0;
-  margin: 15px;
   position: relative;
   vertical-align: top;
 }
@@ -412,7 +513,7 @@ button {
   margin-left: 5px;
   font-weight: bold;
   color: #6a6a6a;
-  font-size: #333;
+  font-size: 10px;
 }
 .course-completo .course-footer .icon-star {
   width: 12px;
@@ -421,58 +522,152 @@ button {
 
 /* Tablet */
 @media (max-width: 768px) {
+  .course-categoria {
+    width: 350px;
+    height: 280px;
+  }
   .course-completo {
-    width: 250px;
+    width: 350px;
     height: 280px;
   }
 }
 /* Móvil */
 @media (max-width: 480px) {
-  .course-completo {
-    width: 110px;
-    height: 124px;
+  .course-categoria {
+    width: 350px;
+    height: 150px;
   }
-  .course-completo .course,
-  .course-completo .course-trasera {
+  .course-categoria .course {
     width: 100%;
     height: 100%;
   }
-  .course-completo .course h3,
-  .course-completo .course h4,
-  .course-completo .course-trasera h3,
-  .course-completo .course-trasera h4 {
+  .course-categoria .course h3,
+  .course-categoria .course h4 {
     margin: 0;
     font-size: 6px;
   }
-  .course-completo .course p {
+  .course-categoria .course p {
     font-size: 6px;
     color: #6a6a6a;
     margin-bottom: 5px;
     overflow-wrap: break-word;
   }
-  .course-completo .course img {
+  .course-categoria .course img {
     width: 100%;
-    height: 75px;
+    height: 50%;
+    object-fit: fill;
+  }
+  .course-completo {
+    width: 140px;
+    height: 120px;
+    flex: 0 0 auto;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  .course-completo .course {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 4px;
+    box-sizing: border-box;
+  }
+  .course-completo .course img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .course-completo .course h3 {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    right: 4px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 5px;
+  }
+  .course-completo .course p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 4px;
+    margin: 0;
+    font-size: 0.55rem;
+    color: #666;
+    transform: translateY(-50%);
+    text-align: left;
+    overflow: hidden;
+    line-height: 1.2;
+    margin-left: 5px;
+  }
+  .course-completo .course .course-footer {
+    position: absolute;
+    padding-left: 5px;
+    bottom: 4px;
+    left: 50%;
+    right: 4px;
+  }
+  .course-completo .course .course-footer .icon-star {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2px;
   }
   .course-completo .course-trasera {
-    padding-top: 12px;
-    padding-left: 12px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 4px;
+  }
+  .course-completo .course-trasera h4 {
+    font-size: 0.65rem;
+    margin: 2px 0;
   }
   .course-completo .course-trasera p {
-    font-size: 6px;
-    margin-bottom: 10px;
-    overflow-wrap: break-word;
+    font-size: 0.55rem;
+    margin: 1px 0;
   }
   .course-completo .course-trasera .mapa-container {
     display: none !important;
   }
   .course-completo .course-trasera button {
     display: block !important;
-    width: 50px;
-    height: 20px;
-    font-size: 6px;
-    margin-top: 0;
-    margin-right: 12px;
+    font-size: 0.55rem;
+    margin-top: 3px;
+    width: 100%;
+  }
+  .course-completo:hover .course {
+    transform: rotateY(180deg);
+  }
+  .course-completo:hover .course-trasera {
+    transform: rotateY(0deg);
   }
 }
 .container {
@@ -512,6 +707,31 @@ button {
   position: relative;
   overflow: hidden;
 }
+.container .carousel-wrapper h2 {
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.container .carousel-wrapper .carousel-btn {
+  position: absolute;
+  top: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.8;
+}
+.container .carousel-wrapper .carousel-btn.right {
+  top: 5%;
+  right: 5%;
+}
+.container .carousel-wrapper .carousel-btn.left {
+  top: 5%;
+  right: 10%;
+}
 .container .carousel-track {
   display: flex;
   gap: 20px;
@@ -522,28 +742,41 @@ button {
 .container .carousel-track::-webkit-scrollbar {
   display: none;
 }
-.container .carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #000;
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  opacity: 0.7;
-  margin-right: 5%;
-  margin-left: 5%;
-}
-.container .carousel-btn.left {
-  left: 0;
-}
-.container .carousel-btn.right {
-  right: 0;
-}
 
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  .container .courses {
+    float: none;
+    width: 100%;
+    padding: 10px;
+  }
+  .container .proximamente {
+    float: none;
+    width: 80%;
+    margin: 20px auto;
+    font-size: 22px;
+  }
+  .container .carousel-track {
+    gap: 15px;
+  }
+  .container .carousel-wrapper .carousel-btn {
+    font-size: 1.3rem;
+    padding: 5px 8px;
+  }
+  .container .carousel-wrapper .carousel-btn.right {
+    right: 5%;
+  }
+  .container .carousel-wrapper .carousel-btn.left {
+    right: 12%;
+  }
+}
+@media (max-width: 768px) {
+  .course-completo {
+    min-width: 260px;
+  }
+}
 @media (max-width: 480px) {
   .container .proximamente {
     float: left;
@@ -551,8 +784,29 @@ button {
     width: 90%;
   }
   .container .carousel-btn {
-    margin-right: 10%;
-    margin-left: 5%;
+    position: absolute;
+    top: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+  }
+  .container .carousel-btn.right {
+    top: 5%;
+    right: 5%;
+  }
+  .container .carousel-btn.left {
+    top: 5%;
+    right: 20%;
+  }
+}
+@media (max-width: 480px) {
+  .course-completo {
+    min-width: 85%;
   }
 }
 /*

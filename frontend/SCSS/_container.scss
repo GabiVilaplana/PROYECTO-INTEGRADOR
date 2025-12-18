@@ -14,7 +14,6 @@
   width: $widthmaximo;
   text-align: $centrar;
   margin-top: -2%;
-
   .courses {
     float: $izquierda;
     width: $widthmaximo;
@@ -44,6 +43,36 @@
   .carousel-wrapper {
     position: relative;
     overflow: hidden;
+
+    h2 {
+      display: block;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 10px; // arriba
+      background: #000;
+      color: #fff;
+      border: none;
+      font-size: 1.5rem;
+      padding: 5px 10px;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0.8;
+    }
+
+    // ambos botones arriba a la derecha
+    .carousel-btn.right {
+      top: 5%;
+      right: 5%;
+    }
+
+    .carousel-btn.left {
+      top: 5%;
+      right: 10%; // separación del botón derecho
+    }
   }
 
   .carousel-track {
@@ -57,29 +86,49 @@
   .carousel-track::-webkit-scrollbar {
     display: none;
   }
+}
 
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #000;
-    color: #fff;
-    border: none;
-    font-size: 2rem;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-    opacity: 0.7;
-    margin-right: 5%;
-    margin-left: 5%;
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+
+    .courses {
+      float: none;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .proximamente {
+      float: none;
+      width: 80%;
+      margin: 20px auto;
+      font-size: 22px;
+    }
+
+    .carousel-track {
+      gap: 15px;
+    }
+
+    .carousel-wrapper {
+      .carousel-btn {
+        font-size: 1.3rem;
+        padding: 5px 8px;
+      }
+
+      .carousel-btn.right {
+        right: 5%;
+      }
+
+      .carousel-btn.left {
+        right: 12%;
+      }
+    }
   }
+}
 
-  .carousel-btn.left {
-    left: 0;
-  }
-
-  .carousel-btn.right {
-    right: 0;
+@media (max-width: 768px) {
+  .course-completo {
+    min-width: 260px;
   }
 }
 
@@ -91,8 +140,33 @@
       width: 90%;
     }
     .carousel-btn {
-      margin-right: 10%;
-      margin-left: 5%;
+      position: absolute;
+      top: 10px; // arriba
+      background: #000;
+      color: #fff;
+      border: none;
+      font-size: 1.5rem;
+      padding: 5px 10px;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0.8;
     }
+
+    // ambos botones arriba a la derecha
+    .carousel-btn.right {
+      top: 5%;
+      right: 5%;
+    }
+
+    .carousel-btn.left {
+      top: 5%;
+      right: 20%; // separación del botón derecho
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .course-completo {
+    min-width: 85%;
   }
 }
