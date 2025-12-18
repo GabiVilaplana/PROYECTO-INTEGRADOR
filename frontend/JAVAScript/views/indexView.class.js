@@ -12,14 +12,20 @@ export default class View {
     }
 
 
-    renderNewServicioPorCategoria(prod) {
+    renderNewServicioPorCategoria(prod, numeroServicios) {
         // Crear la card
+        const textoServicios =
+            numeroServicios > 0
+                ? `${numeroServicios} servicios ya disponibles`
+                : "Se activarán pronto";
+
+
         const html = `
         <div class="course-categoria">
             <div class="course">
                 <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
                 <h3>${prod.Nombre}</h3>
-                <p>18 servicios ya disponibles</p>
+                <p>${textoServicios} </p>
             </div>
         </div>
     `;

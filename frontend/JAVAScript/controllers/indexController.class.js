@@ -24,8 +24,13 @@ export default class Controller {
                 this.model.usuarios.populate()
             ]);
 
-            this.model.categorias.data.forEach(categoria=> this.view.renderNewServicioPorCategoria(categoria))
-            
+            this.model.categorias.data.forEach(categoria => {
+                const numServicios = this.model.servicios.data.filter(
+                    servicio => servicio.IDCategoria === categoria.IDCategoria
+                ).length;
+                this.view.renderNewServicioPorCategoria(categoria, numServicios);
+            })
+
             this.model.servicios.data.forEach(servicio =>
                 this.view.renderNewServicio(servicio, this.model.categorias.data, this.model.usuarios.data));
 
