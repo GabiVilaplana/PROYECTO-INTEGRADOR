@@ -1,26 +1,37 @@
 @use "colores" as *;
 
-//Configuración letras 
-$letraTamanyo:14px;
+//Configuración letras
+$letraTamanyo: 14px;
+$letraTamanyoPequeño:6px;
 $border-radius: 8px;
-$border-radius-grande:18px;
+$border-radius-grande: 18px;
 $border-width: 1px;
-$widthmaximo:100%;
-$heightmaximo:100%;
-$tamanyoPredefinido:1000px;
+$widthmaximo: 100%;
+$heightmaximo: 100%;
+$tamanyoPredefinido: 1000px;
 
 //Dimensiones botones
-$btn-padding-topybottom:5px;
-$btn-padding-rightyleft:10px;
-$btn-width20:20%;
+$btn-padding-topybottom: 5px;
+$btn-padding-rightyleft: 10px;
+$btn-width20: 20%;
 
+$btn-pequenyo-width-tamanyo:50px;
+$btn-pequenyo-height-tamanyo:20px;
 
 //DIMENSIONES TARJETAS
 $card-width: 350px;
 $card-height: 370px;
 $flip-duration: 0.8s;
 $map-height: 35%;
-$map-width:95%;
+$map-width: 95%;
+$tamanyoCurso: 300px;
+$tamanyoHeightCurso: 335px;
+
+$card-tablet-width: 250px;
+$card-tablet-height: 280px;
+
+$card-movil-width: 110px;
+$card-movil-height: 124px;
 
 $map-radius: 16px;
 $price-border-thickness: 10px;
@@ -30,8 +41,11 @@ $price-border-thickness: 10px;
 $vid-heightCompleto: 100%;
 $vid-widthCompleto: 100%;
 
-$vid-widthMedio:45%;
-$vid-heightMedio:45%;
+$vid-widthMedio: 45%;
+$vid-heightMedio: 45%;
+
+$vid-widthPequeño: 45%;
+$vid-heightPequeño: 35%;
 
 $img-width: 100%;
 $img-height: 180px;
@@ -42,22 +56,23 @@ $img-pequenya-height: 75px;
 $icon-mid-width: 35px;
 $icon-mid-height: 35px;
 
-$margenOPaddingDe5:5px;
-$margenOPaddingDe8:8px;
-$margenOPaddingDe10:10px;
-$margenOPaddingDe12:12px;
-$margenOPaddingDe20:20px;
-$margenOPaddingDe15:15px;
-$margenOPaddingDe26:26px;
-$margenOPaddingDe40:40px;
-$margenOPaddingDe3Porciento:3%;
+$icon-pequenyo-width: 12px;
+$icon-pequenyo-height: 12px;
 
-$minHeightPantalla:20vh;
+$margenOPaddingDe5: 5px;
+$margenOPaddingDe8: 8px;
+$margenOPaddingDe10: 10px;
+$margenOPaddingDe12: 12px;
+$margenOPaddingDe20: 20px;
+$margenOPaddingDe15: 15px;
+$margenOPaddingDe26: 26px;
+$margenOPaddingDe40: 40px;
+$margenOPaddingDe3Porciento: 3%;
 
-$sinDimensiones:0;
-$conDimensionesMuyBajas:2px;
-$conDimensionesBajas:6px;
+$minHeightPantalla: 20vh;
+
+$sinDimensiones: 0;
+$conDimensionesMuyBajas: 2px;
+$conDimensionesBajas: 6px;
 $searchBar-width: 35%;
-$tamanyoCasiMaxima:80%;
-$tamanyoCurso:350px;
-$tamanyoHeightCurso:370px;
+$tamanyoCasiMaxima: 80%;

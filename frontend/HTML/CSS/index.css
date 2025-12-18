@@ -275,6 +275,43 @@ button {
   padding: 8px;
 }
 
+/* Móvil */
+@media (max-width: 480px) {
+  .hero {
+    padding: 0;
+    margin: 0;
+  }
+  .hero .hero-video {
+    float: none;
+    margin-top: 10px;
+    width: 90%;
+    object-fit: cover;
+    border: 18px;
+    vertical-align: center;
+  }
+  .hero .hero-content {
+    position: relative;
+    color: black;
+    padding-top: 10px;
+  }
+  .hero .hero-content p {
+    font-size: 18px;
+    color: rgba(17, 17, 17, 0.548);
+  }
+  .hero .hero-content h2 {
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+  .hero .search-container .search-bar {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  .hero .search-container .search-bar input button {
+    padding: 8px;
+  }
+}
 .mapa-container {
   width: 95%;
   height: 35%;
@@ -289,10 +326,11 @@ button {
 }
 
 .course-completo {
-  width: 350px;
-  height: 370px;
+  width: 300px;
+  height: 335px;
   perspective: 1000px;
   display: inline-block;
+  margin: 0;
   margin: 15px;
   position: relative;
   vertical-align: top;
@@ -301,14 +339,13 @@ button {
 .course-completo .course-trasera {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 18px;
   backface-visibility: hidden;
   transition: transform 0.8s;
   position: absolute;
   top: 0;
   left: 0;
   box-sizing: border-box;
-  padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
   overflow: hidden;
@@ -319,22 +356,28 @@ button {
 .course-completo .course-trasera h4 {
   margin: 10px 0;
 }
-.course-completo .course p,
-.course-completo .course-trasera p {
-  font-size: 14px;
-  line-height: 1.4;
-  margin-bottom: 10px;
-  overflow-wrap: break-word;
-}
 .course-completo .course {
   z-index: 2;
   transform: rotateY(0deg);
+}
+.course-completo .course p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #6a6a6a;
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
 }
 .course-completo .course-trasera {
   z-index: 1;
   transform: rotateY(180deg);
   color: white;
   text-align: left;
+}
+.course-completo .course-trasera p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
 }
 .course-completo.category-diseñador .course-trasera {
   background-color: #6a5acd;
@@ -361,17 +404,77 @@ button {
   transform: rotateY(0deg);
 }
 .course-completo .course-footer {
-  border-top: 10px solid #c5d9f8;
   padding-top: 10px;
   overflow: hidden;
 }
 .course-completo .course-footer .price {
   float: left;
+  margin-left: 5px;
   font-weight: bold;
-  color: #333;
+  color: #6a6a6a;
   font-size: #333;
 }
+.course-completo .course-footer .icon-star {
+  width: 12px;
+  height: 12px;
+}
 
+/* Tablet */
+@media (max-width: 768px) {
+  .course-completo {
+    width: 250px;
+    height: 280px;
+  }
+}
+/* Móvil */
+@media (max-width: 480px) {
+  .course-completo {
+    width: 110px;
+    height: 124px;
+  }
+  .course-completo .course,
+  .course-completo .course-trasera {
+    width: 100%;
+    height: 100%;
+  }
+  .course-completo .course h3,
+  .course-completo .course h4,
+  .course-completo .course-trasera h3,
+  .course-completo .course-trasera h4 {
+    margin: 0;
+    font-size: 6px;
+  }
+  .course-completo .course p {
+    font-size: 6px;
+    color: #6a6a6a;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+  }
+  .course-completo .course img {
+    width: 100%;
+    height: 75px;
+  }
+  .course-completo .course-trasera {
+    padding-top: 12px;
+    padding-left: 12px;
+  }
+  .course-completo .course-trasera p {
+    font-size: 6px;
+    margin-bottom: 10px;
+    overflow-wrap: break-word;
+  }
+  .course-completo .course-trasera .mapa-container {
+    display: none !important;
+  }
+  .course-completo .course-trasera button {
+    display: block !important;
+    width: 50px;
+    height: 20px;
+    font-size: 6px;
+    margin-top: 0;
+    margin-right: 12px;
+  }
+}
 .container {
   background-color: white;
   border-top-left-radius: 18px;
@@ -441,6 +544,17 @@ button {
   right: 0;
 }
 
+@media (max-width: 480px) {
+  .container .proximamente {
+    float: left;
+    vertical-align: center;
+    width: 90%;
+  }
+  .container .carousel-btn {
+    margin-right: 10%;
+    margin-left: 5%;
+  }
+}
 /*
 footer {
   background-color: $color-footer;

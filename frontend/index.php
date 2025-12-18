@@ -33,8 +33,7 @@ if ($user_id && !$usuario) {
 
 <head>
   <meta charset="UTF-8">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TaskLink</title>
   <link rel="stylesheet" href="./HTML/CSS/index.css">
 
@@ -127,7 +126,6 @@ if ($user_id && !$usuario) {
         <div class="course-trasera">
           <h4>Información del Usuario</h4>
           <p>Nombre: Juan Pérez</p>
-          <p>Valoración: 4/5</p>
           <p>Telefono: 637123487</p>
           <p>Email: juan@email.com</p>
           <div class="mapa-container">
@@ -146,7 +144,7 @@ if ($user_id && !$usuario) {
           <h3>Profesor</h3>
           <p>Profesor particular para cualquier tipo de asignatura.</p>
           <div class="course-footer">
-            <span class="price">Negociable</span>
+            <span class="price">Precio - Negociable por persona · <img src ="./SVG/estrellaGris.svg" alt="estrella" class="icon-star"> 4,0</span>
           </div>
         </div>
 

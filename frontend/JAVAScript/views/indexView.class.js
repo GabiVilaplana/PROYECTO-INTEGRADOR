@@ -20,17 +20,16 @@ export default class View {
         const html = `
         <div class="course-completo ${categoryClass}">
             <div class="course">
-            <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
-            <h3>${prod.Nombre}</h3>
-            <p>${prod.Descripcion}</p>
-            <div class="course-footer">
-                <span class="price">${prod.Precio}€</span>
-            </div>
+                <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
+                <h3>${prod.Nombre}</h3>
+                <p>${prod.Descripcion}</p>
+                <div class="course-footer">
+                    <span class="price">Precio - ${prod.Precio}€ por persona · <img src ="./SVG/estrellaGris.svg" alt="estrella" class="icon-star"> ${usuario.Valoracion || '0,0'}</span>
+                </div>
             </div>
             <div class="course-trasera">
                 <h4>Información del Usuario</h4>
                 <p>Nombre: ${usuario.Nombre || 'Desconocido'}</p>
-                <p>Valoración: ${usuario.Valoracion || 'N/A'}</p>
                 <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
                 <p>Email: ${usuario.Correo || 'N/A'}</p>
                 <div class="mapa-container">

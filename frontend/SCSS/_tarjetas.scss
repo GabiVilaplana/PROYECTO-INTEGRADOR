@@ -12,6 +12,7 @@
   height: $tamanyoHeightCurso;
   perspective: $tamanyoPredefinido;
   display: $bloqueEnLinea;
+  margin: $sinDimensiones;
   margin: $margenOPaddingDe15;
   position: $posicionRelativa;
   vertical-align: $alineacionVertical-Top;
@@ -20,14 +21,13 @@
   .course-trasera {
     width: $widthmaximo;
     height: $heightmaximo;
-    border-radius: $border-radius;
+    border-radius: $border-radius-grande;
     backface-visibility: $oculto;
     transition: transform 0.8s;
     position: $posicionAbsoluta;
     top: $sinDimensiones;
     left: $sinDimensiones;
     box-sizing: $tamanyo-caja;
-    padding: $margenOPaddingDe15;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: $color-background-page-claro;
     overflow: $oculto;
@@ -36,18 +36,18 @@
     h4 {
       margin: $margenOPaddingDe10 $sinDimensiones;
     }
-
-    p {
-      font-size: $letraTamanyo;
-      line-height: 1.4;
-      margin-bottom: $margenOPaddingDe10;
-      overflow-wrap: $noRomperPalabra;
-    }
   }
 
   .course {
     z-index: 2;
     transform: $rotacionY0;
+    p {
+      font-size: $letraTamanyo;
+      line-height: 1.4;
+      color: $color-grisLetras;
+      margin-bottom: $margenOPaddingDe10;
+      overflow-wrap: $noRomperPalabra;
+    }
   }
 
   .course-trasera {
@@ -55,6 +55,13 @@
     transform: $rotaconY180;
     color: $color-blanco;
     text-align: $izquierda;
+
+    p {
+      font-size: $letraTamanyo;
+      line-height: 1.4;
+      margin-bottom: $margenOPaddingDe10;
+      overflow-wrap: $noRomperPalabra;
+    }
   }
 
   @each $categoria, $color in $categories {
@@ -75,15 +82,81 @@
   }
 
   .course-footer {
-    border-top: $margenOPaddingDe10 $border-style #c5d9f8;
     padding-top: $margenOPaddingDe10;
     overflow: $oculto;
 
     .price {
       float: $izquierda;
+      margin-left: $margenOPaddingDe5;
       font-weight: $texto-Oscuro;
-      color: $text-color;
+      color: $color-grisLetras;
       font-size: $text-color;
+    }
+    .icon-star {
+      width: $icon-pequenyo-width;
+      height: $icon-pequenyo-height;
+    }
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .course-completo {
+    width: $card-tablet-width;
+    height: $card-tablet-height;
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  .course-completo {
+    width: $card-movil-width;
+    height: $card-movil-height;
+
+    .course,
+    .course-trasera {
+      width: $widthmaximo;
+      height: $heightmaximo;
+      h3,
+      h4 {
+        margin: $sinDimensiones;
+        font-size: $letraTamanyoPequeño;
+      }
+    }
+
+    .course {
+      p {
+        font-size: $letraTamanyoPequeño;
+        color: $color-grisLetras;
+        margin-bottom: $margenOPaddingDe5;
+        overflow-wrap: $noRomperPalabra;
+      }
+      img {
+        width: $widthmaximo;
+        height: $img-pequenya-height;
+      }
+    }
+
+    .course-trasera {
+      padding-top: $margenOPaddingDe12;
+      padding-left: $margenOPaddingDe12;
+      p {
+        font-size: $letraTamanyoPequeño;
+
+        margin-bottom: $margenOPaddingDe10;
+        overflow-wrap: $noRomperPalabra;
+      }
+      .mapa-container {
+        display: none !important;
+      }
+      button {
+        display: block !important;
+        width: $btn-pequenyo-width-tamanyo;
+        height: $btn-pequenyo-height-tamanyo;
+        font-size: $letraTamanyoPequeño;
+        margin-top: $sinDimensiones;
+        margin-right:$margenOPaddingDe12;
+      }
     }
   }
 }

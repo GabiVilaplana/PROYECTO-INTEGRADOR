@@ -8,12 +8,12 @@
   padding: $margenOPaddingDe40 $margenOPaddingDe20;
   text-align: $centrar;
   min-height: $minHeightPantalla;
-  background-color: $color-background-hero ;
+  background-color: $color-background-hero;
   overflow: $oculto;
 
   @include efectos("hero");
 
-  .hero-video{
+  .hero-video {
     top: 0.5px;
     left: $sinDimensiones;
     width: $vid-widthMedio;
@@ -22,47 +22,92 @@
     border-radius: $border-radius-grande;
     float: $derecha;
   }
-  .hero-content{
+  .hero-content {
     position: $posicionRelativa;
-    color:$color-negro;
+    color: $color-negro;
     padding-top: $margenOPaddingDe3Porciento;
-    p{
-        font-size: 18px;
-        color: $color-pHeroContent;
+    p {
+      font-size: 18px;
+      color: $color-pHeroContent;
     }
 
-    h2{
+    h2 {
+      font-size: $icon-mid-height;
+      font-weight: $texto-Oscuro;
+      color: $color-blanco;
+      text-shadow: $sinDimensiones $conDimensionesMuyBajas $conDimensionesBajas
+        $color-h2Hero;
+    }
+  }
+
+  .search-container {
+    text-align: $centrar;
+    .search-bar {
+      background-color: $color-background-page-claro;
+      padding: $margenOPaddingDe5;
+      border-radius: $border-radius-grande;
+      width: $searchBar-width;
+      margin: $sinDimensiones $automatico;
+      overflow: $oculto;
+      input {
+        float: $izquierda;
+        border: $without-border;
+        outline: $without-border;
+        padding: $margenOPaddingDe8 $margenOPaddingDe12;
+        width: $tamanyoCasiMaxima;
+        border-radius: $border-radius-grande $sinDimensiones $sinDimensiones
+          $border-radius-grande;
+        font-size: $letraTamanyo;
+        box-sizing: $tamanyo-caja;
+      }
+      button {
+        padding: 8px;
+      }
+    }
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  .hero {
+    padding: 0;
+    margin: 0;
+    .hero-video {
+      float: none;
+      margin-top: $margenOPaddingDe10;
+      width: 90%;
+      object-fit: cover;
+      border: $border-radius-grande;
+      vertical-align: center;
+    }
+    .hero-content {
+      position: $posicionRelativa;
+      color: $color-negro;
+      padding-top: $margenOPaddingDe10;
+      p {
+        font-size: 18px;
+        color: $color-pHeroContent;
+      }
+
+      h2 {
         font-size: $icon-mid-height;
         font-weight: $texto-Oscuro;
         color: $color-blanco;
-        text-shadow:$sinDimensiones $conDimensionesMuyBajas $conDimensionesBajas $color-h2Hero ;
+        text-shadow: $sinDimensiones $conDimensionesMuyBajas
+          $conDimensionesBajas $color-h2Hero;
+      }
     }
 
-  }
-
-  .search-container{
-    text-align: $centrar;
-    .search-bar{
-        background-color: $color-background-page-claro;
-        padding: $margenOPaddingDe5;
-        border-radius: $border-radius-grande;
-        width:$searchBar-width;
-        margin: $sinDimensiones $automatico;
-        overflow: $oculto;
-        input{
-            float: $izquierda;
-            border: $without-border;
-            outline: $without-border;
-            padding: $margenOPaddingDe8 $margenOPaddingDe12;
-            width:$tamanyoCasiMaxima ;
-            border-radius: $border-radius-grande $sinDimensiones $sinDimensiones $border-radius-grande;
-            font-size: $letraTamanyo;
-            box-sizing: $tamanyo-caja;
-        }
-        button{
+    .search-container {
+      .search-bar {
+        width: $tamanyoCasiMaxima;
+        margin-bottom: $margenOPaddingDe10;
+        input {
+          button {
             padding: 8px;
+          }
         }
-
+      }
     }
   }
 }
