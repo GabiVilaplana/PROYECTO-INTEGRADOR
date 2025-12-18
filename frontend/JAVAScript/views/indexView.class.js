@@ -19,7 +19,7 @@ export default class View {
             <div class="course">
                 <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
                 <h3>${prod.Nombre}</h3>
-                <p>${prod.Descripcion}</p>
+                <p>18 servicios ya disponibles</p>
             </div>
         </div>
     `;

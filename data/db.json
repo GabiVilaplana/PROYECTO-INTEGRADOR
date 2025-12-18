@@ -90,6 +90,54 @@
     },
     {
       "IDServicio": "202",
+      "Nombre": "Dise\u00f1o Web Responsive",
+      "FechaCreacion": "2025-03-15T10:30:00Z",
+      "Descripcion": "Creaci\u00f3n de sitio web moderno, adaptable a m\u00f3viles y optimizado para SEO.",
+      "DuracionEstimada": "35",
+      "Precio": "420.00",
+      "IDCategoria": "1",
+      "IDUsuarioCreacion": "101",
+      "IDImagen": "301",
+      "Estado": "activo"
+    },
+    {
+      "IDServicio": "203",
+      "Nombre": "Dise\u00f1o Web Responsive",
+      "FechaCreacion": "2025-03-15T10:30:00Z",
+      "Descripcion": "Creaci\u00f3n de sitio web moderno, adaptable a m\u00f3viles y optimizado para SEO.",
+      "DuracionEstimada": "35",
+      "Precio": "420.00",
+      "IDCategoria": "1",
+      "IDUsuarioCreacion": "101",
+      "IDImagen": "301",
+      "Estado": "activo"
+    },
+    {
+      "IDServicio": "204",
+      "Nombre": "Dise\u00f1o Web Responsive",
+      "FechaCreacion": "2025-03-15T10:30:00Z",
+      "Descripcion": "Creaci\u00f3n de sitio web moderno, adaptable a m\u00f3viles y optimizado para SEO.",
+      "DuracionEstimada": "35",
+      "Precio": "420.00",
+      "IDCategoria": "1",
+      "IDUsuarioCreacion": "101",
+      "IDImagen": "301",
+      "Estado": "activo"
+    },
+    {
+      "IDServicio": "205",
+      "Nombre": "Dise\u00f1o Web Responsive",
+      "FechaCreacion": "2025-03-15T10:30:00Z",
+      "Descripcion": "Creaci\u00f3n de sitio web moderno, adaptable a m\u00f3viles y optimizado para SEO.",
+      "DuracionEstimada": "35",
+      "Precio": "420.00",
+      "IDCategoria": "1",
+      "IDUsuarioCreacion": "101",
+      "IDImagen": "301",
+      "Estado": "activo"
+    },
+    {
+      "IDServicio": "206",
       "Nombre": "Clases de Matem\u00e1ticas Online",
       "FechaCreacion": "2025-04-01T16:45:00Z",
       "Descripcion": "Clases personalizadas para ESO y Bachillerato.",
@@ -101,7 +149,7 @@
       "Estado": "activo"
     },
     {
-      "IDServicio": "203",
+      "IDServicio": "207",
       "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
       "FechaCreacion": "2025-02-20T09:15:00Z",
       "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
@@ -113,7 +161,19 @@
       "Estado": "inactivo"
     },
     {
-      "IDServicio": "203",
+      "IDServicio": "208",
+      "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
+      "FechaCreacion": "2025-02-20T09:15:00Z",
+      "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
+      "DuracionEstimada": "3",
+      "Precio": "180.00",
+      "IDCategoria": "2",
+      "IDUsuarioCreacion": "103",
+      "IDImagen": "303",
+      "Estado": "inactivo"
+    },
+    {
+      "IDServicio": "209",
       "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
       "FechaCreacion": "2025-02-20T09:15:00Z",
       "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
@@ -125,7 +185,7 @@
       "Estado": "inactivo"
     },
     {
-      "IDServicio": "203",
+      "IDServicio": "210",
       "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
       "FechaCreacion": "2025-02-20T09:15:00Z",
       "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
@@ -137,13 +197,49 @@
       "Estado": "inactivo"
     },
     {
-      "IDServicio": "203",
+      "IDServicio": "211",
       "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
       "FechaCreacion": "2025-02-20T09:15:00Z",
       "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
       "DuracionEstimada": "3",
       "Precio": "180.00",
-      "IDCategoria": "3",
+      "IDCategoria": "2",
+      "IDUsuarioCreacion": "103",
+      "IDImagen": "303",
+      "Estado": "inactivo"
+    },
+    {
+      "IDServicio": "212",
+      "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
+      "FechaCreacion": "2025-02-20T09:15:00Z",
+      "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
+      "DuracionEstimada": "3",
+      "Precio": "180.00",
+      "IDCategoria": "2",
+      "IDUsuarioCreacion": "103",
+      "IDImagen": "303",
+      "Estado": "inactivo"
+    },
+    {
+      "IDServicio": "213",
+      "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
+      "FechaCreacion": "2025-02-20T09:15:00Z",
+      "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
+      "DuracionEstimada": "3",
+      "Precio": "180.00",
+      "IDCategoria": "2",
+      "IDUsuarioCreacion": "103",
+      "IDImagen": "303",
+      "Estado": "inactivo"
+    },
+    {
+      "IDServicio": "214",
+      "Nombre": "Sesi\u00f3n Fotogr\u00e1fica de Producto",
+      "FechaCreacion": "2025-02-20T09:15:00Z",
+      "Descripcion": "Fotograf\u00eda profesional para e-commerce.",
+      "DuracionEstimada": "3",
+      "Precio": "180.00",
+      "IDCategoria": "2",
       "IDUsuarioCreacion": "103",
       "IDImagen": "303",
       "Estado": "inactivo"

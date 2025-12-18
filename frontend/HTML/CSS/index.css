@@ -316,6 +316,33 @@ button {
   padding: 8px;
 }
 
+/* Tablet*/
+@media (max-width: 768px) {
+  .hero {
+    padding: 0;
+    margin: 0;
+  }
+  .hero .hero-video {
+    float: none;
+    margin-top: 10px;
+    width: 90%;
+    object-fit: cover;
+    border-radius: 18px;
+    vertical-align: center;
+  }
+  .hero .hero-content {
+    position: relative;
+    color: black;
+    padding-top: 10px;
+  }
+  .hero .hero-content p {
+    display: none !important;
+  }
+  .hero .search-container .search-bar {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+}
 /* Móvil */
 @media (max-width: 480px) {
   .hero {
@@ -475,10 +502,18 @@ button {
   text-align: left;
 }
 .course-completo .course-trasera p {
+  margin-left: 5%;
   font-size: 14px;
   line-height: 1.4;
   margin-bottom: 10px;
   overflow-wrap: break-word;
+}
+.course-completo .course-trasera iframe {
+  margin-left: 5%;
+  border-radius: 18px;
+}
+.course-completo .course-trasera button {
+  margin-right: 5%;
 }
 .course-completo.category-diseñador .course-trasera {
   background-color: #6a5acd;
@@ -523,12 +558,61 @@ button {
 /* Tablet */
 @media (max-width: 768px) {
   .course-categoria {
-    width: 350px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .course-categoria .course {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .course-categoria .course img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  .course-categoria .course h3 {
+    font-size: 1.1rem;
+    margin: 10px;
+  }
+  .course-categoria .course p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0 10px 10px;
   }
   .course-completo {
-    width: 350px;
-    height: 280px;
+    width: 550px;
+    height: 200px;
+  }
+  .course-completo h3 {
+    padding-bottom: 8%;
+  }
+  .course-completo img {
+    height: 70%;
+    object-fit: cover;
+  }
+  .course-completo .course-trasera {
+    padding-left: 5px;
+    padding-top: 5px;
+    align-content: center;
+  }
+  .course-completo .course-trasera h4 {
+    font-size: 18px;
+    margin: 2px 0;
+    padding-bottom: 5px;
+  }
+  .course-completo .course-trasera p {
+    font-size: 14px;
+    margin: 1px 0;
+  }
+  .course-completo .course-trasera .mapa-container {
+    display: none !important;
   }
 }
 /* Móvil */
@@ -614,6 +698,9 @@ button {
     overflow: hidden;
     line-height: 1.2;
     margin-left: 5px;
+  }
+  .course-completo .course .mapa-container {
+    display: none !important;
   }
   .course-completo .course .course-footer {
     position: absolute;
@@ -743,27 +830,56 @@ button {
   display: none;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .container {
     padding: 15px;
+
+    .courses {
+      float: none;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .proximamente {
+      float: none;
+      width: 80%;
+      margin: 20px auto;
+      font-size: 22px;
+    }
+
+    .carousel-track {
+      gap: 15px;
+    }
+
+
   }
-  .container .courses {
-    float: none;
-    width: 100%;
-    padding: 10px;
+}*/
+@media (max-width: 768px) {
+  .container {
+    vertical-align: center;
   }
   .container .proximamente {
-    float: none;
-    width: 80%;
-    margin: 20px auto;
-    font-size: 22px;
+    float: left;
+    width: 92%;
+    margin-right: 5%;
+  }
+  .container .carousel-wrapper {
+    width: 100%;
+    margin: 0 auto;
   }
   .container .carousel-track {
-    gap: 15px;
+    padding-left: 10px;
+  }
+  .container .carousel-track .course-categoria {
+    width: 350px;
+  }
+  .container .carousel-track .course-categoria .course-categoria img {
+    width: 350px;
   }
   .container .carousel-wrapper .carousel-btn {
     font-size: 1.3rem;
     padding: 5px 8px;
+    margin-right: 5%;
   }
   .container .carousel-wrapper .carousel-btn.right {
     right: 5%;
@@ -771,10 +887,8 @@ button {
   .container .carousel-wrapper .carousel-btn.left {
     right: 12%;
   }
-}
-@media (max-width: 768px) {
   .course-completo {
-    min-width: 260px;
+    min-width: 200px;
   }
 }
 @media (max-width: 480px) {
@@ -782,31 +896,6 @@ button {
     float: left;
     vertical-align: center;
     width: 90%;
-  }
-  .container .carousel-btn {
-    position: absolute;
-    top: 10px;
-    background: #000;
-    color: #fff;
-    border: none;
-    font-size: 1.5rem;
-    padding: 5px 10px;
-    cursor: pointer;
-    z-index: 10;
-    opacity: 0.8;
-  }
-  .container .carousel-btn.right {
-    top: 5%;
-    right: 5%;
-  }
-  .container .carousel-btn.left {
-    top: 5%;
-    right: 20%;
-  }
-}
-@media (max-width: 480px) {
-  .course-completo {
-    min-width: 85%;
   }
 }
 /*

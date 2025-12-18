@@ -66,6 +66,35 @@
     }
   }
 }
+/* Tablet*/
+@media (max-width: 768px) {
+  .hero {
+    padding: 0;
+    margin: 0;
+    .hero-video {
+      float: none;
+      margin-top: $margenOPaddingDe10;
+      width: 90%;
+      object-fit: cover;
+      border-radius: $border-radius-grande;
+      vertical-align: center;
+    }
+    .hero-content {
+      position: $posicionRelativa;
+      color: $color-negro;
+      padding-top: $margenOPaddingDe10;
+      p {
+        display: none !important;
+      }
+    }
+    .search-container {
+      .search-bar {
+        width: $tamanyoCasiMaxima;
+        margin-bottom: $margenOPaddingDe10;
+      }
+    }
+  }
+}
 
 /* Móvil */
 @media (max-width: 480px) {

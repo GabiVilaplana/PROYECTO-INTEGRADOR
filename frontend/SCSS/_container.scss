@@ -88,7 +88,7 @@
   }
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .container {
     padding: 15px;
 
@@ -109,10 +109,40 @@
       gap: 15px;
     }
 
+    
+  }
+}*/
+
+@media (max-width: 768px) {
+  .container {
+    vertical-align: center;
+    .proximamente {
+      float: left;
+      width: 92%;
+      margin-right: 5%;
+    }
+    .carousel-wrapper {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .carousel-track {
+      padding-left: 10px;
+    }
+
+    .carousel-track .course-categoria {
+      width: 350px;
+      .course-categoria {
+        img {
+          width: 350px;
+        }
+      }
+    }
     .carousel-wrapper {
       .carousel-btn {
         font-size: 1.3rem;
         padding: 5px 8px;
+        margin-right: 5%;
       }
 
       .carousel-btn.right {
@@ -124,11 +154,8 @@
       }
     }
   }
-}
-
-@media (max-width: 768px) {
   .course-completo {
-    min-width: 260px;
+    min-width: 200px;
   }
 }
 
@@ -139,34 +166,5 @@
       vertical-align: center;
       width: 90%;
     }
-    .carousel-btn {
-      position: absolute;
-      top: 10px; // arriba
-      background: #000;
-      color: #fff;
-      border: none;
-      font-size: 1.5rem;
-      padding: 5px 10px;
-      cursor: pointer;
-      z-index: 10;
-      opacity: 0.8;
-    }
-
-    // ambos botones arriba a la derecha
-    .carousel-btn.right {
-      top: 5%;
-      right: 5%;
-    }
-
-    .carousel-btn.left {
-      top: 5%;
-      right: 20%; // separación del botón derecho
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .course-completo {
-    min-width: 85%;
   }
 }
