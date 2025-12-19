@@ -105,9 +105,7 @@
   }
 }
 
-// =======================================
-// Estilos de course-completo
-// =======================================
+
 .course-completo {
   width: $tamanyoCurso;
   height: $tamanyoHeightCurso;
@@ -205,10 +203,8 @@
   }
 }
 
-// =======================================
-// Responsive Tablet y Móvil para course-categoria y course-completo
-// =======================================
-@media (max-width: 768px) {
+
+@media (max-width: 1297px) {
   .course-categoria, .course-completo {
     width: 100%;
     height: auto;
