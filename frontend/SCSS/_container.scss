@@ -106,12 +106,12 @@
       padding-left: 10px;
       .course-completo {
         flex: 0 0 calc((100% / 4) - (20px * 3 / 4)); // 4 cards visibles, descontando gaps
-        max-width: calc((100% / 4) - (20px * 3 / 4));
+        max-width: calc((100% / 4) - (5px * 3 / 4));
       }
     }
 
     .carousel-track .course-categoria {
-      width: 350px;
+      width: 400px;
       .course-categoria {
         img {
           width: 100%;
@@ -149,5 +149,7 @@
       vertical-align: center;
       width: 90%;
     }
+
+    
   }
 }

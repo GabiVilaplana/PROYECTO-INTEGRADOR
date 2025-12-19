@@ -755,10 +755,10 @@ button {
   }
   .container .carousel-track .course-completo {
     flex: 0 0 calc(25% - 15px);
-    max-width: calc(25% - 15px);
+    max-width: calc(25% - 3.75px);
   }
   .container .carousel-track .course-categoria {
-    width: 350px;
+    width: 400px;
   }
   .container .carousel-track .course-categoria .course-categoria img {
     width: 100%;
