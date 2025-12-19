@@ -7,9 +7,6 @@
 @use "mapas" as *;
 @use "botones" as *;
 
-// =======================================
-// Layout de las cards
-// =======================================
 #contenedorcardsCategoria {
   text-align: left; // alinea las cards
   font-size: 0;     // elimina espacio entre inline-block
@@ -44,9 +41,7 @@
   }
 }
 
-// =======================================
-// Estilos de course-categoria
-// =======================================
+
 .course-categoria {
   width: $tamanyoCurso;
   height: $tamanyoHeightCurso;
