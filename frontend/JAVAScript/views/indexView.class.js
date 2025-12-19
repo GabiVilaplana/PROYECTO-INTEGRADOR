@@ -40,6 +40,10 @@ export default class View {
         const categoria = categorias.find(cat => cat.IDCategoria === prod.IDCategoria);
         if (!categoria) return;
 
+        const imagen = prod.IDImagen === ""
+            ? `image${prod.IDCategoria}.jpg`
+            : prod.IDImagen;
+
         // Revisamos si ya existe un carousel para esta categoría
         let carousel = this.contenedorServicios.querySelector(`#carousel-${categoria.IDCategoria}`);
         if (!carousel) {
@@ -75,7 +79,7 @@ export default class View {
         const html = `
         <div class="course-completo ${categoryClass}" >
             <div class="course" data-id="${prod.IDServicio}">
-                <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
+                <img src="./IMG/${imagen}" alt="${prod.Nombre}" />
                 <h3>${prod.Nombre}</h3>
                 <p>${prod.Descripcion}</p>
                 <div class="course-footer">
@@ -110,14 +114,15 @@ export default class View {
         const usuario = usuarios.find(u => u.IDUsuario === prod.IDUsuarioCreacion) || {};
         const categoryClass = `category-${categoria.Nombre.toLowerCase().replace(/\s+/g, '-')}`;
 
-
-
+        const imagen = !prod.IDImagen || prod.IDImagen === ""
+            ? `image${prod.IDCategoria}.jpg`
+            : prod.IDImagen;
 
 
         const html = `
         <div class="course-completo ${categoryClass}" >
             <div class="course" data-id="${prod.IDServicio}">
-                <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
+                <img src="./IMG/${imagen}" alt="${prod.Nombre}" />
                 <h3>${prod.Nombre}</h3>
                 <p>${prod.Descripcion}</p>
                 <div class="course-footer">

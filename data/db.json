@@ -85,7 +85,7 @@
             "Precio": "420.00",
             "IDCategoria": "1",
             "IDUsuarioCreacion": "101",
-            "IDImagen": "301",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -97,7 +97,7 @@
             "Precio": "420.00",
             "IDCategoria": "1",
             "IDUsuarioCreacion": "101",
-            "IDImagen": "301",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -109,7 +109,7 @@
             "Precio": "420.00",
             "IDCategoria": "1",
             "IDUsuarioCreacion": "101",
-            "IDImagen": "301",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -121,7 +121,7 @@
             "Precio": "420.00",
             "IDCategoria": "1",
             "IDUsuarioCreacion": "101",
-            "IDImagen": "301",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -133,7 +133,7 @@
             "Precio": "420.00",
             "IDCategoria": "1",
             "IDUsuarioCreacion": "101",
-            "IDImagen": "301",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -145,7 +145,7 @@
             "Precio": "420.00",
             "IDCategoria": "1",
             "IDUsuarioCreacion": "101",
-            "IDImagen": "301",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -157,7 +157,7 @@
             "Precio": "420.00",
             "IDCategoria": "1",
             "IDUsuarioCreacion": "101",
-            "IDImagen": "301",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -169,7 +169,7 @@
             "Precio": "420.00",
             "IDCategoria": "1",
             "IDUsuarioCreacion": "101",
-            "IDImagen": "301",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -181,7 +181,7 @@
             "Precio": "25.00",
             "IDCategoria": "2",
             "IDUsuarioCreacion": "102",
-            "IDImagen": "302",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -193,7 +193,7 @@
             "Precio": "180.00",
             "IDCategoria": "3",
             "IDUsuarioCreacion": "103",
-            "IDImagen": "303",
+            "IDImagen": "",
             "Estado": "inactivo"
         },
         {
@@ -205,7 +205,7 @@
             "Precio": "180.00",
             "IDCategoria": "2",
             "IDUsuarioCreacion": "103",
-            "IDImagen": "303",
+            "IDImagen": "",
             "Estado": "inactivo"
         },
         {
@@ -217,7 +217,7 @@
             "Precio": "180.00",
             "IDCategoria": "3",
             "IDUsuarioCreacion": "103",
-            "IDImagen": "303",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -229,7 +229,7 @@
             "Precio": "180.00",
             "IDCategoria": "3",
             "IDUsuarioCreacion": "103",
-            "IDImagen": "303",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -241,7 +241,7 @@
             "Precio": "180.00",
             "IDCategoria": "2",
             "IDUsuarioCreacion": "103",
-            "IDImagen": "303",
+            "IDImagen": "",
             "Estado": "activo"
         },
         {
@@ -253,7 +253,7 @@
             "Precio": "180.00",
             "IDCategoria": "2",
             "IDUsuarioCreacion": "103",
-            "IDImagen": "303",
+            "IDImagen": "",
             "Estado": "inactivo"
         },
         {
@@ -265,7 +265,7 @@
             "Precio": "180.00",
             "IDCategoria": "2",
             "IDUsuarioCreacion": "103",
-            "IDImagen": "303",
+            "IDImagen": "",
             "Estado": "inactivo"
         },
         {
@@ -277,8 +277,21 @@
             "Precio": "180.00",
             "IDCategoria": "2",
             "IDUsuarioCreacion": "103",
-            "IDImagen": "303",
+            "IDImagen": "",
             "Estado": "inactivo"
+        },
+        {
+            "IDServicio": "1001",
+            "Nombre": "adasdasdas",
+            "FechaCreacion": "2025-12-19 12:28:01",
+            "Descripcion": "dasdasdasdasdas",
+            "DuracionEstimada": "12",
+            "UnidadDuracion": "días",
+            "Precio": "2122.00",
+            "IDCategoria": "1",
+            "IDUsuarioCreacion": "108",
+            "IDImagen": "..\/..\/frontend\/IMG\/67b5928bdcdbd.jpeg",
+            "Estado": "activo"
         }
     ],
     "ServicioCompras": [
@@ -380,21 +393,6 @@
             "Correo": "alex@tasklink.es",
             "Password": "$2y$10$fiOrXFy9tKLjMDwVcNwg1OIm8hJCLcibaBz2jUYkd35Tk3pvmkPGi",
             "Valoracion": null
-        }
-    ],
-    "Servicios": [
-        {
-            "IDServicio": "1001",
-            "Nombre": "asdasdasdawsd",
-            "FechaCreacion": "2025-12-19 11:02:27",
-            "Descripcion": "uoigbasduhgasduhasd",
-            "DuracionEstimada": "12",
-            "UnidadDuracion": "días",
-            "Precio": "50.00",
-            "IDCategoria": "1",
-            "IDUsuarioCreacion": "108",
-            "IDImagen": "..\/..\/frontend\/IMG\/servicios\/67b5928bdcdbd.jpeg",
-            "Estado": "activo"
         }
     ]
 }

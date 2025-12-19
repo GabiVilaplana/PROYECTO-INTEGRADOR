@@ -17,7 +17,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Usuario logueado
 $usuarioID = $_SESSION['user_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -37,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $infoMensaje = "⚠️ El precio debe ser un número positivo.";
     } else {
 
-        $data = json_get_data('db.json') ?? ['Servicios' => []];
-        $servicios = $data['Servicios'] ?? [];
+        $data = json_get_data('db.json') ?? ['Servicio' => []];
+        $servicios = $data['Servicio'] ?? [];
 
         // Generar ID autoincremental
         $ultimoID = 1000;
@@ -49,12 +48,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $nuevoID = $ultimoID + 1;
 
+        // Carpeta de destino
+        $carpetaDestino = '../../frontend/IMG/';
+        if (!is_dir($carpetaDestino)) {
+            mkdir($carpetaDestino, 0755, true); // crea la carpeta si no existe
+        }
+
         // Procesar imagen
         if (!empty($imagen) && is_uploaded_file($_FILES['imagen']['tmp_name'])) {
-            $rutaDestino = '../../frontend/IMG/servicios/' . basename($imagen);
-            move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaDestino);
+            $rutaDestino = $carpetaDestino . basename($imagen);
+            if (!move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaDestino)) {
+                $infoMensaje = "❌ Error al subir la imagen. Se usará la imagen por defecto.";
+                $rutaDestino = '../../frontend/IMG/categorias/default.png';
+            }
         } else {
-            $rutaDestino = '../../frontend/IMG/categorias/default.png'; // imagen por defecto
+            $rutaDestino = '../../frontend/IMG/categorias/default.png';
         }
 
         // Crear servicio
@@ -73,10 +81,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
 
         $servicios[] = $nuevoServicio;
-        $data['Servicios'] = $servicios;
+        $data['Servicio'] = $servicios;
 
         if (json_save_data('db.json', $data)) {
-            header('Location: ./servicios.php');
+            header('Location: ../../frontend/index.php');
             exit;
         } else {
             $infoMensaje = "❌ Error al guardar el servicio. Inténtalo más tarde.";
