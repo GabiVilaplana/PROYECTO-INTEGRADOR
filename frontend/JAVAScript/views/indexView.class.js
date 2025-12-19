@@ -231,8 +231,27 @@ export default class View {
         });
     }
 
+    bindClickService(handler) {
+    // Escuchamos en los dos contenedores donde pueden aparecer servicios
+    const contenedores = [this.contenedorServicios, this.contenedorCardsCategoria];
 
+    contenedores.forEach(contenedor => {
+        if (!contenedor) return;
 
+            contenedor.addEventListener("click", (e) => {
+                // Buscamos si el click fue dentro de un elemento con la clase .course 
+                // que es donde tienes el data-id="${prod.IDServicio}"
+                const card = e.target.closest(".course");
+                
+                // Evitamos que el click se dispare si pulsas en la parte trasera 
+                // (por si quieres dejar el botón de contactar para otra cosa)
+                if (card && !e.target.closest(".course-trasera")) {
+                    const id = card.dataset.id;
+                    if (id) handler(id);
+                }
+            });
+        });
+    }
 
     mostrarErrores(message) {
 
