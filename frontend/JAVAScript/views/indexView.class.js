@@ -152,6 +152,18 @@ export default class View {
 
     }
 
+    /*renderSeleccionarServicio(callback) {
+        if (!this.contenedorCardsCategoria || !this.contenedorServicios) {
+            this.
+            const btnElegir  = e.target.closest(".card");
+            if (!btnElegir) return;
+            const card = btnElegir.dataset.id;
+            console.log(card);
+            if (!card) this.mostrarErrores("Errores al obtener la ID del coche, está vacia");
+            //callback(card);
+        }
+
+    }*/
 
 
 

@@ -651,16 +651,17 @@ button {
   }
   .course-categoria .course-trasera h4,
   .course-completo .course-trasera h4 {
-    font-size: 0.65rem;
+    font-size: 14px;
   }
   .course-categoria .course-trasera p,
   .course-completo .course-trasera p {
-    font-size: 0.55rem;
+    font-size: 14px;
   }
   .course-categoria .course-trasera button,
   .course-completo .course-trasera button {
+    padding-left: 2%;
     font-size: 0.55rem;
-    width: 100%;
+    width: 90%;
   }
 }
 .container {

@@ -258,14 +258,15 @@
     .course-trasera {
       padding: 4px;
       h4 {
-        font-size: 0.65rem;
+        font-size: $letraTamanyo;
       }
       p {
-        font-size: 0.55rem;
+        font-size: $letraTamanyo;
       }
       button {
+        padding-left: 2%;
         font-size: 0.55rem;
-        width: 100%;
+        width: 90%;
       }
     }
   }
