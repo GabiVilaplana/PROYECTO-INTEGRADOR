@@ -21,7 +21,7 @@ export default class View {
 
 
         const html = `
-        <div class="course-categoria">
+        <div class="course-categoria" data-id="${prod.IDCategoria}">
             <div class="course">
                 <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
                 <h3>${prod.Nombre}</h3>
@@ -72,8 +72,8 @@ export default class View {
         const categoryClass = `category-${categoria.Nombre.toLowerCase().replace(/\s+/g, '-')}`;
 
         const html = `
-        <div class="course-completo ${categoryClass}">
-            <div class="course">
+        <div class="course-completo ${categoryClass}" >
+            <div class="course" data-id="${prod.IDServicio}">
                 <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
                 <h3>${prod.Nombre}</h3>
                 <p>${prod.Descripcion}</p>
@@ -98,6 +98,22 @@ export default class View {
 
         // Insertar la card dentro del track del carousel de esta categoría
         carousel.querySelector(".carousel-track").insertAdjacentHTML("beforeend", html);
+    }
+
+    renderFilterCategorias(callback) {
+        if (!this.contenedordatosCategorias) return;
+
+        this.contenedordatosCategorias.addEventListener("click", (e) => {
+            console.log(e);
+            const btnCategorias = e.target.closest(".course-categoria");
+            if (!btnCategorias) return;
+           
+
+            const id = btnCategorias.dataset.id;
+            console.log("BOTÓN DE CATEGORÍAS:", id);
+
+            if (callback) callback(id);
+        });
     }
 
 

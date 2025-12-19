@@ -17,6 +17,7 @@ export default class Controller {
         console.log("✅ Controller iniciado");
 
         try {
+            this.view.renderFilterCategorias(this.handlerFilterCategorias.bind(this))
 
             await Promise.all([
                 this.model.servicios.populate(),
@@ -26,13 +27,16 @@ export default class Controller {
 
             this.model.categorias.data.forEach(categoria => {
                 const numServicios = this.model.servicios.data.filter(
-                    servicio => servicio.IDCategoria === categoria.IDCategoria
+                    servicio => ((servicio.IDCategoria === categoria.IDCategoria) && servicio.Estado === "activo")
                 ).length;
                 this.view.renderNewServicioPorCategoria(categoria, numServicios);
-            })
+            });
 
-            this.model.servicios.data.forEach(servicio =>
-                this.view.renderNewServicio(servicio, this.model.categorias.data, this.model.usuarios.data));
+            this.model.servicios.data
+                .filter(servicio => servicio.Estado === "activo")
+                .forEach(servicio =>
+                    this.view.renderNewServicio(servicio, this.model.categorias.data, this.model.usuarios.data
+                    ));
 
             this.view.sliceCards();
             this.view.bindProfileDropdown(() => {
@@ -43,5 +47,19 @@ export default class Controller {
             this.view.mostrarErrores("Error al cargar la infromación inicial: " + error);
         }
 
+    }
+
+    async handlerFilterCategorias(IDCategoria) {
+        try {
+            this.view.contenedorServicios.innerHTML = "";
+
+            const serviciosFiltrados = this.model.servicios.getServiciosByCategoria(IDCategoria)
+            serviciosFiltrados.forEach(serviciosCategoria =>
+                this.view.renderNewServicio(serviciosCategoria, this.model.categorias.data, this.model.usuarios.data)
+            );
+        } catch (error) {
+            this.view.mostrarErrores("Error al cargar la infromación inicial: " + error);
+
+        }
     }
 }

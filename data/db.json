@@ -182,7 +182,7 @@
       "IDCategoria": "3",
       "IDUsuarioCreacion": "103",
       "IDImagen": "303",
-      "Estado": "inactivo"
+      "Estado": "activo"
     },
     {
       "IDServicio": "210",
@@ -194,7 +194,7 @@
       "IDCategoria": "3",
       "IDUsuarioCreacion": "103",
       "IDImagen": "303",
-      "Estado": "inactivo"
+      "Estado": "activo"
     },
     {
       "IDServicio": "211",
@@ -206,7 +206,7 @@
       "IDCategoria": "2",
       "IDUsuarioCreacion": "103",
       "IDImagen": "303",
-      "Estado": "inactivo"
+      "Estado": "activo"
     },
     {
       "IDServicio": "212",
