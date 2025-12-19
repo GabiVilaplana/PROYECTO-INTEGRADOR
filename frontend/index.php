@@ -67,6 +67,7 @@ if ($user_id && !$usuario) {
         <li><a href="../backend/auth/profile.php"><span>👤</span> Perfil</a></li>
         <li><a href="like.php"><span>❤️</span> Favoritos</a></li>
         <li><a href="mensajes.php"><span>💬</span> Mensajes</a></li>
+        <li><a href="../backend/auth/crearServicio.php"><span>➕🛠️</span> Añadir Servicio</a></li>
         <li class="divider">
           <hr>
         </li>
