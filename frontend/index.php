@@ -113,6 +113,7 @@ if ($user_id && !$usuario) {
 
     </div>
     <h2>Servicios Disponibles</h2>
+    <div id="contenedorcardsCategoria"></div>
     <div id="contenedorCategoria"></div>
     <h3>¡Tendencias ahora!</h3>
     <div class="proximamente">

@@ -3,6 +3,7 @@ export default class View {
         //this.contenedorCategorias = document.querySelector(".courses.carousel-categorias");
 
         this.contenedordatosCategorias = document.getElementById("datosCategoria");
+        this.contenedorCardsCategoria = document.getElementById("contenedorcardsCategoria");
         this.contenedorServicios = document.getElementById("contenedorCategoria");
 
         this.btnLeft = document.getElementById("btn-left");
@@ -100,6 +101,64 @@ export default class View {
         carousel.querySelector(".carousel-track").insertAdjacentHTML("beforeend", html);
     }
 
+
+    renederServiciosPorCategoria(prod, categorias, usuarios) {
+        this.contenedorServicios.innerHTML = "";
+        const categoria = categorias.find(cat => cat.IDCategoria === prod.IDCategoria);
+        if (!categoria) return;
+        // Crear la card
+        const usuario = usuarios.find(u => u.IDUsuario === prod.IDUsuarioCreacion) || {};
+        const categoryClass = `category-${categoria.Nombre.toLowerCase().replace(/\s+/g, '-')}`;
+
+
+
+
+
+        const html = `
+        <div class="course-completo ${categoryClass}" >
+            <div class="course" data-id="${prod.IDServicio}">
+                <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
+                <h3>${prod.Nombre}</h3>
+                <p>${prod.Descripcion}</p>
+                <div class="course-footer">
+                    <span class="price">Precio - ${prod.Precio}€ por persona · 
+                        ${usuario.Valoracion || '0,0'} /5
+                    </span>
+                </div>
+            </div>
+            <div class="course-trasera">
+                <h4>Información del Usuario</h4>
+                <p>Nombre: ${usuario.Nombre}  ${usuario.Apellidos}</p>
+                <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
+                <p>Email: ${usuario.Correo || 'N/A'}</p>
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <button class="btn-trasera">Contactar</button>
+            </div>
+        </div>
+    `;
+
+        let div = this.contenedorCardsCategoria.querySelector(`[data-id="${prod.id}"]`);
+        if (div) {
+            div.innerHTML = html;
+        } else {
+            const div = document.createElement("div");
+            div.dataset.id = prod.IDServicio;
+            div.className = "card";
+
+            div.innerHTML = html;
+            this.contenedorCardsCategoria.appendChild(div);
+        }
+
+    }
+
+
+
+
+
+
+
     renderFilterCategorias(callback) {
         if (!this.contenedordatosCategorias) return;
 
@@ -107,7 +166,7 @@ export default class View {
             console.log(e);
             const btnCategorias = e.target.closest(".course-categoria");
             if (!btnCategorias) return;
-           
+
 
             const id = btnCategorias.dataset.id;
             console.log("BOTÓN DE CATEGORÍAS:", id);

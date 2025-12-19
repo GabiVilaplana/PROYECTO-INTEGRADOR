@@ -7,6 +7,46 @@
 @use "mapas" as *;
 @use "botones" as *;
 
+// =======================================
+// Layout de las cards
+// =======================================
+#contenedorcardsCategoria {
+  text-align: left; // alinea las cards
+  font-size: 0;     // elimina espacio entre inline-block
+}
+
+#contenedorcardsCategoria .card {
+  display: inline-block;
+  vertical-align: top;
+  width: 23%;       // 4 cards por fila en desktop
+  margin: 0.5%;     // separación entre cards
+  font-size: 16px;  // restaura tamaño de letra
+
+  .course {
+    padding: $margenOPaddingDe12;
+  }
+}
+
+// Tablet (2 cards por fila)
+@media (max-width: 768px) {
+  #contenedorcardsCategoria .card {
+    width: 48%;      // 2 cards por fila
+    margin: 1%;      // separación
+  }
+}
+
+// Móvil (1 card por fila)
+@media (max-width: 480px) {
+  #contenedorcardsCategoria .card {
+    width: 98%;        // 1 card por fila
+    margin: 1% auto;   // centrado horizontal
+    display: block;
+  }
+}
+
+// =======================================
+// Estilos de course-categoria
+// =======================================
 .course-categoria {
   width: $tamanyoCurso;
   height: $tamanyoHeightCurso;
@@ -65,6 +105,9 @@
   }
 }
 
+// =======================================
+// Estilos de course-completo
+// =======================================
 .course-completo {
   width: $tamanyoCurso;
   height: $tamanyoHeightCurso;
@@ -162,33 +205,33 @@
   }
 }
 
-/* Tablet */
-@media ((min-width: 479px) and (max-width: 768px)) {
-  .course-categoria {
+// =======================================
+// Responsive Tablet y Móvil para course-categoria y course-completo
+// =======================================
+@media (max-width: 768px) {
+  .course-categoria, .course-completo {
     width: 100%;
-    height: 100%;
+    height: auto;
     margin-bottom: $margenOPaddingDe10;
 
     .course {
       position: relative;
       width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+      height: auto;
       overflow: hidden;
       border-radius: $border-radius;
     }
 
     .course img {
-      width: 350px;
-      height: 190px; // altura fija razonable
+      width: 100%;
+      height: auto;
       object-fit: cover;
       display: block;
     }
 
     .course h3 {
-      font-size: 1.1rem;
-      margin: $margenOPaddingDe10;
+      font-size: 1rem;
+      margin: $margenOPaddingDe10 0;
     }
 
     .course p {
@@ -196,211 +239,46 @@
       line-height: 1.4;
       margin: 0 $margenOPaddingDe10 $margenOPaddingDe10;
     }
-  }
-  .course-completo {
-    width: $card-tablet-width;
-    height: $card-tablet-height;
-    .course {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border-radius: $border-radius;
-      p {
-        display: none !important;
-      }
-    }
-    img {
-      width: 350px;
-      height: 80px; // altura fija razonable
-      object-fit: cover;
-      display: block;
-    }
 
     .course-trasera {
-      padding-left: $margenOPaddingDe5;
-      padding-top: $margenOPaddingDe5;
-      align-content: center;
-      h4 {
-        font-size: 18px;
-        margin: 2px 0;
-        padding-bottom: 5px;
-      }
-      p {
-        font-size: 14px;
-        margin: 1px 0;
-      }
-      .mapa-container {
-        display: none !important;
-      }
+      padding: $margenOPaddingDe5;
     }
   }
 }
 
-/* Móvil */
 @media (max-width: 480px) {
-  .course-categoria {
+  .course-categoria, .course-completo {
     width: 100%;
-    height: 100%;
-
-    .course {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border-radius: $border-radius;
-      h3,
-      h4 {
-        margin: $sinDimensiones;
-        font-size: 18px;
-      }
-
-      p {
-        font-size: $letraTamanyo;
-        color: $color-grisLetras;
-        margin-bottom: $margenOPaddingDe5;
-        overflow-wrap: $noRomperPalabra;
-      }
-      img {
-        width: 250px;
-        height: 190px;
-        object-fit: fill;
-      }
-    }
-  }
-  .course-completo {
-    width: 140px;
-    height: 120px;
-    flex: 0 0 auto;
-    position: relative;
-    margin: 0;
-    padding: 0;
+    height: auto;
 
     .course {
       width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-      padding: 4px;
-      box-sizing: border-box;
-
-      // Imagen: 50% izquierda
+      height: auto;
       img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 4px;
+        width: 100%;
+        height: auto;
       }
 
-      // Título: arriba del todo (derecha)
-      h3 {
-        position: absolute;
-        top: 4px; // respetar el padding del contenedor
-        left: 50%;
-        right: 4px;
-        margin: 0;
-        font-size: 12px;
-        font-weight: bold;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        margin-left: 5px;
+      h3, h4 {
+        font-size: 16px;
       }
 
-      // Descripción: centrada verticalmente en el espacio total (solo visible en la derecha)
       p {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        right: 4px;
-        margin: 0;
-        font-size: 0.55rem;
-        color: #666;
-        transform: translateY(-50%);
-        text-align: left;
-        overflow: hidden;
-        line-height: 1.2;
-        margin-left: 5px;
-      }
-
-      .mapa-container {
-        display: none !important;
-      }
-
-      .course-footer {
-        position: absolute;
-        padding-left: 5px;
-        bottom: 4px;
-        left: 50%;
-        right: 4px;
-
-        .icon-star {
-          width: 8px;
-          height: 8px;
-          // ✅ Elimina float y usa esto:
-          display: inline-block;
-          vertical-align: middle;
-          margin: 0 2px; // espacio consistente: · ★ 4,5
-        }
+        font-size: 0.8rem;
       }
     }
+
     .course-trasera {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      transform: rotateY(180deg);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      border-radius: 8px;
-      overflow: hidden;
-      background-color: #fff;
       padding: 4px;
-
       h4 {
         font-size: 0.65rem;
-        margin: 2px 0;
       }
       p {
         font-size: 0.55rem;
-        margin: 1px 0;
       }
-
-      .mapa-container {
-        display: none !important;
-      }
-
       button {
-        display: block !important;
         font-size: 0.55rem;
-        margin-top: 3px;
         width: 100%;
-      }
-    }
-
-    &:hover {
-      .course {
-        transform: rotateY(180deg);
-      }
-      .course-trasera {
-        transform: rotateY(0deg);
       }
     }
   }

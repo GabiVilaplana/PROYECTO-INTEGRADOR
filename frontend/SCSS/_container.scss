@@ -78,40 +78,20 @@
   .carousel-track {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
+    overflow: hidden;
     scroll-behavior: smooth;
     padding: 20px 0;
+
+    .course-completo {
+      flex: 0 0 calc((100% / 6) - (20px * 5 / 6)); // 6 cards visibles, descontando gaps
+      max-width: calc((100% / 6) - (20px * 5 / 6));
+    }
   }
 
   .carousel-track::-webkit-scrollbar {
     display: none;
   }
 }
-
-/*@media (max-width: 768px) {
-  .container {
-    padding: 15px;
-
-    .courses {
-      float: none;
-      width: 100%;
-      padding: 10px;
-    }
-
-    .proximamente {
-      float: none;
-      width: 80%;
-      margin: 20px auto;
-      font-size: 22px;
-    }
-
-    .carousel-track {
-      gap: 15px;
-    }
-
-    
-  }
-}*/
 
 @media (max-width: 768px) {
   .container {
@@ -121,24 +101,27 @@
       width: 92%;
       margin-right: 5%;
     }
-    .carousel-wrapper {
-      width: 100%;
-      margin: 0 auto;
-    }
 
     .carousel-track {
       padding-left: 10px;
+      .course-completo {
+        flex: 0 0 calc((100% / 4) - (20px * 3 / 4)); // 4 cards visibles, descontando gaps
+        max-width: calc((100% / 4) - (20px * 3 / 4));
+      }
     }
 
     .carousel-track .course-categoria {
       width: 350px;
       .course-categoria {
         img {
-          width: 350px;
+          width: 100%;
+          height: 50%;
         }
       }
     }
     .carousel-wrapper {
+      width: 100%;
+      margin: 0 auto;
       .carousel-btn {
         font-size: 1.3rem;
         padding: 5px 8px;

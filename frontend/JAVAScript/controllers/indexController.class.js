@@ -32,11 +32,13 @@ export default class Controller {
                 this.view.renderNewServicioPorCategoria(categoria, numServicios);
             });
 
+
             this.model.servicios.data
                 .filter(servicio => servicio.Estado === "activo")
                 .forEach(servicio =>
                     this.view.renderNewServicio(servicio, this.model.categorias.data, this.model.usuarios.data
                     ));
+
 
             this.view.sliceCards();
             this.view.bindProfileDropdown(() => {
@@ -52,11 +54,15 @@ export default class Controller {
     async handlerFilterCategorias(IDCategoria) {
         try {
             this.view.contenedorServicios.innerHTML = "";
+            this.view.contenedorCardsCategoria.innerHTML = "";
 
             const serviciosFiltrados = this.model.servicios.getServiciosByCategoria(IDCategoria)
-            serviciosFiltrados.forEach(serviciosCategoria =>
-                this.view.renderNewServicio(serviciosCategoria, this.model.categorias.data, this.model.usuarios.data)
-            );
+            serviciosFiltrados
+                .filter(servicio => servicio.Estado === "activo")
+                .forEach(servicio =>
+                    this.view.renederServiciosPorCategoria(servicio, this.model.categorias.data, this.model.usuarios.data
+
+                    ));
         } catch (error) {
             this.view.mostrarErrores("Error al cargar la infromación inicial: " + error);
 
