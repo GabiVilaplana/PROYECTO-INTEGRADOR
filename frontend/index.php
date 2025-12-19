@@ -14,6 +14,8 @@ if ($user_id) {
     if (isset($u['IDUsuario']) && $u['IDUsuario'] === $user_id) {
       $usuario = $u;
 
+      //SUBIR RAMA GABI2
+
       // Sincronitzar sessió (per coherència)
       $_SESSION['user_id'] = $u['IDUsuario'];
       $_SESSION['email'] = $u['Correo'];
