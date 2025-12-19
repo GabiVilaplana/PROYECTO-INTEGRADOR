@@ -9,15 +9,15 @@
 
 #contenedorcardsCategoria {
   text-align: left; // alinea las cards
-  font-size: 0;     // elimina espacio entre inline-block
+  font-size: 0; // elimina espacio entre inline-block
 }
 
 #contenedorcardsCategoria .card {
   display: inline-block;
   vertical-align: top;
-  width: 23%;       // 4 cards por fila en desktop
-  margin: 0.5%;     // separación entre cards
-  font-size: 16px;  // restaura tamaño de letr
+  width: 23%; // 4 cards por fila en desktop
+  margin: 0.5%; // separación entre cards
+  font-size: 16px; // restaura tamaño de letr
 
   .course {
     padding: $margenOPaddingDe12;
@@ -27,20 +27,19 @@
 // Tablet (2 cards por fila)
 @media (max-width: 768px) {
   #contenedorcardsCategoria .card {
-    width: 48%;      // 2 cards por fila
-    margin: 1%;      // separación
+    width: 48%; // 2 cards por fila
+    margin: 1%; // separación
   }
 }
 
 // Móvil (1 card por fila)
 @media (max-width: 480px) {
   #contenedorcardsCategoria .card {
-    width: 98%;        // 1 card por fila
-    margin: 1% auto;   // centrado horizontal
+    width: 98%; // 1 card por fila
+    margin: 1% auto; // centrado horizontal
     display: block;
   }
 }
-
 
 .course-categoria {
   width: $tamanyoCurso;
@@ -100,7 +99,6 @@
   }
 }
 
-
 .course-completo {
   width: $tamanyoCurso;
   height: $tamanyoHeightCurso;
@@ -154,10 +152,6 @@
       margin-bottom: $margenOPaddingDe10;
       overflow-wrap: $noRomperPalabra;
     }
-    iframe {
-      margin-left: 5%;
-      border-radius: $border-radius-grande;
-    }
     button {
       margin-right: 5%;
     }
@@ -198,9 +192,9 @@
   }
 }
 
-
 @media (max-width: 1297px) {
-  .course-categoria, .course-completo {
+  .course-categoria,
+  .course-completo {
     width: 100%;
     height: auto;
     margin-bottom: $margenOPaddingDe10;
@@ -238,7 +232,8 @@
 }
 
 @media (max-width: 480px) {
-  .course-categoria, .course-completo {
+  .course-categoria,
+  .course-completo {
     width: 100%;
     height: auto;
 
@@ -250,7 +245,8 @@
         height: auto;
       }
 
-      h3, h4 {
+      h3,
+      h4 {
         font-size: 16px;
       }
 

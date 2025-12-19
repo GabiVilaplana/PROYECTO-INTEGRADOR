@@ -538,10 +538,6 @@ button {
   margin-bottom: 10px;
   overflow-wrap: break-word;
 }
-.course-completo .course-trasera iframe {
-  margin-left: 5%;
-  border-radius: 18px;
-}
 .course-completo .course-trasera button {
   margin-right: 5%;
 }
@@ -586,66 +582,83 @@ button {
 }
 
 @media (max-width: 1297px) {
-  .course-categoria, .course-completo {
+  .course-categoria,
+  .course-completo {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
   }
-  .course-categoria .course, .course-completo .course {
+  .course-categoria .course,
+  .course-completo .course {
     position: relative;
     width: 100%;
     height: auto;
     overflow: hidden;
     border-radius: 8px;
   }
-  .course-categoria .course img, .course-completo .course img {
+  .course-categoria .course img,
+  .course-completo .course img {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
   }
-  .course-categoria .course h3, .course-completo .course h3 {
+  .course-categoria .course h3,
+  .course-completo .course h3 {
     font-size: 1rem;
     margin: 10px 0;
   }
-  .course-categoria .course p, .course-completo .course p {
+  .course-categoria .course p,
+  .course-completo .course p {
     font-size: 0.9rem;
     line-height: 1.4;
     margin: 0 10px 10px;
   }
-  .course-categoria .course-trasera, .course-completo .course-trasera {
+  .course-categoria .course-trasera,
+  .course-completo .course-trasera {
     padding: 5px;
   }
 }
 @media (max-width: 480px) {
-  .course-categoria, .course-completo {
+  .course-categoria,
+  .course-completo {
     width: 100%;
     height: auto;
   }
-  .course-categoria .course, .course-completo .course {
+  .course-categoria .course,
+  .course-completo .course {
     width: 100%;
     height: auto;
   }
-  .course-categoria .course img, .course-completo .course img {
+  .course-categoria .course img,
+  .course-completo .course img {
     width: 100%;
     height: auto;
   }
-  .course-categoria .course h3, .course-categoria .course h4, .course-completo .course h3, .course-completo .course h4 {
+  .course-categoria .course h3,
+  .course-categoria .course h4,
+  .course-completo .course h3,
+  .course-completo .course h4 {
     font-size: 16px;
   }
-  .course-categoria .course p, .course-completo .course p {
+  .course-categoria .course p,
+  .course-completo .course p {
     font-size: 0.8rem;
   }
-  .course-categoria .course-trasera, .course-completo .course-trasera {
+  .course-categoria .course-trasera,
+  .course-completo .course-trasera {
     padding: 4px;
   }
-  .course-categoria .course-trasera h4, .course-completo .course-trasera h4 {
+  .course-categoria .course-trasera h4,
+  .course-completo .course-trasera h4 {
     font-size: 0.65rem;
   }
-  .course-categoria .course-trasera p, .course-completo .course-trasera p {
+  .course-categoria .course-trasera p,
+  .course-completo .course-trasera p {
     font-size: 0.55rem;
   }
-  .course-categoria .course-trasera button, .course-completo .course-trasera button {
+  .course-categoria .course-trasera button,
+  .course-completo .course-trasera button {
     font-size: 0.55rem;
     width: 100%;
   }

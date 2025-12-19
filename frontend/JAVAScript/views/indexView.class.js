@@ -92,9 +92,7 @@ export default class View {
                 <p>Nombre: ${usuario.Nombre}  ${usuario.Apellidos}</p>
                 <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
                 <p>Email: ${usuario.Correo || 'N/A'}</p>
-                <div class="mapa-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+
                 <button class="btn-trasera">Contactar</button>
             </div>
         </div>
@@ -135,9 +133,6 @@ export default class View {
                 <p>Nombre: ${usuario.Nombre}  ${usuario.Apellidos}</p>
                 <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
                 <p>Email: ${usuario.Correo || 'N/A'}</p>
-                <div class="mapa-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12454.997924615587!2d-0.48873568354075925!3d38.70059844253098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61864e204bb377%3A0x3270bc5ab4510472!2sAlcoy%2C%20Alicante!5e0!3m2!1ses!2ses!4v1763423541393!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
                 <button class="btn-trasera">Contactar</button>
             </div>
         </div>
