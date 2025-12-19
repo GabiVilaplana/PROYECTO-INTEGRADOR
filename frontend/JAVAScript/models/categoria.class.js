@@ -5,7 +5,7 @@ export default class Categoria {
         this.Descripcion = dato.Descripcion;
         this.Activo = dato.Activo;
     }
-
+//UJH
 
     toString() {
         return `Categoria{

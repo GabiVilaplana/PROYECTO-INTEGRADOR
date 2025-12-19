@@ -5,7 +5,7 @@ export default class Categorias {
     constructor() {
         this.data = [];
     }
-
+//UJH
     async populate() {
         try {
             const categorias = await CategoriasApi.getDBCategorias();

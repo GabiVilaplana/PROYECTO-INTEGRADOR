@@ -4,7 +4,7 @@ async function getDBUsuarios() {
     const resp = await fetch(`${SERVER}/Usuarios`);
 
     if (!resp.ok) {
-        const texto = await resp.text(); // si hay mensaje de error
+        const texto = await resp.text(); // si hay mensaje de erro
         console.error("Respuesta del servidor:", texto);
         throw new Error(`Fallo al obtener todos los Usuarios: ${resp.status}`);
     }

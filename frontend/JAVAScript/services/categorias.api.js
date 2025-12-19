@@ -4,7 +4,7 @@ async function getDBCategorias() {
     const resp = await fetch(`${SERVER}/Categorias`);
 
     if (!resp.ok) {
-        const texto = await resp.text(); // si hay mensaje de error
+        const texto = await resp.text(); // si hay mensaje de erro
         console.error("Respuesta del servidor:", texto);
         throw new Error(`Fallo al obtener todos los Categorias: ${resp.status}`);
     }

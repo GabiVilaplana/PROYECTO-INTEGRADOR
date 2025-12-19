@@ -9,6 +9,7 @@ export default class Controller {
             servicios: new Servicios(),
             categorias: new Categorias(),
             usuarios: new Usuarios()
+            //SDFSDF
         }
         this.view = new View();
     }

@@ -4,7 +4,7 @@ async function getDBServicios() {
     const resp = await fetch(`${SERVER}/Servicio`);
 
     if (!resp.ok) {
-        const texto = await resp.text(); // si hay mensaje de error
+        const texto = await resp.text(); // si hay mensaje de erro
         console.error("Respuesta del servidor:", texto);
         throw new Error(`Fallo al obtener todos los Servicios: ${resp.status}`);
     }

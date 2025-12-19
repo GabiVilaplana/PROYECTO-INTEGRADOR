@@ -15,7 +15,7 @@ export default class Usuarios {
             throw error;
         }
     }
-
+//UJH
     async addUsuario(usuarioData) {
         try {
             const nuevoUsuario = await UsuariosApi.addDBUsuario(usuarioData);

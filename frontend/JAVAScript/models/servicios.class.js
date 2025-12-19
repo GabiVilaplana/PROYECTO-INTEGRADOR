@@ -5,7 +5,7 @@ export default class Servicios {
     constructor() {
         this.data = [];
     }
-
+//UJH
     async populate() {
         try {
             const servicios = await ServiciosApi.getDBServicios();

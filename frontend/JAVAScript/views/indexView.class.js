@@ -1,6 +1,6 @@
 export default class View {
     constructor() {
-        //this.contenedorCategorias = document.querySelector(".courses.carousel-categorias");
+        //this.contenedorCategorias = document.querySelector(".courses.carousel-categorias")
 
         this.contenedordatosCategorias = document.getElementById("datosCategoria");
         this.contenedorCardsCategoria = document.getElementById("contenedorcardsCategoria");
@@ -43,7 +43,6 @@ export default class View {
         const imagen = prod.IDImagen === ""
             ? `image${prod.IDCategoria}.jpg`
             : prod.IDImagen;
-
         // Revisamos si ya existe un carousel para esta categoría
         let carousel = this.contenedorServicios.querySelector(`#carousel-${categoria.IDCategoria}`);
         if (!carousel) {

@@ -8,7 +8,7 @@ export default class Usuario {
         this.Password = dato.Password;
         this.Valoracion = dato.Valoracion;
     }
-
+//UJH
 
     toString() {
         return `Usuario{

@@ -13,7 +13,7 @@ export default class Servicio {
 
     }
 
-
+//UJH
     toString() {
         const fecha = this.FechaCreacion instanceof Date
             ? this.FechaCreacion.toLocaleDateString('es-ES')
