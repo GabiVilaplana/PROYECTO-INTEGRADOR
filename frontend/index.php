@@ -9,7 +9,8 @@ if ($user_id) {
   $usuarios = $data['Usuarios'] ?? [];
 
   foreach ($usuarios as $u) {
-    // Comparació estricta de strings (IDUsuario és string!)
+    // Comparació estricta de strings (IDUsuario és string!
+
     if (isset($u['IDUsuario']) && $u['IDUsuario'] === $user_id) {
       $usuario = $u;
 
