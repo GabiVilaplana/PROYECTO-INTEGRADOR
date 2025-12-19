@@ -159,6 +159,7 @@ header .icono-perfil {
   display: inline-block;
   vertical-align: middle;
   margin-left: 10px;
+  padding-right: 10px;
 }
 header .profile-icon {
   width: 35px;
