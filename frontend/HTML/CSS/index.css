@@ -628,12 +628,14 @@ button {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+    position: relative;
+    min-height: 360px;
   }
   .course-categoria .course,
   .course-categoria .course-trasera,
   .course-completo .course,
   .course-completo .course-trasera {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -648,32 +650,14 @@ button {
     object-fit: cover;
     display: block;
   }
-  .course-categoria .course h3,
-  .course-categoria .course-trasera h3,
-  .course-categoria .course-trasera h4,
-  .course-completo .course h3,
-  .course-completo .course-trasera h3,
-  .course-completo .course-trasera h4 {
-    font-size: 1rem;
-  }
-  .course-categoria .course p,
-  .course-categoria .course-trasera p,
-  .course-completo .course p,
-  .course-completo .course-trasera p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin: 0 10px 10px;
-  }
-  .course-categoria .course-trasera,
-  .course-completo .course-trasera {
-    padding: 5px;
-  }
 }
 @media (max-width: 480px) {
   .course-categoria,
   .course-completo {
     width: 100%;
     height: auto;
+    position: relative;
+    min-height: 280px;
   }
   .course-categoria .course,
   .course-categoria .course-trasera,
@@ -681,6 +665,7 @@ button {
   .course-completo .course-trasera {
     width: 100%;
     height: auto;
+    position: a;
   }
   .course-categoria .course img,
   .course-categoria .course-trasera img,
@@ -739,6 +724,7 @@ button {
   padding: 20px;
   overflow: hidden;
   text-align: center;
+  height: 100%;
 }
 .container .proximamente {
   float: right;
@@ -764,6 +750,7 @@ button {
   display: block;
   text-align: left;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 .container .carousel-wrapper .carousel-btn {
   position: absolute;
@@ -799,7 +786,7 @@ button {
   gap: 20px;
   overflow: hidden;
   scroll-behavior: smooth;
-  padding: 20px 0;
+  margin-left: 20px;
 }
 .container .carousel-track .course-completo {
   flex: 0 0 calc(16.6666666667% - 16.6666666667px);
@@ -809,59 +796,6 @@ button {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .container {
-    vertical-align: center;
-  }
-  .container .proximamente {
-    float: left;
-    width: 92%;
-    margin-right: 5%;
-  }
-  .container .carousel-track {
-    padding-left: 10px;
-  }
-  .container .carousel-track .course-completo {
-    flex: 0 0 calc(25% - 15px);
-    max-width: calc(25% - 15px);
-  }
-  .container .carousel-track .course-categoria {
-    width: 350px;
-  }
-  .container .carousel-track .course-categoria .course-categoria img {
-    width: 100%;
-    height: 50%;
-  }
-  .container .carousel-track .course-categoria .course-categoria:focus-within {
-    outline: 3px solid #007bff;
-    outline-offset: 4px;
-  }
-  .container .carousel-wrapper {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .container .carousel-wrapper .carousel-btn {
-    font-size: 1.3rem;
-    padding: 5px 8px;
-    margin-right: 5%;
-  }
-  .container .carousel-wrapper .carousel-btn.right {
-    right: 5%;
-  }
-  .container .carousel-wrapper .carousel-btn.left {
-    right: 12%;
-  }
-  .course-completo {
-    min-width: 200px;
-  }
-}
-@media (max-width: 480px) {
-  .container .proximamente {
-    float: left;
-    vertical-align: center;
-    width: 90%;
-  }
-}
 /*
 footer {
   background-color: $color-footer;

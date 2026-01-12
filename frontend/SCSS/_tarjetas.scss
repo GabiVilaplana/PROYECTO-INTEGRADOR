@@ -209,16 +209,19 @@
 }
 
 /* MEDIA QUERIES: RESPONSIVE */
+
 @media (max-width: 1297px) {
   .course-categoria,
   .course-completo {
     width: 100%;
     height: auto;
     margin-bottom: $margenOPaddingDe10;
+    position: relative;
+    min-height: 360px; 
 
     .course,
     .course-trasera {
-      position: relative;
+      position: absolute;
       width: 100%;
       height: auto;
       overflow: hidden;
@@ -232,23 +235,6 @@
       object-fit: cover;
       display: block;
     }
-
-    .course h3,
-    .course-trasera h3,
-    .course-trasera h4 {
-      font-size: 1rem;
-    }
-
-    .course p,
-    .course-trasera p {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      margin: 0 10px 10px;
-    }
-
-    .course-trasera {
-      padding: 5px;
-    }
   }
 }
 
@@ -257,11 +243,14 @@
   .course-completo {
     width: 100%;
     height: auto;
+    position: relative;
+    min-height: 280px;
 
     .course,
     .course-trasera {
       width: 100%;
       height: auto;
+      position: a;
 
       img {
         width: 100%;

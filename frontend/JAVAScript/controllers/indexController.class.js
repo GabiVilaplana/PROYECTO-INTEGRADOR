@@ -41,7 +41,7 @@ export default class Controller {
                     ));
 
 
-            this.view.sliceCards();
+            //this.view.sliceCards();
             this.view.bindProfileDropdown(() => {
                 this.view.renderToggleDropdown();
             });
