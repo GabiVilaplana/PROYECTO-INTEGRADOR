@@ -1,0 +1,81 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+  height: 60px;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  height: calc(100vh - 60px); /* Altura total menos el header */
+}
+
+/* Columna izquierda (fija) */
+.left {
+  width: 300px;
+  padding: 20px;
+  background-color: #fafafa;
+  border-right: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Imagen perfil */
+.profile-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Botón comprar */
+.btn-comprar {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Columna derecha (scrollable) */
+.right {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* Portafolio */
+.portfolio-item {
+  height: 150px;
+  background-color: #ddd;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Títulos */
+h2 {
+  margin: 15px 0 10px;
+}
