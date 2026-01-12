@@ -7,6 +7,7 @@
 @use "mapas" as *;
 @use "botones" as *;
 
+/* CONTENEDOR CARDS CATEGORIA */
 #contenedorcardsCategoria {
   text-align: left; // alinea las cards
   font-size: 0; // elimina espacio entre inline-block
@@ -17,7 +18,7 @@
   vertical-align: top;
   width: 23%; // 4 cards por fila en desktop
   margin: 0.5%; // separación entre cards
-  font-size: 16px; // restaura tamaño de letr
+  font-size: 16px; // restaura tamaño de letra
 
   .course {
     padding: $margenOPaddingDe12;
@@ -27,40 +28,41 @@
 // Tablet (2 cards por fila)
 @media (max-width: 768px) {
   #contenedorcardsCategoria .card {
-    width: 48%; // 2 cards por fila
-    margin: 1%; // separación
+    width: 48%;
+    margin: 1%;
   }
 }
 
 // Móvil (1 card por fila)
 @media (max-width: 480px) {
   #contenedorcardsCategoria .card {
-    width: 98%; // 1 card por fila
-    margin: 1% auto; // centrado horizontal
+    width: 98%;
+    margin: 1% auto;
     display: block;
   }
 }
 
+/* COURSE CATEGORIA ESTANDAR */
 .course-categoria {
   width: $tamanyoCurso;
   height: $tamanyoHeightCurso;
-  position: $posicionRelativa;
-  vertical-align: $alineacionVertical-Top;
+  position: relative;
+  vertical-align: top;
 
   .course {
     width: $widthmaximo;
     height: $heightmaximo;
     border-radius: $border-radius;
-    position: $posicionAbsoluta;
-    top: $sinDimensiones;
-    left: $sinDimensiones;
-    box-sizing: $tamanyo-caja;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     background-color: $color-background-page-claro;
-    overflow: $oculto;
+    overflow: hidden;
 
     h3 {
-      margin: $margenOPaddingDe10 $sinDimensiones;
+      margin: $margenOPaddingDe10 0;
     }
 
     p {
@@ -68,16 +70,16 @@
       line-height: 1.4;
       color: $color-grisLetras;
       margin-bottom: $margenOPaddingDe10;
-      overflow-wrap: $noRomperPalabra;
+      overflow-wrap: break-word;
     }
   }
 
   .course-footer {
     padding-top: $margenOPaddingDe10;
-    overflow: $oculto;
+    overflow: hidden;
 
     .price {
-      float: $izquierda;
+      float: left;
       margin-left: $margenOPaddingDe5;
       font-weight: $texto-Oscuro;
       color: $color-grisLetras;
@@ -89,6 +91,10 @@
       height: $icon-pequenyo-height;
     }
   }
+  &:focus-within {
+    outline: 3px solid #007bff;
+    outline-offset: 4px;
+  }
 
   @each $categoria, $color in $categories {
     &.category-#{$categoria} {
@@ -99,59 +105,62 @@
   }
 }
 
+/* COURSE COMPLETO (FLIP) */
 .course-completo {
   width: $tamanyoCurso;
   height: $tamanyoHeightCurso;
   perspective: $tamanyoPredefinido;
-  position: $posicionRelativa;
-  vertical-align: $alineacionVertical-Top;
+  position: relative;
+  vertical-align: top;
 
   .course,
   .course-trasera {
     width: $widthmaximo;
     height: $heightmaximo;
     border-radius: $border-radius-grande;
-    backface-visibility: $oculto;
+    backface-visibility: hidden;
     transition: transform 0.8s;
-    position: $posicionAbsoluta;
-    top: $sinDimensiones;
-    left: $sinDimensiones;
-    box-sizing: $tamanyo-caja;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     background-color: $color-background-page-claro;
-    overflow: $oculto;
+    overflow: hidden;
 
     h3,
     h4 {
-      margin: $margenOPaddingDe10 $sinDimensiones;
+      margin: $margenOPaddingDe10 0;
     }
   }
 
   .course {
     z-index: 2;
-    transform: $rotacionY0;
+    transform: rotateY(0deg);
+
     p {
       font-size: $letraTamanyo;
       line-height: 1.4;
       color: $color-grisLetras;
       margin-bottom: $margenOPaddingDe10;
-      overflow-wrap: $noRomperPalabra;
+      overflow-wrap: break-word;
     }
   }
 
   .course-trasera {
     z-index: 1;
-    transform: $rotaconY180;
+    transform: rotateY(180deg);
     color: $color-blanco;
-    text-align: $izquierda;
+    text-align: left;
+    padding: 5%;
 
     p {
-      margin-left: 5%;
       font-size: $letraTamanyo;
       line-height: 1.4;
       margin-bottom: $margenOPaddingDe10;
-      overflow-wrap: $noRomperPalabra;
+      overflow-wrap: break-word;
     }
+
     button {
       margin-right: 5%;
     }
@@ -165,21 +174,28 @@
     }
   }
 
-  &:hover {
-    .course {
-      transform: $rotaconY180;
-    }
-    .course-trasera {
-      transform: $rotacionY0;
-    }
+  /* Hover y TAB */
+  &:hover .course,
+  &:focus-within .course {
+    transform: rotateY(180deg);
+  }
+
+  &:hover .course-trasera,
+  &:focus-within .course-trasera {
+    transform: rotateY(0deg);
+  }
+
+  &:focus-within {
+    outline: 3px solid #007bff;
+    outline-offset: 4px;
   }
 
   .course-footer {
     padding-top: $margenOPaddingDe10;
-    overflow: $oculto;
+    overflow: hidden;
 
     .price {
-      float: $izquierda;
+      float: left;
       margin-left: $margenOPaddingDe5;
       font-weight: $texto-Oscuro;
       color: $color-grisLetras;
@@ -192,6 +208,7 @@
   }
 }
 
+/* MEDIA QUERIES: RESPONSIVE */
 @media (max-width: 1297px) {
   .course-categoria,
   .course-completo {
@@ -199,34 +216,38 @@
     height: auto;
     margin-bottom: $margenOPaddingDe10;
 
-    .course {
+    .course,
+    .course-trasera {
       position: relative;
       width: 100%;
       height: auto;
       overflow: hidden;
-      border-radius: $border-radius;
+      border-radius: 8px;
     }
 
-    .course img {
+    .course img,
+    .course-trasera img {
       width: 100%;
       height: auto;
       object-fit: cover;
       display: block;
     }
 
-    .course h3 {
+    .course h3,
+    .course-trasera h3,
+    .course-trasera h4 {
       font-size: 1rem;
-      margin: $margenOPaddingDe10 0;
     }
 
-    .course p {
+    .course p,
+    .course-trasera p {
       font-size: 0.9rem;
       line-height: 1.4;
-      margin: 0 $margenOPaddingDe10 $margenOPaddingDe10;
+      margin: 0 10px 10px;
     }
 
     .course-trasera {
-      padding: $margenOPaddingDe5;
+      padding: 5px;
     }
   }
 }
@@ -237,9 +258,11 @@
     width: 100%;
     height: auto;
 
-    .course {
+    .course,
+    .course-trasera {
       width: 100%;
       height: auto;
+
       img {
         width: 100%;
         height: auto;
@@ -257,16 +280,18 @@
 
     .course-trasera {
       padding: 4px;
+
       h4 {
-        font-size: $letraTamanyo;
+        font-size: 0.65rem;
       }
+
       p {
-        font-size: $letraTamanyo;
-      }
-      button {
-        padding-left: 2%;
         font-size: 0.55rem;
-        width: 90%;
+      }
+
+      button {
+        font-size: 0.55rem;
+        width: 100%;
       }
     }
   }

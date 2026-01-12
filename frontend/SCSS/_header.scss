@@ -26,7 +26,12 @@ header {
   }
   .right-header {
     float: $derecha;
-    height: $heightmaximo;
+    //height: $heightmaximo;
+    margin: 10px;
+    &:focus-within {
+      outline: 3px solid #007bff;
+      outline-offset: 4px;
+    }
   }
 
   .texto-servicios {
@@ -45,6 +50,8 @@ header {
     vertical-align: $alineacionVertical;
     margin-left: $btn-padding-rightyleft;
     padding-right: 10px;
+
+
   }
 
   .profile-icon {

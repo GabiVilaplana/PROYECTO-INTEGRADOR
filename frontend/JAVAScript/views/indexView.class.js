@@ -5,11 +5,15 @@ export default class View {
         this.contenedordatosCategorias = document.getElementById("datosCategoria");
         this.contenedorCardsCategoria = document.getElementById("contenedorcardsCategoria");
         this.contenedorServicios = document.getElementById("contenedorCategoria");
+        const firstCard = this.contenedordatosCategorias.querySelector('.course-categoria');
+        this.cardWidth = firstCard ? firstCard.offsetWidth : 300; // fallback
+
 
         this.btnLeft = document.getElementById("btn-left");
         this.btnRight = document.getElementById("btn-right");
         this.dropdown = document.getElementById('user-dropdown');
         this.profileIcon = document.querySelector('.icono-perfil');
+        this.rightHeader = document.querySelector('.right-header')
     }
 
 
@@ -22,7 +26,7 @@ export default class View {
 
 
         const html = `
-        <div class="course-categoria" data-id="${prod.IDCategoria}">
+        <div class="course-categoria" data-id="${prod.IDCategoria}"  tabindex="0">
             <div class="course">
                 <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
                 <h3>${prod.Nombre}</h3>
@@ -52,8 +56,8 @@ export default class View {
             carousel.id = `carousel-${categoria.IDCategoria}`;
             carousel.innerHTML = `
             <h2>${categoria.Nombre}</h2>
-            <button class="carousel-btn left">‹</button>
-            <button class="carousel-btn right">›</button>
+            <button class="carousel-btn left"><</button>
+            <button class="carousel-btn right">></button>
             <section class="courses carousel-track"></section>
         `;
             this.contenedorServicios.appendChild(carousel);
@@ -94,6 +98,8 @@ export default class View {
                 <p>Email: ${usuario.Correo || 'N/A'}</p>
 
                 <button class="btn-trasera">Contactar</button>
+                <button class="btn-trasera-Comprar">Comprar</button>
+
             </div>
         </div>
     `;
@@ -127,13 +133,6 @@ export default class View {
                         ${usuario.Valoracion || '0,0'} /5
                     </span>
                 </div>
-            </div>
-            <div class="course-trasera">
-                <h4>Información del Usuario</h4>
-                <p>Nombre: ${usuario.Nombre}  ${usuario.Apellidos}</p>
-                <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
-                <p>Email: ${usuario.Correo || 'N/A'}</p>
-                <button class="btn-trasera">Contactar</button>
             </div>
         </div>
     `;
@@ -193,13 +192,14 @@ export default class View {
             return;
         }
         this.btnRight.addEventListener("click", () => {
-            this.contenedordatosCategorias.scrollBy({ left: 300, behavior: "smooth" });
+            this.contenedordatosCategorias.scrollBy({ left: this.cardWidth, behavior: "smooth" });
         });
 
         this.btnLeft.addEventListener("click", () => {
-            this.contenedordatosCategorias.scrollBy({ left: -300, behavior: "smooth" });
+            this.contenedordatosCategorias.scrollBy({ left: -this.cardWidth, behavior: "smooth" });
         });
     }
+
 
 
     renderToggleDropdown() {
@@ -241,6 +241,13 @@ export default class View {
             event.stopPropagation();
             handler();
         });
+
+        this.rightHeader.addEventListener("keydown", (event) => {
+        if (event.key === " " || event.key === "Enter") {
+            event.preventDefault(); // evita scroll en el espacio
+            handler();
+        }
+    });
     }
 
 

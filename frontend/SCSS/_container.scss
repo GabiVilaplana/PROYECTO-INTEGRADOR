@@ -73,6 +73,16 @@
       top: 5%;
       right: 10%; // separación del botón derecho
     }
+    .carousel-btn:focus,
+     .carousel-btn:focus-visible {
+      outline: 3px solid #007bff;
+      outline-offset: 4px;
+    }
+    .carousel-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 3px #007bff55; /* borde azul sutil en hover */
+    }
+
   }
 
   .carousel-track {
@@ -106,16 +116,20 @@
       padding-left: 10px;
       .course-completo {
         flex: 0 0 calc((100% / 4) - (20px * 3 / 4)); // 4 cards visibles, descontando gaps
-        max-width: calc((100% / 4) - (5px * 3 / 4));
+        max-width: calc((100% / 4) - (20px * 3 / 4));
       }
     }
 
     .carousel-track .course-categoria {
-      width: 400px;
+      width: 350px;
       .course-categoria {
         img {
           width: 100%;
           height: 50%;
+        }
+        &:focus-within {
+          outline: 3px solid #007bff; // borde azul al hacer TAB
+          outline-offset: 4px;
         }
       }
     }
@@ -135,6 +149,7 @@
       .carousel-btn.left {
         right: 12%;
       }
+     
     }
   }
   .course-completo {
@@ -149,7 +164,5 @@
       vertical-align: center;
       width: 90%;
     }
-
-    
   }
 }

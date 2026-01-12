@@ -61,8 +61,14 @@ img {
   padding: 15px 0;
 }
 
+.user-dropdown:focus-within,
 .user-dropdown.active {
   display: block;
+}
+
+.user-dropdown:focus {
+  outline: 3px solid #007bff;
+  outline-offset: 4px;
 }
 
 .dropdown-menu {
@@ -143,7 +149,11 @@ header .logo-icon {
 }
 header .right-header {
   float: right;
-  height: 100%;
+  margin: 10px;
+}
+header .right-header:focus-within {
+  outline: 3px solid #007bff;
+  outline-offset: 4px;
 }
 header .texto-servicios {
   color: #333;
@@ -253,6 +263,22 @@ button {
   background-color: #0056b3;
 }
 .btn-trasera {
+  margin-top: 10px;
+  background-color: #0056b3;
+  float: right;
+}
+
+.btn-trasera-Comprar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.btn-trasera-Comprar:hover {
+  background-color: #0056b3;
+}
+.btn-trasera-Comprar {
   margin-top: 10px;
   float: right;
 }
@@ -395,6 +421,7 @@ button {
   border: 0;
 }
 
+/* CONTENEDOR CARDS CATEGORIA */
 #contenedorcardsCategoria {
   text-align: left;
   font-size: 0;
@@ -424,6 +451,7 @@ button {
     display: block;
   }
 }
+/* COURSE CATEGORIA ESTANDAR */
 .course-categoria {
   width: 300px;
   height: 335px;
@@ -467,6 +495,10 @@ button {
   width: 12px;
   height: 12px;
 }
+.course-categoria:focus-within {
+  outline: 3px solid #007bff;
+  outline-offset: 4px;
+}
 .course-categoria.category-diseñador .course {
   background-color: #6a5acd;
 }
@@ -486,6 +518,7 @@ button {
   background-color: #1a4c6e;
 }
 
+/* COURSE COMPLETO (FLIP) */
 .course-completo {
   width: 300px;
   height: 335px;
@@ -530,9 +563,9 @@ button {
   transform: rotateY(180deg);
   color: white;
   text-align: left;
+  padding: 5%;
 }
 .course-completo .course-trasera p {
-  margin-left: 5%;
   font-size: 14px;
   line-height: 1.4;
   margin-bottom: 10px;
@@ -559,11 +592,18 @@ button {
 .course-completo.category-default .course-trasera {
   background-color: #1a4c6e;
 }
-.course-completo:hover .course {
+.course-completo {
+  /* Hover y TAB */
+}
+.course-completo:hover .course, .course-completo:focus-within .course {
   transform: rotateY(180deg);
 }
-.course-completo:hover .course-trasera {
+.course-completo:hover .course-trasera, .course-completo:focus-within .course-trasera {
   transform: rotateY(0deg);
+}
+.course-completo:focus-within {
+  outline: 3px solid #007bff;
+  outline-offset: 4px;
 }
 .course-completo .course-footer {
   padding-top: 10px;
@@ -581,6 +621,7 @@ button {
   height: 12px;
 }
 
+/* MEDIA QUERIES: RESPONSIVE */
 @media (max-width: 1297px) {
   .course-categoria,
   .course-completo {
@@ -589,7 +630,9 @@ button {
     margin-bottom: 10px;
   }
   .course-categoria .course,
-  .course-completo .course {
+  .course-categoria .course-trasera,
+  .course-completo .course,
+  .course-completo .course-trasera {
     position: relative;
     width: 100%;
     height: auto;
@@ -597,19 +640,26 @@ button {
     border-radius: 8px;
   }
   .course-categoria .course img,
-  .course-completo .course img {
+  .course-categoria .course-trasera img,
+  .course-completo .course img,
+  .course-completo .course-trasera img {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
   }
   .course-categoria .course h3,
-  .course-completo .course h3 {
+  .course-categoria .course-trasera h3,
+  .course-categoria .course-trasera h4,
+  .course-completo .course h3,
+  .course-completo .course-trasera h3,
+  .course-completo .course-trasera h4 {
     font-size: 1rem;
-    margin: 10px 0;
   }
   .course-categoria .course p,
-  .course-completo .course p {
+  .course-categoria .course-trasera p,
+  .course-completo .course p,
+  .course-completo .course-trasera p {
     font-size: 0.9rem;
     line-height: 1.4;
     margin: 0 10px 10px;
@@ -626,23 +676,33 @@ button {
     height: auto;
   }
   .course-categoria .course,
-  .course-completo .course {
+  .course-categoria .course-trasera,
+  .course-completo .course,
+  .course-completo .course-trasera {
     width: 100%;
     height: auto;
   }
   .course-categoria .course img,
-  .course-completo .course img {
+  .course-categoria .course-trasera img,
+  .course-completo .course img,
+  .course-completo .course-trasera img {
     width: 100%;
     height: auto;
   }
   .course-categoria .course h3,
   .course-categoria .course h4,
+  .course-categoria .course-trasera h3,
+  .course-categoria .course-trasera h4,
   .course-completo .course h3,
-  .course-completo .course h4 {
+  .course-completo .course h4,
+  .course-completo .course-trasera h3,
+  .course-completo .course-trasera h4 {
     font-size: 16px;
   }
   .course-categoria .course p,
-  .course-completo .course p {
+  .course-categoria .course-trasera p,
+  .course-completo .course p,
+  .course-completo .course-trasera p {
     font-size: 0.8rem;
   }
   .course-categoria .course-trasera,
@@ -651,17 +711,16 @@ button {
   }
   .course-categoria .course-trasera h4,
   .course-completo .course-trasera h4 {
-    font-size: 14px;
+    font-size: 0.65rem;
   }
   .course-categoria .course-trasera p,
   .course-completo .course-trasera p {
-    font-size: 14px;
+    font-size: 0.55rem;
   }
   .course-categoria .course-trasera button,
   .course-completo .course-trasera button {
-    padding-left: 2%;
     font-size: 0.55rem;
-    width: 90%;
+    width: 100%;
   }
 }
 .container {
@@ -726,6 +785,15 @@ button {
   top: 5%;
   right: 10%;
 }
+.container .carousel-wrapper .carousel-btn:focus,
+.container .carousel-wrapper .carousel-btn:focus-visible {
+  outline: 3px solid #007bff;
+  outline-offset: 4px;
+}
+.container .carousel-wrapper .carousel-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3333333333); /* borde azul sutil en hover */
+}
 .container .carousel-track {
   display: flex;
   gap: 20px;
@@ -755,14 +823,18 @@ button {
   }
   .container .carousel-track .course-completo {
     flex: 0 0 calc(25% - 15px);
-    max-width: calc(25% - 3.75px);
+    max-width: calc(25% - 15px);
   }
   .container .carousel-track .course-categoria {
-    width: 400px;
+    width: 350px;
   }
   .container .carousel-track .course-categoria .course-categoria img {
     width: 100%;
     height: 50%;
+  }
+  .container .carousel-track .course-categoria .course-categoria:focus-within {
+    outline: 3px solid #007bff;
+    outline-offset: 4px;
   }
   .container .carousel-wrapper {
     width: 100%;

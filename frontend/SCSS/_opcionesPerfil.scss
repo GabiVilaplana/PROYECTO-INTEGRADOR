@@ -13,9 +13,16 @@
     padding: 15px 0;
 }
 
+.user-dropdown:focus-within,
 .user-dropdown.active {
-    display: block;
+  display: block;
 }
+
+.user-dropdown:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 4px;
+}
+
 
 .dropdown-menu {
     list-style: none;

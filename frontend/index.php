@@ -47,10 +47,10 @@ if ($user_id && !$usuario) {
       <img src="./IMG/logo.png" alt="TaskLink Logo" class="logo-icon">
     </div>
 
-    <div class="right-header">
+    <div class="right-header" tabindex="1">
       <?php if ($usuario): ?>
         <span class="texto-servicios"><?= htmlspecialchars($usuario['Nombre']) ?></span>
-        <div class="icono-perfil">
+        <div class="icono-perfil" >
           <img src="./IMG/imagenPerfilRedonda.png" class="profile-icon">
         </div>
       <?php else: ?>
@@ -60,7 +60,7 @@ if ($user_id && !$usuario) {
     </div>
 
     <div id="user-dropdown" class="user-dropdown">
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" >
         <h2>Mi cuenta</h2>
         <li class="divider">
           <hr>

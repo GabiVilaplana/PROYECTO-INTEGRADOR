@@ -13,3 +13,6 @@ button {
 .btn-trasera {
   @include btn-disenyos("btn-trasera");
 }
+.btn-trasera-Comprar {
+  @include btn-disenyos("btn-trasera-Comprar");
+}

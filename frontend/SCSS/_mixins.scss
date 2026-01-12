@@ -27,6 +27,10 @@
       $sinDimensiones;
   } @else if $class == "btn-trasera" {
     margin-top: $margenOPaddingDe10;
+    background-color: $color-btn-hover;
+    float: $derecha;
+  }@else if $class == "btn-trasera-Comprar"{
+    margin-top: $margenOPaddingDe10;
     float: $derecha;
   } @else {
     float: $izquierda;
