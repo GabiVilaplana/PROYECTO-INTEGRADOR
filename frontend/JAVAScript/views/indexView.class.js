@@ -6,7 +6,8 @@ export default class View {
         this.contenedorCardsCategoria = document.getElementById("contenedorcardsCategoria");
         this.contenedorServicios = document.getElementById("contenedorCategoria");
         const firstCard = this.contenedordatosCategorias.querySelector('.course-categoria');
-        this.cardWidth = firstCard ? firstCard.offsetWidth : 300; // fallback
+        this.cardWidth = firstCard ? firstCard.offsetWidth : 300;
+
 
 
         this.btnLeft = document.getElementById("btn-left");
@@ -97,12 +98,26 @@ export default class View {
                 <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
                 <p>Email: ${usuario.Correo || 'N/A'}</p>
 
-                <button class="btn-trasera">Contactar</button>
+                <button class="btn-trasera">Consultar Información</button>
                 <button class="btn-trasera-Comprar">Comprar</button>
 
             </div>
         </div>
     `;
+        // Añadir evento al botón de comprar dentro de cada card
+        carousel.querySelector(".carousel-track").querySelectorAll(".btn-trasera-Comprar")
+            .forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    // Encontrar la card a la que pertenece este botón
+                    const card = e.target.closest(".course-completo");
+                    if (!card) return;
+
+                    const idProducto = card.querySelector(".course").dataset.id;
+                    // Abrir producto.php pasando el ID como parámetro
+                    window.open(`../backend/auth/producto.php?id=${idProducto}`, "_blank");
+                });
+            });
+
 
         // Insertar la card dentro del track del carousel de esta categoría
         carousel.querySelector(".carousel-track").insertAdjacentHTML("beforeend", html);
@@ -243,11 +258,11 @@ export default class View {
         });
 
         this.rightHeader.addEventListener("keydown", (event) => {
-        if (event.key === " " || event.key === "Enter") {
-            event.preventDefault(); // evita scroll en el espacio
-            handler();
-        }
-    });
+            if (event.key === " " || event.key === "Enter") {
+                event.preventDefault(); // evita scroll en el espacio
+                handler();
+            }
+        });
     }
 
 
