@@ -57,9 +57,11 @@
     top: 0;
     left: 0;
     box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: $color-background-page-claro;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s ease;
 
     h3 {
       margin: $margenOPaddingDe10 0;
@@ -72,6 +74,11 @@
       margin-bottom: $margenOPaddingDe10;
       overflow-wrap: break-word;
     }
+  }
+
+  &:hover .course {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
+    transform: translateY(-10px) scale(1.02);
   }
 
   .course-footer {
@@ -119,12 +126,12 @@
     height: $heightmaximo;
     border-radius: $border-radius-grande;
     backface-visibility: hidden;
-    transition: transform 0.8s;
+    transition: transform 0.8s, box-shadow 0.4s ease;
     position: absolute;
     top: 0;
     left: 0;
     box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: $color-background-page-claro;
     overflow: hidden;
 
@@ -178,11 +185,13 @@
   &:hover .course,
   &:focus-within .course {
     transform: rotateY(180deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   }
 
   &:hover .course-trasera,
   &:focus-within .course-trasera {
     transform: rotateY(0deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   }
 
   &:focus-within {
@@ -205,6 +214,34 @@
       width: $icon-pequenyo-width;
       height: $icon-pequenyo-height;
     }
+  }
+}
+
+.btn-narrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 10;
+  transition: transform 0.2s, background 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  &.activo {
+    color: #007bff; // Color azul si está hablando
   }
 }
 
