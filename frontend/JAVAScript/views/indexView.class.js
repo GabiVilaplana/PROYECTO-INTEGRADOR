@@ -17,8 +17,11 @@ export default class View {
             ? `${numeroServicios} servicios ya disponibles`
             : "Se activarán pronto";
 
+        const textoLectura = `Categoría: ${prod.Nombre}. ${textoServicios}.`;
+
         const html = `
       <div class="course-categoria" data-id="${prod.IDCategoria}" tabindex="0">
+        <button class="btn-narrar" aria-label="Escuchar" data-texto="${textoLectura}">🔊</button>
         <div class="course">
           <img src="./IMG/image${prod.IDCategoria}.jpg" alt="${prod.Nombre}" />
           <h3>${prod.Nombre}</h3>
@@ -74,8 +77,11 @@ export default class View {
         const usuario = usuarios.find(u => u.IDUsuario === prod.IDUsuarioCreacion) || {};
         const categoryClass = `category-${categoria.Nombre.toLowerCase().replace(/\s+/g, '-')}`;
 
+        const textoLectura = `Servicio de ${prod.Nombre}. Descripción: ${prod.Descripcion}. Precio: ${prod.Precio} euros.`;
+
         const html = `
       <div class="course-completo ${categoryClass}">
+        <button class="btn-narrar" aria-label="Escuchar" data-texto="${textoLectura}">🔊</button>
         <div class="course" data-id="${prod.IDServicio}">
           <img src="./IMG/${imagen}" alt="${prod.Nombre}" />
           <h3>${prod.Nombre}</h3>
@@ -119,8 +125,11 @@ export default class View {
 
         const imagen = !prod.IDImagen || prod.IDImagen === "" ? `image${prod.IDCategoria}.jpg` : prod.IDImagen;
 
+        const textoLectura = `Servicio de ${prod.Nombre}. ${prod.Descripcion}.`;
+
         const html = `
       <div class="course-completo ${categoryClass}">
+        <button class="btn-narrar" aria-label="Escuchar" data-texto="${textoLectura}">🔊</button>
         <div class="course" data-id="${prod.IDServicio}">
           <img src="./IMG/${imagen}" alt="${prod.Nombre}" />
           <h3>${prod.Nombre}</h3>
@@ -154,6 +163,9 @@ export default class View {
     renderFilterCategorias(callback) {
         if (!this.contenedordatosCategorias) return;
         this.contenedordatosCategorias.addEventListener("click", (e) => {
+
+            if (e.target.closest(".btn-narrar")) return; // EVITAR PROPAGACIÓN DE EVENTOS
+
             const btnCategorias = e.target.closest(".course-categoria");
             if (!btnCategorias) return;
             const id = btnCategorias.dataset.id;

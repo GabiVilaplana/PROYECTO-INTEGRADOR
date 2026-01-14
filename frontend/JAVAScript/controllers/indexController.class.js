@@ -46,10 +46,45 @@ export default class Controller {
                 this.view.renderToggleDropdown();
             });
 
+            this.setupAccessibility();
+
         } catch (error) {
             this.view.mostrarErrores("Error al cargar la infromación inicial: " + error);
         }
 
+    }
+
+    setupAccessibility() {
+        // Escuchamos clicks en los contenedores principales para detectar el botón de altavoz
+        const contenedores = [
+            this.view.contenedordatosCategorias,
+            this.view.contenedorCardsCategoria,
+            this.view.contenedorServicios
+        ];
+
+        contenedores.forEach(contenedor => {
+            if (!contenedor) return;
+            contenedor.addEventListener("click", (e) => {
+                const btn = e.target.closest(".btn-narrar");
+                if (btn) {
+                    e.stopPropagation(); // EVITAR PROPAGACIÓN
+                    btn.blur(); // Quita el foco para que desaparezca el borde azul tras el clic
+                    const texto = btn.dataset.texto;
+                    this.narrar(texto);
+                }
+            });
+        });
+    }
+
+    narrar(texto) {
+        // Cancelar cualquier lectura previa
+        window.speechSynthesis.cancel();
+
+        const mensaje = new SpeechSynthesisUtterance(texto);
+        mensaje.lang = 'es-ES'; // Idioma
+        mensaje.rate = 0.9;     // Velocidad ligeramente más lenta para mejor claridad
+        
+        window.speechSynthesis.speak(mensaje);
     }
 
     async handlerFilterCategorias(IDCategoria) {

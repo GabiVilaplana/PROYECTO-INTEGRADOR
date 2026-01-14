@@ -9,23 +9,23 @@
 
 /* CONTENEDOR CARDS CATEGORIA */
 #contenedorcardsCategoria {
-  text-align: left; // alinea las cards
-  font-size: 0; // elimina espacio entre inline-block
+  text-align: left;
+  font-size: 0;
 }
 
 #contenedorcardsCategoria .card {
   display: inline-block;
   vertical-align: top;
-  width: 23%; // 4 cards por fila en desktop
-  margin: 0.5%; // separación entre cards
-  font-size: 16px; // restaura tamaño de letra
+  width: 23%;
+  margin: 0.5%;
+  font-size: 16px;
 
   .course {
     padding: $margenOPaddingDe12;
   }
 }
 
-// Tablet (2 cards por fila)
+// Tablet
 @media (max-width: 768px) {
   #contenedorcardsCategoria .card {
     width: 48%;
@@ -33,7 +33,7 @@
   }
 }
 
-// Móvil (1 card por fila)
+// Móvil
 @media (max-width: 480px) {
   #contenedorcardsCategoria .card {
     width: 98%;
@@ -48,6 +48,7 @@
   height: $tamanyoHeightCurso;
   position: relative;
   vertical-align: top;
+  outline: none; // Evita el recuadro por defecto al hacer clic
 
   .course {
     width: $widthmaximo;
@@ -57,10 +58,9 @@
     top: 0;
     left: 0;
     box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: $color-background-page-claro;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s ease;
 
     h3 {
@@ -76,9 +76,17 @@
     }
   }
 
+  // Efecto visual solo al pasar el ratón
   &:hover .course {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
     transform: translateY(-10px) scale(1.02);
+  }
+
+  // ACCESIBILIDAD: El cuadro azul solo aparece con el teclado (TAB)
+  &:focus-visible {
+    outline: 3px solid #007bff;
+    outline-offset: 4px;
+    border-radius: $border-radius;
   }
 
   .course-footer {
@@ -98,10 +106,6 @@
       height: $icon-pequenyo-height;
     }
   }
-  &:focus-within {
-    outline: 3px solid #007bff;
-    outline-offset: 4px;
-  }
 
   @each $categoria, $color in $categories {
     &.category-#{$categoria} {
@@ -119,6 +123,7 @@
   perspective: $tamanyoPredefinido;
   position: relative;
   vertical-align: top;
+  outline: none;
 
   .course,
   .course-trasera {
@@ -135,8 +140,7 @@
     background-color: $color-background-page-claro;
     overflow: hidden;
 
-    h3,
-    h4 {
+    h3, h4 {
       margin: $margenOPaddingDe10 0;
     }
   }
@@ -181,22 +185,25 @@
     }
   }
 
-  /* Hover y TAB */
-  &:hover .course,
-  &:focus-within .course {
+  /* Hover y Giro */
+  &:hover .course {
     transform: rotateY(180deg);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   }
 
-  &:hover .course-trasera,
-  &:focus-within .course-trasera {
+  &:hover .course-trasera {
     transform: rotateY(0deg);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   }
 
-  &:focus-within {
+  /* ACCESIBILIDAD: El cuadro azul y el giro solo por teclado */
+  &:focus-within .course { transform: rotateY(180deg); }
+  &:focus-within .course-trasera { transform: rotateY(0deg); }
+  
+  &:focus-visible {
     outline: 3px solid #007bff;
     outline-offset: 4px;
+    border-radius: $border-radius-grande;
   }
 
   .course-footer {
@@ -217,36 +224,40 @@
   }
 }
 
+/* BOTÓN NARRADOR */
 .btn-narrar {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
+  z-index: 30; 
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
   border-radius: 50%;
   width: 35px;
   height: 35px;
   cursor: pointer;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  z-index: 10;
-  transition: transform 0.2s, background 0.2s;
+  transition: all 0.3s ease;
+  outline: none; // Evitamos borde azul al clickear
 
   &:hover {
+    background: #007bff;
+    color: white;
     transform: scale(1.1);
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
 
-  &.activo {
-    color: #007bff; // Color azul si está hablando
+  // Solo se marca si llegamos con el tabulador
+  &:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
   }
 }
 
 /* MEDIA QUERIES: RESPONSIVE */
-
 @media (max-width: 1297px) {
   .course-categoria,
   .course-completo {
@@ -264,61 +275,23 @@
       overflow: hidden;
       border-radius: 8px;
     }
-
-    .course img,
-    .course-trasera img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
   }
 }
 
 @media (max-width: 480px) {
   .course-categoria,
   .course-completo {
-    width: 100%;
-    height: auto;
-    position: relative;
     min-height: 280px;
 
-    .course,
-    .course-trasera {
-      width: 100%;
-      height: auto;
-      position: a;
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-
-      h3,
-      h4 {
+    .course h3, .course h4 {
         font-size: 16px;
-      }
-
-      p {
-        font-size: 0.8rem;
-      }
     }
 
     .course-trasera {
       padding: 4px;
-
-      h4 {
-        font-size: 0.65rem;
-      }
-
-      p {
-        font-size: 0.55rem;
-      }
-
-      button {
-        font-size: 0.55rem;
-        width: 100%;
-      }
+      h4 { font-size: 0.65rem; }
+      p { font-size: 0.55rem; }
+      button { font-size: 0.55rem; width: 100%; }
     }
   }
 }

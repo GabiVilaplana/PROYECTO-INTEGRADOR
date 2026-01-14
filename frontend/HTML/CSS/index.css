@@ -457,6 +457,7 @@ button {
   height: 335px;
   position: relative;
   vertical-align: top;
+  outline: none;
 }
 .course-categoria .course {
   width: 100%;
@@ -466,7 +467,6 @@ button {
   top: 0;
   left: 0;
   box-sizing: border-box;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -486,6 +486,11 @@ button {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   transform: translateY(-10px) scale(1.02);
 }
+.course-categoria:focus-visible {
+  outline: 3px solid #007bff;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
 .course-categoria .course-footer {
   padding-top: 10px;
   overflow: hidden;
@@ -500,10 +505,6 @@ button {
 .course-categoria .course-footer .icon-star {
   width: 12px;
   height: 12px;
-}
-.course-categoria:focus-within {
-  outline: 3px solid #007bff;
-  outline-offset: 4px;
 }
 .course-categoria.category-diseñador .course {
   background-color: #6a5acd;
@@ -531,6 +532,7 @@ button {
   perspective: 1000px;
   position: relative;
   vertical-align: top;
+  outline: none;
 }
 .course-completo .course,
 .course-completo .course-trasera {
@@ -547,8 +549,7 @@ button {
   background-color: white;
   overflow: hidden;
 }
-.course-completo .course h3,
-.course-completo .course h4,
+.course-completo .course h3, .course-completo .course h4,
 .course-completo .course-trasera h3,
 .course-completo .course-trasera h4 {
   margin: 10px 0;
@@ -599,19 +600,29 @@ button {
   background-color: #1a4c6e;
 }
 .course-completo {
-  /* Hover y TAB */
+  /* Hover y Giro */
 }
-.course-completo:hover .course, .course-completo:focus-within .course {
+.course-completo:hover .course {
   transform: rotateY(180deg);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
-.course-completo:hover .course-trasera, .course-completo:focus-within .course-trasera {
+.course-completo:hover .course-trasera {
   transform: rotateY(0deg);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
-.course-completo:focus-within {
+.course-completo {
+  /* ACCESIBILIDAD: El cuadro azul y el giro solo por teclado */
+}
+.course-completo:focus-within .course {
+  transform: rotateY(180deg);
+}
+.course-completo:focus-within .course-trasera {
+  transform: rotateY(0deg);
+}
+.course-completo:focus-visible {
   outline: 3px solid #007bff;
   outline-offset: 4px;
+  border-radius: 18px;
 }
 .course-completo .course-footer {
   padding-top: 10px;
@@ -629,30 +640,34 @@ button {
   height: 12px;
 }
 
+/* BOTÓN NARRADOR */
 .btn-narrar {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
   border-radius: 50%;
   width: 35px;
   height: 35px;
   cursor: pointer;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  z-index: 10;
-  transition: transform 0.2s, background 0.2s;
+  transition: all 0.3s ease;
+  outline: none;
 }
 .btn-narrar:hover {
+  background: #007bff;
+  color: white;
   transform: scale(1.1);
-  background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-.btn-narrar.activo {
-  color: #007bff;
+.btn-narrar:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
 }
 
 /* MEDIA QUERIES: RESPONSIVE */
@@ -675,54 +690,16 @@ button {
     overflow: hidden;
     border-radius: 8px;
   }
-  .course-categoria .course img,
-  .course-categoria .course-trasera img,
-  .course-completo .course img,
-  .course-completo .course-trasera img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-  }
 }
 @media (max-width: 480px) {
   .course-categoria,
   .course-completo {
-    width: 100%;
-    height: auto;
-    position: relative;
     min-height: 280px;
   }
-  .course-categoria .course,
-  .course-categoria .course-trasera,
-  .course-completo .course,
-  .course-completo .course-trasera {
-    width: 100%;
-    height: auto;
-    position: a;
-  }
-  .course-categoria .course img,
-  .course-categoria .course-trasera img,
-  .course-completo .course img,
-  .course-completo .course-trasera img {
-    width: 100%;
-    height: auto;
-  }
-  .course-categoria .course h3,
-  .course-categoria .course h4,
-  .course-categoria .course-trasera h3,
-  .course-categoria .course-trasera h4,
+  .course-categoria .course h3, .course-categoria .course h4,
   .course-completo .course h3,
-  .course-completo .course h4,
-  .course-completo .course-trasera h3,
-  .course-completo .course-trasera h4 {
+  .course-completo .course h4 {
     font-size: 16px;
-  }
-  .course-categoria .course p,
-  .course-categoria .course-trasera p,
-  .course-completo .course p,
-  .course-completo .course-trasera p {
-    font-size: 0.8rem;
   }
   .course-categoria .course-trasera,
   .course-completo .course-trasera {
