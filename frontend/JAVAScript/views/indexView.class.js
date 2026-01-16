@@ -33,7 +33,6 @@ export default class View {
         this.contenedordatosCategorias.insertAdjacentHTML("beforeend", html);
     }
 
-    // Renderiza servicios dentro de un carousel
     renderNewServicio(prod, categorias, usuarios) {
         const categoria = categorias.find(cat => cat.IDCategoria === prod.IDCategoria);
         if (!categoria) return;
@@ -47,11 +46,11 @@ export default class View {
             carousel.className = "carousel-wrapper";
             carousel.id = `carousel-${categoria.IDCategoria}`;
             carousel.innerHTML = `
-        <h2>${categoria.Nombre}</h2>
-        <button class="carousel-btn left"><</button>
-        <button class="carousel-btn right">></button>
-        <section class="courses carousel-track"></section>
-      `;
+                <h2>${categoria.Nombre}</h2>
+                <button class="carousel-btn left"><</button>
+                <button class="carousel-btn right">></button>
+                <section class="courses carousel-track"></section>
+            `;
             this.contenedorServicios.appendChild(carousel);
 
             // Añadir scroll dinámico
@@ -62,7 +61,7 @@ export default class View {
             btnRight.addEventListener("click", () => {
                 const card = track.querySelector(".course-completo");
                 if (!card) return;
-                const cardWidth = card.offsetWidth + 10; // ancho real + gap
+                const cardWidth = card.offsetWidth + 10; 
                 track.scrollBy({ left: cardWidth, behavior: "smooth" });
             });
 
@@ -76,43 +75,42 @@ export default class View {
 
         const usuario = usuarios.find(u => u.IDUsuario === prod.IDUsuarioCreacion) || {};
         const categoryClass = `category-${categoria.Nombre.toLowerCase().replace(/\s+/g, '-')}`;
-
         const textoLectura = `Servicio de ${prod.Nombre}. Descripción: ${prod.Descripcion}. Precio: ${prod.Precio} euros.`;
 
         const html = `
-      <div class="course-completo ${categoryClass}">
-        <button class="btn-narrar" aria-label="Escuchar" data-texto="${textoLectura}">🔊</button>
-        <div class="course" data-id="${prod.IDServicio}">
-          <img src="./IMG/${imagen}" alt="${prod.Nombre}" />
-          <h3>${prod.Nombre}</h3>
-          <p>${prod.Descripcion}</p>
-          <div class="course-footer">
-            <span class="price">Precio - ${prod.Precio}€ por persona · ${usuario.Valoracion || '0,0'} /5</span>
-          </div>
-        </div>
-        <div class="course-trasera">
-          <h4>Información del Usuario</h4>
-          <p>Nombre: ${usuario.Nombre || 'N/A'} ${usuario.Apellidos || ''}</p>
-          <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
-          <p>Email: ${usuario.Correo || 'N/A'}</p>
-          <button class="btn-trasera">Consultar Información</button>
-          <button class="btn-trasera-Comprar">Comprar</button>
-        </div>
-      </div>
-    `;
+            <div class="course-completo ${categoryClass}">
+                <button class="btn-narrar" aria-label="Escuchar" data-texto="${textoLectura}">🔊</button>
+                <div class="course" data-id="${prod.IDServicio}">
+                    <img src="./IMG/${imagen}" alt="${prod.Nombre}" />
+                    <h3>${prod.Nombre}</h3>
+                    <p>${prod.Descripcion}</p>
+                    <div class="course-footer">
+                        <span class="price">Precio - ${prod.Precio}€ por persona · ${usuario.Valoracion || '0,0'} /5</span>
+                    </div>
+                </div>
+                <div class="course-trasera">
+                    <h4>Información del Usuario</h4>
+                    <p>Nombre: ${usuario.Nombre || 'N/A'}</p>
+                    <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
+                    <button class="btn-trasera">Consultar Información</button>
+                    <button class="btn-trasera-Comprar">Comprar</button>
+                </div>
+            </div>
+        `;
 
-        carousel.querySelector(".carousel-track").insertAdjacentHTML("beforeend", html);
+        const track = carousel.querySelector(".carousel-track");
+        track.insertAdjacentHTML("beforeend", html);
 
-        // Evento comprar
-        carousel.querySelector(".carousel-track").querySelectorAll(".btn-trasera-Comprar")
-            .forEach(btn => {
-                btn.addEventListener("click", (e) => {
-                    const card = e.target.closest(".course-completo");
-                    if (!card) return;
-                    const idProducto = card.querySelector(".course").dataset.id;
-                    window.open(`../backend/auth/producto.php?id=${idProducto}`, "_blank");
-                });
+        // --- Lógica de redirección a Producto ---
+        const lastCard = track.lastElementChild;
+        const idProducto = prod.IDServicio;
+
+        // Programamos los clics para ambos botones de la parte trasera
+        lastCard.querySelectorAll(".btn-trasera, .btn-trasera-Comprar").forEach(btn => {
+            btn.addEventListener("click", () => {
+                window.open(`../backend/auth/producto.php?id=${idProducto}`, "_blank");
             });
+        });
     }
 
     renederServiciosPorCategoria(prod, categorias, usuarios) {
@@ -122,42 +120,44 @@ export default class View {
 
         const usuario = usuarios.find(u => u.IDUsuario === prod.IDUsuarioCreacion) || {};
         const categoryClass = `category-${categoria.Nombre.toLowerCase().replace(/\s+/g, '-')}`;
-
         const imagen = !prod.IDImagen || prod.IDImagen === "" ? `image${prod.IDCategoria}.jpg` : prod.IDImagen;
-
         const textoLectura = `Servicio de ${prod.Nombre}. ${prod.Descripcion}.`;
 
         const html = `
-      <div class="course-completo ${categoryClass}">
-        <button class="btn-narrar" aria-label="Escuchar" data-texto="${textoLectura}">🔊</button>
-        <div class="course" data-id="${prod.IDServicio}">
-          <img src="./IMG/${imagen}" alt="${prod.Nombre}" />
-          <h3>${prod.Nombre}</h3>
-          <p>${prod.Descripcion}</p>
-          <div class="course-footer">
-            <span class="price">Precio - ${prod.Precio}€ por persona · ${usuario.Valoracion || '0,0'} /5</span>
-          </div>
-        </div>
-        <div class="course-trasera">
-          <h4>Información del Usuario</h4>
-          <p>Nombre: ${usuario.Nombre || 'N/A'} ${usuario.Apellidos || ''}</p>
-          <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
-          <p>Email: ${usuario.Correo || 'N/A'}</p>
-          <button class="btn-trasera">Contactar</button>
-        </div>
-      </div>
-    `;
+            <div class="course-completo ${categoryClass}">
+                <button class="btn-narrar" aria-label="Escuchar" data-texto="${textoLectura}">🔊</button>
+                <div class="course" data-id="${prod.IDServicio}">
+                    <img src="./IMG/${imagen}" alt="${prod.Nombre}" />
+                    <h3>${prod.Nombre}</h3>
+                    <p>${prod.Descripcion}</p>
+                    <div class="course-footer">
+                        <span class="price">Precio - ${prod.Precio}€ por persona · ${usuario.Valoracion || '0,0'} /5</span>
+                    </div>
+                </div>
+                <div class="course-trasera">
+                    <h4>Información del Usuario</h4>
+                    <p>Nombre: ${usuario.Nombre || 'N/A'} ${usuario.Apellidos || ''}</p>
+                    <p>Teléfono: ${usuario.Telefono || 'N/A'}</p>
+                    <p>Email: ${usuario.Correo || 'N/A'}</p>
+                    <button class="btn-trasera">Contactar</button>
+                </div>
+            </div>
+        `;
 
-        let div = this.contenedorCardsCategoria.querySelector(`[data-id="${prod.id}"]`);
-        if (div) {
-            div.innerHTML = html;
-        } else {
-            const div = document.createElement("div");
+        let div = this.contenedorCardsCategoria.querySelector(`[data-id="${prod.IDServicio}"]`);
+        if (!div) {
+            div = document.createElement("div");
             div.dataset.id = prod.IDServicio;
             div.className = "card";
-            div.innerHTML = html;
             this.contenedorCardsCategoria.appendChild(div);
         }
+        
+        div.innerHTML = html;
+
+        // --- Lógica de redirección a Producto ---
+        div.querySelector(".btn-trasera").addEventListener("click", () => {
+            window.open(`../backend/auth/producto.php?id=${prod.IDServicio}`, "_blank");
+        });
     }
 
     renderFilterCategorias(callback) {

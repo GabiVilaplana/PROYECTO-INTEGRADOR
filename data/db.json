@@ -394,5 +394,52 @@
             "Password": "$2y$10$fiOrXFy9tKLjMDwVcNwg1OIm8hJCLcibaBz2jUYkd35Tk3pvmkPGi",
             "Valoracion": null
         }
+    ],
+    "Comentarios": [
+        {
+            "IDComentario": "696a66ff5a075",
+            "IDServicio": "201",
+            "IDUsuario": "107",
+            "NombreUsuario": "Gabi Vilaplana",
+            "Puntuacion": 2,
+            "Comentario": "Servicio pésimo. No volvería a contratar.",
+            "Fecha": "16\/01\/2026"
+        },
+        {
+            "IDComentario": "696a671ed486d",
+            "IDServicio": "201",
+            "IDUsuario": "107",
+            "NombreUsuario": "Gabi Vilaplana",
+            "Puntuacion": 4,
+            "Comentario": "En verda me lo he pensado y no ha estado mal del todo.",
+            "Fecha": "16\/01\/2026"
+        },
+        {
+            "IDComentario": "696a6fa9dd068",
+            "IDServicio": "202",
+            "IDUsuario": "107",
+            "NombreUsuario": "Gabi Vilaplana",
+            "Puntuacion": 5,
+            "Comentario": "Muy bueno",
+            "Fecha": "16\/01\/2026"
+        },
+        {
+            "IDComentario": "696a712db7515",
+            "IDServicio": "203",
+            "IDUsuario": "107",
+            "NombreUsuario": "Gabi Vilaplana",
+            "Puntuacion": 4,
+            "Comentario": "Muy bueno muchas gracias\r\n",
+            "Fecha": "16\/01\/2026"
+        },
+        {
+            "IDComentario": "696a71758905e",
+            "IDServicio": "201",
+            "IDUsuario": "108",
+            "NombreUsuario": "Alex",
+            "Puntuacion": 2,
+            "Comentario": "Muy malo",
+            "Fecha": "16\/01\/2026"
+        }
     ]
 }
