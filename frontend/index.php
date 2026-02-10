@@ -137,7 +137,7 @@ if ($user_id && !$usuario) {
         <h2>Enlaces Rápidos</h2>
         <div>
           <a href="../backend/auth/contacto.php">Centro de ayuda</a>
-          <a href="#">Crear oferta</a>
+          <a href="../backend/auth/crearServicio.php">Crear oferta</a>
           <a href="#">Solicitar Oferta</a>
         </div>
       </div>

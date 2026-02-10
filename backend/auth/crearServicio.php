@@ -2,93 +2,18 @@
 session_start();
 require_once __DIR__ . '/../includes/json_connect.php';
 
-$infoMensaje = "";
-
-// Verificar si el usuario está logueado
-if (!isset($_SESSION['user_id'])) {
-    echo '<!DOCTYPE html>
-    <html lang="es">
-    <head><meta charset="UTF-8"><title>No autorizado</title></head>
-    <body style="font-family:Arial,sans-serif; text-align:center; margin-top:50px;">
-    <h2>⚠️ Debes iniciar sesión para crear un servicio</h2>
-    <a href="../login.php">Ir al login</a>
-    </body>
-    </html>';
+$user_id = $_SESSION['user_id'] ?? $_COOKIE['user_id'] ?? null;
+if (!$user_id) {
+    header('Location: login.php');
     exit;
 }
 
-$usuarioID = $_SESSION['user_id'];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $nombre = trim($_POST['nombre'] ?? '');
-    $descripcion = trim($_POST['descripcion'] ?? '');
-    $duracion = trim($_POST['duracion'] ?? '');
-    $unidadDuracion = trim($_POST['unidad_duracion'] ?? '');
-    $precio = trim($_POST['precio'] ?? '');
-    $idCategoria = trim($_POST['id_categoria'] ?? '');
-    $imagen = $_FILES['imagen']['name'] ?? '';
-
-    // Validaciones
-    if (empty($nombre) || empty($descripcion) || empty($duracion) || empty($unidadDuracion) || empty($precio) || empty($idCategoria)) {
-        $infoMensaje = "⚠️ Todos los campos son obligatorios.";
-    } elseif (!is_numeric($precio) || $precio < 0) {
-        $infoMensaje = "⚠️ El precio debe ser un número positivo.";
-    } else {
-
-        $data = json_get_data('db.json') ?? ['Servicio' => []];
-        $servicios = $data['Servicio'] ?? [];
-
-        // Generar ID autoincremental
-        $ultimoID = 1000;
-        foreach ($servicios as $ser) {
-            if (isset($ser['IDServicio']) && is_numeric($ser['IDServicio'])) {
-                $ultimoID = max($ultimoID, (int)$ser['IDServicio']);
-            }
-        }
-        $nuevoID = $ultimoID + 1;
-
-        // Carpeta de destino
-        $carpetaDestino = '../../frontend/IMG/';
-        if (!is_dir($carpetaDestino)) {
-            mkdir($carpetaDestino, 0755, true); // crea la carpeta si no existe
-        }
-
-        // Procesar imagen
-        if (!empty($imagen) && is_uploaded_file($_FILES['imagen']['tmp_name'])) {
-            $rutaDestino = $carpetaDestino . basename($imagen);
-            if (!move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaDestino)) {
-                $infoMensaje = "❌ Error al subir la imagen. Se usará la imagen por defecto.";
-                $rutaDestino = '../../frontend/IMG/categorias/default.png';
-            }
-        } else {
-            $rutaDestino = '../../frontend/IMG/categorias/default.png';
-        }
-
-        // Crear servicio
-        $nuevoServicio = [
-            "IDServicio" => (string)$nuevoID,
-            "Nombre" => $nombre,
-            "FechaCreacion" => date('Y-m-d H:i:s'),
-            "Descripcion" => $descripcion,
-            "DuracionEstimada" => $duracion,
-            "UnidadDuracion" => $unidadDuracion,
-            "Precio" => number_format((float)$precio, 2, '.', ''),
-            "IDCategoria" => $idCategoria,
-            "IDUsuarioCreacion" => $usuarioID,
-            "IDImagen" => $rutaDestino,
-            "Estado" => "activo"
-        ];
-
-        $servicios[] = $nuevoServicio;
-        $data['Servicio'] = $servicios;
-
-        if (json_save_data('db.json', $data)) {
-            header('Location: ../../frontend/index.php');
-            exit;
-        } else {
-            $infoMensaje = "❌ Error al guardar el servicio. Inténtalo más tarde.";
-        }
+$data = json_get_data('db.json');
+$usuario = null;
+foreach ($data['Usuarios'] as $u) {
+    if ($u['IDUsuario'] === $user_id) {
+        $usuario = $u;
+        break;
     }
 }
 ?>
@@ -96,75 +21,129 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../frontend/HTML/CSS/contacto.css" type="text/css" />
-<title>Crear Servicio - TaskLink</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar Servicio - TaskLink</title>
+  <!-- Cargamos primero el index para el header y luego el específico -->
+  <link rel="stylesheet" href="../../frontend/HTML/CSS/index.css">
+  <link rel="stylesheet" href="../../frontend/HTML/CSS/crearServicio.css">
 </head>
-<body>
-<div class="contenedor">
-    <aside class="sidebar">
-        <section class="opcionesContacto">
-            <div class="OtrosContactos">
-                <a href="../../frontend/index.php" class="btn-volver">← Volver</a>
-                <h3>Opciones</h3>
+
+<body class="body-crear-servicio">
+  <header>
+    <div class="logo-container">
+        <a href="../../frontend/index.php">
+            <img src="../../frontend/IMG/logo.png" alt="Logo" class="logo-icon">
+        </a>
+    </div>
+    <div class="right-header">
+        <span class="texto-servicios"><?= htmlspecialchars($usuario['Nombre']) ?></span>
+        <div class="icono-perfil">
+            <img src="../../frontend/IMG/imagenPerfilRedonda.png" class="profile-icon" alt="Perfil">
+        </div>
+    </div>
+  </header>
+
+  <main class="airbnb-layout">
+    <div class="product-header">
+        <h1>Anuncia tu talento en TaskLink</h1>
+        <p>Crea una oferta atractiva para que los clientes te encuentren fácilmente.</p>
+    </div>
+
+    <!-- GRID DE IMÁGENES (IDENTIDAD) -->
+    <section class="photo-upload-grid">
+        <div class="main-photo-upload">
+            <div class="upload-content">
+                <span class="icon">📸</span>
+                <b>Añadir foto principal</b>
+                <p>O arrastra y suelta aquí</p>
+                <input type="file" id="file-main" hidden>
             </div>
-        </section>
-    </aside>
+        </div>
+        <div class="secondary-upload"><span>+</span></div>
+        <div class="secondary-upload"><span>+</span></div>
+        <div class="secondary-upload"><span>+</span></div>
+        <div class="secondary-upload"><span>+</span></div>
+    </section>
 
-    <form method="POST" enctype="multipart/form-data" class="formulario">
-        <div class="contactoh2">
-            <img src="../../frontend/IMG/logo.png" alt="Logo">
-            <h2>Crear Servicio</h2>
+    <form id="form-crear-servicio" class="content-wrapper">
+        <div class="main-column">
+            <!-- INFO USUARIO -->
+            <div class="host-info">
+                <div>
+                    <h2>Publicarás como <?= htmlspecialchars($usuario['Nombre']) ?></h2>
+                    <p>Tu valoración actual es de ⭐ <?= $usuario['Valoracion'] ?? '5.0' ?></p>
+                </div>
+                <img src="../../frontend/IMG/imagenPerfilRedonda.png" class="host-profile-img" alt="Avatar">
+            </div>
+
+            <!-- FORMULARIO -->
+            <div class="description-section">
+                <div class="section-title">Título de tu servicio</div>
+                <input type="text" name="nombre" class="input-minimal" placeholder="Ej: Diseño de logotipos modernos" required>
+            </div>
+
+            <div class="description-section">
+                <div class="section-title">Categoría</div>
+                <select name="idCategoria" id="idCategoria" class="input-minimal" required>
+                    <!-- Se rellena vía JS con tu controlador -->
+                </select>
+            </div>
+
+            <div class="description-section">
+                <div class="section-title">Descripción detallada</div>
+                <textarea name="descripcion" class="textarea-minimal" rows="6" placeholder="¿En qué consiste tu trabajo? ¿Qué herramientas usas? ¿Qué incluye el precio?" required></textarea>
+            </div>
         </div>
 
-        <div class="contenedorNombre">
-            <span>Nombre del Servicio</span><br>
-            <input class="nombre" type="text" name="nombre" required>
-        </div>
+        <!-- WIDGET LATERAL (ESTILO PRODUCTO) -->
+        <div class="sidebar-column">
+            <div class="publish-widget">
+                <div class="section-title" style="margin-top:0">Precio del servicio</div>
+                <div class="widget-price-row">
+                    <input type="number" name="precio" id="price-input" placeholder="0.00" step="0.01" required>
+                    <span>€ / sesión</span>
+                </div>
+                
+                <div class="widget-details">
+                    <div class="detail-row">
+                        <span>Visibilidad</span>
+                        <b>Máxima (Nueva)</b>
+                    </div>
+                    <div class="detail-row">
+                        <span>Tasa de servicio</span>
+                        <b>0.00 €</b>
+                    </div>
+                </div>
 
-        <div class="contenedorMensaje">
-            <span>Descripción</span><br>
-            <textarea class="mensaje" name="descripcion" rows="6" placeholder="Describe tu servicio" required></textarea>
+                <button type="submit" class="widget-btn">Publicar ahora</button>
+                
+                <div class="total-preview-row">
+                    <span>Tú recibes</span>
+                    <b id="price-preview">0.00 €</b>
+                </div>
+            </div>
         </div>
-
-        <div class="contenedorDuracion">
-            <span>Duración Estimada</span><br>
-            <input type="number" name="duracion" min="1" style="width:30%;" required>
-            <select name="unidad_duracion" style="width:65%;" required>
-                <option value="días">Días</option>
-                <option value="semanas">Semanas</option>
-                <option value="años">Años</option>
-            </select>
-        </div>
-
-        <div class="contenedorPrecio">
-            <span>Precio (€)</span><br>
-            <input type="number" step="0.01" min="0" name="precio" required>
-        </div>
-
-        <div class="contenedorCategoria">
-            <span>Categoría</span><br>
-            <select name="id_categoria" required>
-                <option value="1">Diseño</option>
-                <option value="2">Desarrollo</option>
-                <option value="3">Marketing</option>
-            </select>
-        </div>
-
-        <div class="contenedorImagen">
-            <span>Imagen (opcional)</span><br>
-            <input type="file" name="imagen" accept="image/*">
-        </div>
-
-        <div class="contenedorEnviar">
-            <button class="btnEnviar">Crear Servicio</button>
-        </div>
-
-        <?php if($infoMensaje): ?>
-            <p class="mensaje-info"><?= $infoMensaje ?></p>
-        <?php endif; ?>
     </form>
-</div>
+  </main>
+
+  <footer style="margin-top: 50px; padding: 20px; border-top: 1px solid #eee; text-align: center; color: #666;">
+      Español (España) © 2025 TaskLink from Alex&Gabi
+  </footer>
+
+  <script type="module">
+    import CrearServicioController from '../../JAVAScript/controllers/crearServicioController.class.js';
+    document.addEventListener("DOMContentLoaded", () => {
+        const controller = new CrearServicioController();
+        controller.init();
+
+        // Actualización dinámica del precio en el widget
+        const input = document.getElementById('price-input');
+        const preview = document.getElementById('price-preview');
+        input.addEventListener('input', (e) => {
+            preview.innerText = (e.target.value || "0.00") + " €";
+        });
+    });
+  </script>
 </body>
 </html>

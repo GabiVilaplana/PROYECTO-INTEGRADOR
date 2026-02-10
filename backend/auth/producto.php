@@ -307,34 +307,37 @@ if ($total_resenas > 0) {
         </div>
 
         <!-- COLUMNA DERECHA (Widget) -->
+        <!-- COLUMNA DERECHA (Widget) -->
         <div class="sidebar-column">
-    <div class="booking-widget">
-        <div class="widget-price">
-            <?= number_format($servicio_actual['Precio'], 2) ?> € <span style="font-weight: normal; font-size: 16px;">/ sesión</span>
-        </div>
-        
-        <div style="border: 1px solid #ccc; border-radius: 8px; margin-bottom: 15px; overflow: hidden;">
-            <div style="padding: 10px; border-bottom: 1px solid #ccc; font-size: 12px;">
-                <b>FECHA</b><br>
-                <span style="color: #666;">Seleccionar fecha</span>
-            </div>
-            <div style="padding: 10px; font-size: 12px;">
-                <b>PERSONAS</b><br>
-                <span style="color: #666;">1 persona</span>
-            </div>
-        </div>
+            <div class="booking-widget">
+                <div class="widget-price" style="font-size: 22px; font-weight: 700; margin-bottom: 15px;">
+                    <?= number_format($servicio_actual['Precio'], 2) ?> € <span style="font-weight: normal; font-size: 16px;">/ sesión</span>
+                </div>
+                
+                <div style="border: 1px solid #ccc; border-radius: 8px; margin-bottom: 15px; overflow: hidden;">
+                    <div style="padding: 10px; border-bottom: 1px solid #ccc; font-size: 12px;">
+                        <b>FECHA</b><br>
+                        <span style="color: #666;"><?= date('d/m/Y') ?> (Hoy)</span>
+                    </div>
+                    <div style="padding: 10px; font-size: 12px;">
+                        <b>PERSONAS</b><br>
+                        <span style="color: #666;">1 persona</span>
+                    </div>
+                </div>
 
-        <button class="widget-btn">Reservar ahora</button>
-        
-        <p style="text-align: center; font-size: 12px; margin-top: 10px; color: #666;">No se te cobrará nada aún</p>
-        
-        <!-- Fila de Total corregida -->
-        <div class="total-row">
-            <span>Total</span>
-            <b><?= number_format($servicio_actual['Precio'], 2) ?> €</b>
+                <!-- BOTÓN CORREGIDO -->
+                <button class="widget-btn" onclick="window.location.href='payment.php?id=<?= $id_actual ?>'">
+                    Reservar ahora
+                </button>        
+                
+                <p style="text-align: center; font-size: 12px; margin-top: 10px; color: #666;">No se te cobrará nada aún</p>
+                
+                <div class="total-row">
+                    <span>Total</span>
+                    <b><?= number_format($servicio_actual['Precio'], 2) ?> €</b>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
     </div>
 </main>
 

@@ -1,0 +1,150 @@
+/* crearServicio.css - Identidad Visual TaskLink */
+
+.body-crear-servicio {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+}
+
+.airbnb-layout {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header fix para asegurar tamaños */
+.logo-icon { width: 150px !important; height: auto !important; }
+.profile-icon { width: 35px !important; height: 35px !important; border-radius: 50%; }
+
+.product-header { padding: 32px 0; }
+.product-header h1 { font-size: 32px; margin: 0 0 8px 0; }
+.product-header p { color: #6a6a6a; margin: 0; }
+
+/* Grid de fotos estilo producto */
+.photo-upload-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 180px 180px;
+    gap: 10px;
+    height: 370px;
+    margin-bottom: 40px;
+}
+
+.main-photo-upload, .secondary-upload {
+    background: #f7f7f7;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.main-photo-upload:hover, .secondary-upload:hover {
+    border-color: #007bff;
+    background: #f0f7ff;
+}
+
+.main-photo-upload { grid-row: span 2; }
+.upload-content { text-align: center; color: #717171; }
+.upload-content .icon { font-size: 40px; display: block; margin-bottom: 10px; }
+
+/* Layout de columnas */
+.content-wrapper { display: flex; gap: 80px; }
+.main-column { flex: 2; }
+.sidebar-column { flex: 1; min-width: 320px; }
+
+.host-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 32px;
+}
+
+.host-info h2 { font-size: 22px; margin: 0; }
+.host-profile-img { width: 60px !important; height: 60px !important; border-radius: 50% !important; object-fit: cover; }
+
+/* Inputs minimalistas */
+.section-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+
+.input-minimal, .textarea-minimal {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    outline: none;
+    background: transparent;
+    margin-bottom: 32px;
+}
+
+.input-minimal:focus, .textarea-minimal:focus {
+    border-bottom: 2px solid #007bff;
+}
+
+.textarea-minimal { font-size: 16px; resize: none; }
+
+/* Widget de Publicación (Sidebar) */
+.publish-widget {
+    position: sticky;
+    top: 100px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    background: white;
+}
+
+.widget-price-row { display: flex; align-items: baseline; gap: 5px; margin-bottom: 20px; }
+#price-input {
+    border: none;
+    font-size: 28px;
+    font-weight: bold;
+    width: 120px;
+    outline: none;
+}
+
+.widget-details {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.detail-row {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.detail-row:first-child { border-bottom: 1px solid #ddd; }
+
+.widget-btn {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.total-preview-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    font-size: 16px;
+}
+
+/* Responsivo */
+@media (max-width: 950px) {
+    .content-wrapper { flex-direction: column; }
+    .sidebar-column { order: -1; width: 100%; }
+    .photo-upload-grid { height: 250px; grid-template-rows: 120px 120px; }
+}

@@ -1,0 +1,205 @@
+/* --- CABECERA SIMPLE --- */
+.header-simple {
+    display: flex;
+    align-items: center;
+    padding: 20px 80px;
+    border-bottom: 1px solid #ebebeb;
+    background: #fff;
+}
+
+.header-title {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* --- LAYOUT PRINCIPAL --- */
+.container-payment {
+    max-width: 1120px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.payment-layout {
+    display: flex;
+    gap: 80px;
+}
+
+.payment-details {
+    flex: 1.5;
+}
+
+.payment-summary {
+    flex: 1;
+}
+
+/* --- BLOQUES DE CONTENIDO --- */
+.section-block h3 {
+    font-size: 22px;
+    margin-bottom: 24px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-btn {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #222;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #dddddd;
+    margin: 32px 0;
+}
+
+/* --- CONTENEDOR DE MÉTODOS DE PAGO --- */
+.payment-methods-container {
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.method-item {
+    border-bottom: 1px solid #dddddd;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.method-item:last-child {
+    border-bottom: none;
+}
+
+.method-item.active {
+    background: #f7f7f7;
+}
+
+.method-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.method-header label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #222;
+}
+
+/* --- AJUSTE DE ICONOS (VISA/BIZUM/ETC) --- */
+.method-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.method-icons img {
+    height: 18px; /* Altura controlada para que no salgan grandes */
+    width: auto;
+    object-fit: contain;
+}
+
+/* --- FORMULARIO DE TARJETA --- */
+.card-inputs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-inputs input {
+    padding: 12px;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+/* --- BOTÓN FINAL --- */
+.btn-confirm-pay {
+    background: #ff385c;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+/* --- TARJETA RESUMEN (STIKY) --- */
+.summary-card {
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 24px;
+    position: sticky;
+    top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 6px 16px;
+}
+
+.service-preview {
+    display: flex;
+    gap: 12px;
+}
+
+.service-preview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.service-name {
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+.category-small, .rating {
+    font-size: 12px;
+    color: #717171;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.price-row.total {
+    font-weight: 700;
+    font-size: 18px;
+    color: #222;
+}
+
+/* --- FOOTER --- */
+.footer-simple {
+    text-align: center;
+    padding: 60px 0;
+    color: #717171;
+    font-size: 14px;
+}
+
+/* Responsivo básico */
+@media (max-width: 900px) {
+    .payment-layout { flex-direction: column; }
+    .payment-summary { order: -1; } /* El resumen arriba en móvil */
+}
